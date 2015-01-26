@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FCCA01A1A76C62200A281AF /* RegionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCA0191A76C62200A281AF /* RegionalViewController.swift */; };
+		2FCCA01C1A76CBA800A281AF /* PointOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCA01B1A76CBA800A281AF /* PointOfInterestViewController.swift */; };
 		5D1A30731A75CA6300479A3E /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1A30721A75CA6300479A3E /* SearchUserViewController.swift */; };
 		5D1A30751A75CC6E00479A3E /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1A30741A75CC6E00479A3E /* UserCell.swift */; };
 		5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907521A758C7B009D92C2 /* AppDelegate.swift */; };
@@ -15,15 +17,11 @@
 		5DA9075D1A758C7C009D92C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9075B1A758C7C009D92C2 /* LaunchScreen.xib */; };
 		5DA907691A758C7C009D92C2 /* _3AndMeClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907681A758C7C009D92C2 /* _3AndMeClientTests.swift */; };
 		5DA9078E1A758D85009D92C2 /* ancestry_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907781A758D85009D92C2 /* ancestry_get.json */; };
-		5DA9078F1A758D85009D92C2 /* carriers_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907791A758D85009D92C2 /* carriers_get.json */; };
 		5DA907911A758D85009D92C2 /* family_members_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9077B1A758D85009D92C2 /* family_members_get.json */; };
 		5DA907921A758D85009D92C2 /* genome_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9077C1A758D85009D92C2 /* genome_get.json */; };
 		5DA907931A758D85009D92C2 /* genotypes_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9077D1A758D85009D92C2 /* genotypes_get.json */; };
 		5DA907941A758D85009D92C2 /* grfs_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9077E1A758D85009D92C2 /* grfs_get.json */; };
 		5DA907951A758D85009D92C2 /* haplogroups_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9077F1A758D85009D92C2 /* haplogroups_get.json */; };
-		5DA907961A758D85009D92C2 /* introduction_read.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907801A758D85009D92C2 /* introduction_read.json */; };
-		5DA907971A758D85009D92C2 /* introduction_write_patch.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907811A758D85009D92C2 /* introduction_write_patch.json */; };
-		5DA907981A758D85009D92C2 /* introduction_write_post.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907821A758D85009D92C2 /* introduction_write_post.json */; };
 		5DA907991A758D85009D92C2 /* names_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907831A758D85009D92C2 /* names_get.json */; };
 		5DA9079A1A758D85009D92C2 /* neanderthal_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907841A758D85009D92C2 /* neanderthal_get.json */; };
 		5DA9079B1A758D85009D92C2 /* phenotype_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907851A758D85009D92C2 /* phenotype_get.json */; };
@@ -31,15 +29,9 @@
 		5DA9079D1A758D85009D92C2 /* picture_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907871A758D85009D92C2 /* picture_get.json */; };
 		5DA9079E1A758D85009D92C2 /* publish.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907881A758D85009D92C2 /* publish.json */; };
 		5DA9079F1A758D85009D92C2 /* relatives_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907891A758D85009D92C2 /* relatives_get.json */; };
-		5DA907A01A758D85009D92C2 /* relatives_patch.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9078A1A758D85009D92C2 /* relatives_patch.json */; };
-		5DA907A11A758D85009D92C2 /* risks_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9078B1A758D85009D92C2 /* risks_get.json */; };
-		5DA907A21A758D85009D92C2 /* traits_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9078C1A758D85009D92C2 /* traits_get.json */; };
 		5DA907A31A758D85009D92C2 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9078D1A758D85009D92C2 /* user.json */; };
-		5DA907A51A758EA5009D92C2 /* drug_responses_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907A41A758EA5009D92C2 /* drug_responses_get.json */; };
 		5DA907A81A7597E0009D92C2 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907A71A7597E0009D92C2 /* MenuTableViewController.swift */; };
-		5DA907AA1A759A62009D92C2 /* RisksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907A91A759A62009D92C2 /* RisksViewController.swift */; };
 		5DA907AC1A759E36009D92C2 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907AB1A759E36009D92C2 /* UserDetailsViewController.swift */; };
-		5DA907AE1A759F22009D92C2 /* DrugResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907AD1A759F22009D92C2 /* DrugResponseViewController.swift */; };
 		5DA907B01A75A3E1009D92C2 /* Inherited Conditions ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907AF1A75A3E1009D92C2 /* Inherited Conditions ViewController.swift */; };
 		5DA907B21A75A582009D92C2 /* AncestryCompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907B11A75A582009D92C2 /* AncestryCompositionViewController.swift */; };
 		5DA907B41A75A7BB009D92C2 /* MaternalLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907B31A75A7BB009D92C2 /* MaternalLineViewController.swift */; };
@@ -59,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FCCA0191A76C62200A281AF /* RegionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionalViewController.swift; sourceTree = "<group>"; };
+		2FCCA01B1A76CBA800A281AF /* PointOfInterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointOfInterestViewController.swift; sourceTree = "<group>"; };
 		5D1A30721A75CA6300479A3E /* SearchUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
 		5D1A30741A75CC6E00479A3E /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5DA9074D1A758C7B009D92C2 /* 23AndMeClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 23AndMeClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,15 +65,11 @@
 		5DA907671A758C7C009D92C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DA907681A758C7C009D92C2 /* _3AndMeClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _3AndMeClientTests.swift; sourceTree = "<group>"; };
 		5DA907781A758D85009D92C2 /* ancestry_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ancestry_get.json; sourceTree = "<group>"; };
-		5DA907791A758D85009D92C2 /* carriers_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = carriers_get.json; sourceTree = "<group>"; };
 		5DA9077B1A758D85009D92C2 /* family_members_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = family_members_get.json; sourceTree = "<group>"; };
 		5DA9077C1A758D85009D92C2 /* genome_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = genome_get.json; sourceTree = "<group>"; };
 		5DA9077D1A758D85009D92C2 /* genotypes_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = genotypes_get.json; sourceTree = "<group>"; };
 		5DA9077E1A758D85009D92C2 /* grfs_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grfs_get.json; sourceTree = "<group>"; };
 		5DA9077F1A758D85009D92C2 /* haplogroups_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = haplogroups_get.json; sourceTree = "<group>"; };
-		5DA907801A758D85009D92C2 /* introduction_read.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = introduction_read.json; sourceTree = "<group>"; };
-		5DA907811A758D85009D92C2 /* introduction_write_patch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = introduction_write_patch.json; sourceTree = "<group>"; };
-		5DA907821A758D85009D92C2 /* introduction_write_post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = introduction_write_post.json; sourceTree = "<group>"; };
 		5DA907831A758D85009D92C2 /* names_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = names_get.json; sourceTree = "<group>"; };
 		5DA907841A758D85009D92C2 /* neanderthal_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = neanderthal_get.json; sourceTree = "<group>"; };
 		5DA907851A758D85009D92C2 /* phenotype_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = phenotype_get.json; sourceTree = "<group>"; };
@@ -87,15 +77,9 @@
 		5DA907871A758D85009D92C2 /* picture_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = picture_get.json; sourceTree = "<group>"; };
 		5DA907881A758D85009D92C2 /* publish.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = publish.json; sourceTree = "<group>"; };
 		5DA907891A758D85009D92C2 /* relatives_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = relatives_get.json; sourceTree = "<group>"; };
-		5DA9078A1A758D85009D92C2 /* relatives_patch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = relatives_patch.json; sourceTree = "<group>"; };
-		5DA9078B1A758D85009D92C2 /* risks_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = risks_get.json; sourceTree = "<group>"; };
-		5DA9078C1A758D85009D92C2 /* traits_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = traits_get.json; sourceTree = "<group>"; };
 		5DA9078D1A758D85009D92C2 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
-		5DA907A41A758EA5009D92C2 /* drug_responses_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drug_responses_get.json; sourceTree = "<group>"; };
 		5DA907A71A7597E0009D92C2 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		5DA907A91A759A62009D92C2 /* RisksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RisksViewController.swift; sourceTree = "<group>"; };
 		5DA907AB1A759E36009D92C2 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
-		5DA907AD1A759F22009D92C2 /* DrugResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrugResponseViewController.swift; sourceTree = "<group>"; };
 		5DA907AF1A75A3E1009D92C2 /* Inherited Conditions ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inherited Conditions ViewController.swift"; sourceTree = "<group>"; };
 		5DA907B11A75A582009D92C2 /* AncestryCompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AncestryCompositionViewController.swift; sourceTree = "<group>"; };
 		5DA907B31A75A7BB009D92C2 /* MaternalLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaternalLineViewController.swift; sourceTree = "<group>"; };
@@ -194,13 +178,13 @@
 			children = (
 				5DA907B11A75A582009D92C2 /* AncestryCompositionViewController.swift */,
 				5DA907A71A7597E0009D92C2 /* MenuTableViewController.swift */,
-				5DA907A91A759A62009D92C2 /* RisksViewController.swift */,
 				5DA907AB1A759E36009D92C2 /* UserDetailsViewController.swift */,
-				5DA907AD1A759F22009D92C2 /* DrugResponseViewController.swift */,
 				5DA907B31A75A7BB009D92C2 /* MaternalLineViewController.swift */,
 				5DA907B51A75A885009D92C2 /* PaternalLineViewController.swift */,
 				5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */,
 				5D1A30721A75CA6300479A3E /* SearchUserViewController.swift */,
+				2FCCA0191A76C62200A281AF /* RegionalViewController.swift */,
+				2FCCA01B1A76CBA800A281AF /* PointOfInterestViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -218,16 +202,11 @@
 			isa = PBXGroup;
 			children = (
 				5DA907781A758D85009D92C2 /* ancestry_get.json */,
-				5DA907791A758D85009D92C2 /* carriers_get.json */,
-				5DA907A41A758EA5009D92C2 /* drug_responses_get.json */,
 				5DA9077B1A758D85009D92C2 /* family_members_get.json */,
 				5DA9077C1A758D85009D92C2 /* genome_get.json */,
 				5DA9077D1A758D85009D92C2 /* genotypes_get.json */,
 				5DA9077E1A758D85009D92C2 /* grfs_get.json */,
 				5DA9077F1A758D85009D92C2 /* haplogroups_get.json */,
-				5DA907801A758D85009D92C2 /* introduction_read.json */,
-				5DA907811A758D85009D92C2 /* introduction_write_patch.json */,
-				5DA907821A758D85009D92C2 /* introduction_write_post.json */,
 				5DA907831A758D85009D92C2 /* names_get.json */,
 				5DA907841A758D85009D92C2 /* neanderthal_get.json */,
 				5DA907851A758D85009D92C2 /* phenotype_get.json */,
@@ -235,9 +214,6 @@
 				5DA907871A758D85009D92C2 /* picture_get.json */,
 				5DA907881A758D85009D92C2 /* publish.json */,
 				5DA907891A758D85009D92C2 /* relatives_get.json */,
-				5DA9078A1A758D85009D92C2 /* relatives_patch.json */,
-				5DA9078B1A758D85009D92C2 /* risks_get.json */,
-				5DA9078C1A758D85009D92C2 /* traits_get.json */,
 				5DA9078D1A758D85009D92C2 /* user.json */,
 			);
 			name = "JSON Files";
@@ -325,10 +301,8 @@
 			files = (
 				5DA907911A758D85009D92C2 /* family_members_get.json in Resources */,
 				5DA9079A1A758D85009D92C2 /* neanderthal_get.json in Resources */,
-				5DA907A11A758D85009D92C2 /* risks_get.json in Resources */,
 				5DA907921A758D85009D92C2 /* genome_get.json in Resources */,
 				5DA907991A758D85009D92C2 /* names_get.json in Resources */,
-				5DA907A01A758D85009D92C2 /* relatives_patch.json in Resources */,
 				5DA907581A758C7C009D92C2 /* Main.storyboard in Resources */,
 				5DA9079C1A758D85009D92C2 /* phenotype_put.json in Resources */,
 				5DA907A31A758D85009D92C2 /* user.json in Resources */,
@@ -336,16 +310,10 @@
 				5DA9078E1A758D85009D92C2 /* ancestry_get.json in Resources */,
 				5DA9079D1A758D85009D92C2 /* picture_get.json in Resources */,
 				5DA9075D1A758C7C009D92C2 /* LaunchScreen.xib in Resources */,
-				5DA907A21A758D85009D92C2 /* traits_get.json in Resources */,
-				5DA907961A758D85009D92C2 /* introduction_read.json in Resources */,
 				5DA9079B1A758D85009D92C2 /* phenotype_get.json in Resources */,
-				5DA907A51A758EA5009D92C2 /* drug_responses_get.json in Resources */,
 				5DA907931A758D85009D92C2 /* genotypes_get.json in Resources */,
-				5DA907981A758D85009D92C2 /* introduction_write_post.json in Resources */,
 				5DA9075A1A758C7C009D92C2 /* Images.xcassets in Resources */,
 				5DA9079F1A758D85009D92C2 /* relatives_get.json in Resources */,
-				5DA907971A758D85009D92C2 /* introduction_write_patch.json in Resources */,
-				5DA9078F1A758D85009D92C2 /* carriers_get.json in Resources */,
 				5DA907951A758D85009D92C2 /* haplogroups_get.json in Resources */,
 				5DA9079E1A758D85009D92C2 /* publish.json in Resources */,
 			);
@@ -368,14 +336,14 @@
 				5DA907BC1A75ACB4009D92C2 /* NetworkController.swift in Sources */,
 				5D1A30751A75CC6E00479A3E /* UserCell.swift in Sources */,
 				5D1A30731A75CA6300479A3E /* SearchUserViewController.swift in Sources */,
-				5DA907AE1A759F22009D92C2 /* DrugResponseViewController.swift in Sources */,
 				5DA907A81A7597E0009D92C2 /* MenuTableViewController.swift in Sources */,
 				5DA907B61A75A886009D92C2 /* PaternalLineViewController.swift in Sources */,
 				5DA907B21A75A582009D92C2 /* AncestryCompositionViewController.swift in Sources */,
 				5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */,
+				2FCCA01A1A76C62200A281AF /* RegionalViewController.swift in Sources */,
+				2FCCA01C1A76CBA800A281AF /* PointOfInterestViewController.swift in Sources */,
 				5DA907B41A75A7BB009D92C2 /* MaternalLineViewController.swift in Sources */,
 				5DA907AC1A759E36009D92C2 /* UserDetailsViewController.swift in Sources */,
-				5DA907AA1A759A62009D92C2 /* RisksViewController.swift in Sources */,
 				5DA907B81A75A91F009D92C2 /* NeanderthalAncestryViewController.swift in Sources */,
 				5DA907B01A75A3E1009D92C2 /* Inherited Conditions ViewController.swift in Sources */,
 			);
