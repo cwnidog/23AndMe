@@ -1,0 +1,22 @@
+# JSON response:
+{
+    "i3000001": "II",
+    "rs3094315": "AA"
+    "id": "c4480ba411939067"
+}
+
+?format=embedded
+# JSON response:
+{
+    "id": "c4480ba411939067"
+    "genotypes": [
+        {
+            "location": "i3000001",
+            "call": "II"
+        },
+        {
+            "location": "rs3094315",
+            "call": "AA"
+        }
+    ]
+}

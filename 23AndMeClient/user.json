@@ -1,0 +1,42 @@
+# JSON response:
+{
+    "id": "a42e94634e3f7683",
+    "profiles": [
+        {
+            "genotyped": true,
+            "id": "c4480ba411939067"
+        }, ...
+    ]
+}
+
+?services=true
+# JSON response:
+{
+    "id": "a42e94634e3f7683",
+    "profiles": [
+        {
+            "genotyped": true,
+            "id": "c4480ba411939067",
+            "services": [
+                {
+                    "description": "Health",
+                    "label": "pgs_health",
+                    "id": 1
+                }, ...
+            ]
+        }, ...
+    ]
+}
+
+?email=true w/ email scope
+#JSON response:
+{
+    "id": "a42e94634e3f7683",
+    "email": "gregormendel@23andme.com",
+    "profiles": [
+        {
+            "genotyped": true,
+            "id": "c4480ba411939067"
+        }, ...
+    ]
+}

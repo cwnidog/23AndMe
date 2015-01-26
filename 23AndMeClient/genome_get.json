@@ -1,0 +1,5 @@
+# JSON response:
+{
+    "id": "c4480ba411939067",
+    "genome": "ACTAGTAG__TTGADDAAIICCTT" # ... (2MB string!)
+}
