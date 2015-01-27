@@ -62,14 +62,28 @@ class NetworkController {
     
   } // init ()
   
+  
   func handleCallbackURL(url : NSURL)
   {
-    let code = url.query
+    var postRequest : NSMutableURLRequest!
     
-    // send a POST back to 23AndMe asking for a token
-    let oauthURL = "https://api.23andme.com/token?\(code!)&client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&code=\(code!)&redirect_uri=celebrime23://oauth&scope=basic%20haplogroups%20ancestry%names"
-    let postRequest = NSMutableURLRequest(URL: NSURL(string: oauthURL)!)
-    postRequest.HTTPMethod = "POST"
+    if !self.needRefresh // need to ask for an initial token
+    {
+      let code = url.query
+      
+      // send a POST back to 23AndMe asking for a token using the authorization code
+      let oauthURL = "https://api.23andme.com/token?\(code!)&client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&code=\(code!)&redirect_uri=https://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
+      postRequest = NSMutableURLRequest(URL: NSURL(string: oauthURL)!)
+      postRequest.HTTPMethod = "POST"
+    } // need to ask for inital token
+      
+    else
+    {
+      // send a POST back to 23AndMe asking for a token using the refresh token
+      let oauthURL = "https://api.23andme.com/token?&client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(refreshToken)&redirect_uri=https://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
+      postRequest = NSMutableURLRequest(URL: NSURL(string: oauthURL)!)
+      postRequest.HTTPMethod = "POST"
+    } // need to refresh token
     
     // deal with the response
     let dataTask = self.urlSession.dataTaskWithRequest(postRequest, completionHandler: { (data, response, error) -> Void in
