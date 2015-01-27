@@ -183,8 +183,27 @@
                     <view key="view" contentMode="scaleToFill" id="YFB-yH-T3M">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKQ-TB-2Vh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="dcW-EL-zSM"/>
+                                    <constraint firstAttribute="width" constant="600" id="m6V-ao-TXi"/>
+                                </constraints>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LKQ-TB-2Vh" firstAttribute="leading" secondItem="YFB-yH-T3M" secondAttribute="leading" id="FAj-cR-Qf1"/>
+                            <constraint firstItem="LKQ-TB-2Vh" firstAttribute="top" secondItem="YFB-yH-T3M" secondAttribute="top" id="dH0-ma-XF4"/>
+                            <constraint firstItem="ZAs-j2-4nK" firstAttribute="top" secondItem="LKQ-TB-2Vh" secondAttribute="bottom" id="ni6-GN-TQb"/>
+                            <constraint firstAttribute="trailing" secondItem="LKQ-TB-2Vh" secondAttribute="trailing" id="yeh-po-80I"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="LKQ-TB-2Vh" id="Wyk-6R-uT0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hz5-bY-x4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,8 +220,27 @@
                     <view key="view" contentMode="scaleToFill" id="Zus-hs-an4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DLP-p4-JhZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="Ed0-hj-5cx"/>
+                                    <constraint firstAttribute="height" constant="600" id="LgB-KB-678"/>
+                                </constraints>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ljr-w9-tDY" firstAttribute="top" secondItem="DLP-p4-JhZ" secondAttribute="bottom" id="C7o-KX-tPQ"/>
+                            <constraint firstAttribute="trailing" secondItem="DLP-p4-JhZ" secondAttribute="trailing" id="QmG-Q7-kOs"/>
+                            <constraint firstItem="DLP-p4-JhZ" firstAttribute="leading" secondItem="Zus-hs-an4" secondAttribute="leading" id="Vnj-zw-cyX"/>
+                            <constraint firstItem="DLP-p4-JhZ" firstAttribute="top" secondItem="Zus-hs-an4" secondAttribute="top" id="yV3-AA-4OT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="DLP-p4-JhZ" id="A1v-gR-Rqw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1j-sO-ndt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
