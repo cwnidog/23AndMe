@@ -11,12 +11,103 @@ import UIKit
 class NetworkController {
   
   // create a singleton NetworkController
-  class var sharedNetworkController : NetworkController {
-    struct Static {
+  class var sharedNetworkController : NetworkController
+  {
+    struct Static
+    {
       static let instance : NetworkController = NetworkController()
     }
     return Static.instance
   } // sharedNetworkController
+  
+  let clientSecret = "25959db5672ef3b67399713f140c0302"
+  let clientID = "98d783a58c22cc274221088f60e99d5e"
+  
+  let accessTokenUserDefaultsKey = "accessToken"
+  let refreshTokenUserDefaultsKey = "refreshToken"
+  let tokenStoredDateDefaultKey = "tokenStoredDate"
+  let tokenAgeOut = 82800
+  
+  var accessToken : String?
+  var refreshToken : String?
+  var needRefresh = false
+  
+  var urlSession : NSURLSession
+  
+  init()
+  {
+    let ephemeralConfig = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+    self.urlSession = NSURLSession(configuration: ephemeralConfig)
+    
+    // if we have a stored access token, that is less than a day old, use it
+    if let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(self.accessTokenUserDefaultsKey) as? String
+    {
+      let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(tokenStoredDateDefaultKey) as? NSDate
+      
+      // check age of token
+      let calendar = NSCalendar.currentCalendar()
+      let now = NSDate()
+    
+      let components = calendar.components(NSCalendarUnit.HourCalendarUnit, fromDate: tokenDate!, toDate: now, options: nil)
+      
+      if components.hour > 23 // token timed out, need a new one
+      {
+        if let refreshToken = NSUserDefaults.standardUserDefaults().valueForKey(refreshTokenUserDefaultsKey) as? String
+        {
+          self.needRefresh = true // signal we need to refresh the access token
+        } // if let refreshToken
+      } // if components
+      
+    } // if let accessToken
+    
+  } // init ()
+  
+  func handleCallbackURL(url : NSURL)
+  {
+    let code = url.query
+    
+    // send a POST back to 23AndMe asking for a token
+    let oauthURL = "https://api.23andme.com/token?\(code!)&client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&code=\(code!)&redirect_uri=celebrime23://oauth&scope=basic%20haplogroups%20ancestry%names"
+    let postRequest = NSMutableURLRequest(URL: NSURL(string: oauthURL)!)
+    postRequest.HTTPMethod = "POST"
+    
+    // deal with the response
+    let dataTask = self.urlSession.dataTaskWithRequest(postRequest, completionHandler: { (data, response, error) -> Void in
+      if error == nil
+      {
+        // need to downcast the response as an NSHTTPURLResponse to read the status code
+        if let httpResponse = response as? NSHTTPURLResponse
+        {
+          switch httpResponse.statusCode
+          {
+          case 200 ... 299 :
+            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String : AnyObject]
+            {
+              self.accessToken = jsonDictionary["access_token"] as? String
+              self.refreshToken = jsonDictionary["refresh_token"] as? String
+              let currentDate = NSDate()
+              
+              // store the access and refresh tokens away for reuse
+              NSUserDefaults.standardUserDefaults().setValue(self.accessToken!, forKey: self.accessTokenUserDefaultsKey)
+              NSUserDefaults.standardUserDefaults().setValue(self.refreshToken!, forKey: self.refreshTokenUserDefaultsKey)
+              NSUserDefaults.standardUserDefaults().setValue(currentDate, forKey: self.tokenStoredDateDefaultKey)
 
+              NSUserDefaults.standardUserDefaults().synchronize()
+            } // if let jsonDictionary
+            
+          case 400 ... 499 :
+            println("Got response saying error at our end with status code: \(httpResponse.statusCode)")
+            
+          case 500 ... 599 :
+            println("Got response saying error at server end with status code: \(httpResponse.statusCode)")
+            
+          default :
+            println("Hit default case with status code: \(httpResponse.statusCode)")
+          } // switch httpResponse.statusCode
+        } // if let httpResponse
+      } // if no error
+    }) // end dataTask enclosure
+  } // handleCallbackURL()
+  
   
 } // NetworkController
