@@ -122,17 +122,35 @@ class NetworkController
               NSUserDefaults.standardUserDefaults().setValue(self.refreshToken!, forKey: self.refreshTokenUserDefaultsKey)
               NSUserDefaults.standardUserDefaults().setValue(currentDate, forKey: self.tokenStoredDateDefaultKey)
 
-  let urlSession = NSURLSession()
-
+              NSUserDefaults.standardUserDefaults().synchronize()
+              NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                completionHandler()
+              })
+            } // if let jsonDictionary
+            
+          case 400 ... 499 :
+            println("Got response saying error at our end with status code: \(httpResponse.statusCode)")
+            
+          case 500 ... 599 :
+            println("Got response saying error at server end with status code: \(httpResponse.statusCode)")
+            
+          default :
+            println("Hit default case with status code: \(httpResponse.statusCode)")
+          } // switch httpResponse.statusCode
+        } // if let httpResponse
+      } // if no error
+    }) // end dataTask enclosure
+    dataTask.resume()
+  } // handleCallbackURL()
   
   
   func fetchAncestryComposition(userID: String, callback:(region:[Regions]?, errorString: String?) -> (Void))
   {
     
-    let url = NSURL(string: "https://api.23andme.com/1/user/1/ancestry/profile_id/?=\(userID)") //TODO: this is probably wrong!!
+    let url = NSURL(string: "https://api.23andme.com/1/user/1/ancestry/profile_id/threshold=0.9") //TODO: this is probably wrong!!
     let requestedURL = NSMutableURLRequest(URL: url!)
-    requestedURL.setValue("token"/* TODO:add access token here*/, forHTTPHeaderField: "Authorization")
-    
+    requestedURL.setValue("token \(self.accessToken)", forHTTPHeaderField: "Authorization")
+    println("\(userID)")
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
       if(error == nil)
       {
@@ -169,5 +187,6 @@ class NetworkController
         }
       }
     })
+    dataTask.resume()
   }
 } // NetworkController

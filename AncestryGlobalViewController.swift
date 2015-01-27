@@ -8,25 +8,28 @@
 
 import UIKit
 
-class AncestryGlobalViewController: UIViewController, UITableViewDataSource {
+class AncestryGlobalViewController: UIViewController, UITableViewDataSource
+{
   
   @IBOutlet weak var tableView: UITableView!
   
   var global = [GlobalCatagory]()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      // initiate variables
-      self.tableView.dataSource = self
-
-        // Do any additional setup after loading the view.
-    }
+  override func viewDidLoad()
+  {
+    super.viewDidLoad()
+    
+    // initiate variables
+    self.tableView.dataSource = self
+      // Do any additional setup after loading the view.
+  }
+  
   
   // UITableViewDataSource
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // fulfills tableView requirement to tell how many rows to make
     return self.global.count
   }
+  
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as GlobalCell
