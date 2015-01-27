@@ -72,7 +72,7 @@ class NetworkController {
       let code = url.query
       
       // send a POST back to 23AndMe asking for a token using the authorization code
-      let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=https://localhost:5000/receive_code/&scope=basic"
+      let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=http://localhost:5000/receive_code/&scope=basic"
       let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
       let length = bodyData!.length
       
@@ -92,7 +92,7 @@ class NetworkController {
       let length = bodyData!.length
       
       // put the POST request together
-      postRequest = NSMutableURLRequest(URL : NSURL(string: "https://api.23andme.com/token/")!)
+      postRequest = NSMutableURLRequest(URL : NSURL(string: "http://api.23andme.com/token/")!)
       postRequest.HTTPMethod = "POST"
       postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
       postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
