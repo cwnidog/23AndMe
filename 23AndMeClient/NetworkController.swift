@@ -63,7 +63,7 @@ class NetworkController {
   } // init ()
   
   
-  func handleCallbackURL(url : NSURL)
+  func handleCallbackURL(url : NSURL, completionHandler : () -> ())
   {
     var postRequest : NSMutableURLRequest!
     
@@ -72,18 +72,33 @@ class NetworkController {
       let code = url.query
       
       // send a POST back to 23AndMe asking for a token using the authorization code
-      let oauthURL = "https://api.23andme.com/token?\(code!)&client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&code=\(code!)&redirect_uri=https://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
-      postRequest = NSMutableURLRequest(URL: NSURL(string: oauthURL)!)
+      let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=https://localhost:5000/receive_code/&scope=basic"
+      let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
+      let length = bodyData!.length
+      
+      // put the POST request together
+      postRequest = NSMutableURLRequest(URL : NSURL(string: "https://api.23andme.com/token/")!)
       postRequest.HTTPMethod = "POST"
+      postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
+      postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+      postRequest.HTTPBody = bodyData
     } // need to ask for inital token
       
     else
     {
       // send a POST back to 23AndMe asking for a token using the refresh token
-      let oauthURL = "https://api.23andme.com/token?&client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(refreshToken)&redirect_uri=https://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
-      postRequest = NSMutableURLRequest(URL: NSURL(string: oauthURL)!)
+      let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(refreshToken)&redirect_uri=https://localhost:5000/receive_code/&scope=basic"
+      let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
+      let length = bodyData!.length
+      
+      // put the POST request together
+      postRequest = NSMutableURLRequest(URL : NSURL(string: "https://api.23andme.com/token/")!)
       postRequest.HTTPMethod = "POST"
-    } // need to refresh token
+      postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
+      postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+      postRequest.HTTPBody = bodyData
+      
+    } // need to use refresh token
     
     // deal with the response
     let dataTask = self.urlSession.dataTaskWithRequest(postRequest, completionHandler: { (data, response, error) -> Void in
@@ -107,6 +122,9 @@ class NetworkController {
               NSUserDefaults.standardUserDefaults().setValue(currentDate, forKey: self.tokenStoredDateDefaultKey)
 
               NSUserDefaults.standardUserDefaults().synchronize()
+              NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                completionHandler()
+              })
             } // if let jsonDictionary
             
           case 400 ... 499 :
@@ -121,6 +139,7 @@ class NetworkController {
         } // if let httpResponse
       } // if no error
     }) // end dataTask enclosure
+    dataTask.resume()
   } // handleCallbackURL()
   
   

@@ -32,6 +32,9 @@ class MenuTableViewController: UITableViewController {
       let webVC = WebViewController()
       self.presentViewController(webVC, animated: true, completion: { () -> Void in
         
+        //pop the web view
+        //self.dismissViewControllerAnimated(true, completion: { () -> Void in
+        //})
       })
     }
     

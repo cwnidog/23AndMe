@@ -19,6 +19,16 @@ class WebViewController: UIViewController, WKNavigationDelegate {
       self.view.addSubview(self.webView)
       self.webView.navigationDelegate = self
       
+      // set upconstraint so that the webView is always in the center of it's container
+      // lifted code from Stack Overflow
+      self.webView.setTranslatesAutoresizingMaskIntoConstraints(true) // this time, we want it
+      
+      // make all four webView margins flexible, so they'll adjust to the container
+      self.webView.autoresizingMask = UIViewAutoresizing.FlexibleLeftMargin | UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleTopMargin | UIViewAutoresizing.FlexibleBottomMargin
+      
+      // center the webView in the container
+      self.webView.center = CGPointMake(self.view.bounds.midX, self.view.bounds.midY)
+      
       let url = "https://api.23andme.com/authorize/?redirect_uri=http://localhost:5000/receive_code/&response_type=code&client_id=\(NetworkController.sharedNetworkController.clientID)&scope=basic%20haplogroups%20ancestry%20names"
       self.webView.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
       // Do any additional setup after loading the view.
@@ -28,11 +38,16 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     println(navigationAction.request.URL)
     
     if navigationAction.request.URL.description.rangeOfString("code=") != nil {
-      NetworkController.sharedNetworkController.handleCallbackURL(navigationAction.request.URL)
-      
+      NetworkController.sharedNetworkController.handleCallbackURL(navigationAction.request.URL, completionHandler: { () -> () in
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+          
+        })
+      })
     }
+    
     decisionHandler(WKNavigationActionPolicy.Allow)
-  }
+  
+  } // webView()
     
 
     /*
