@@ -8,17 +8,18 @@
 
 import Foundation
 
-class SubRegion {
-  var region : String
+class SubRegion
+{
+  var region     : String
   var proportion : Float
   var unassigned : Float?
   var countries  : [Country]?
   
   init(jsonDictionary: [String:AnyObject])
   {
-    self.region = jsonDictionary["label"] as String
+    self.region     = jsonDictionary["label"] as String
     self.proportion = jsonDictionary["proportion"] as Float
-    if let unknown = jsonDictionary["unassigned"] as? Float
+    if let unknown  = jsonDictionary["unassigned"] as? Float
     {
       self.unassigned = unknown
     }

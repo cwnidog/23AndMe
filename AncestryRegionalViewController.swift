@@ -8,58 +8,58 @@
 
 import UIKit
 
-class AncestryRegionalViewController: UIViewController, UITableViewDataSource {
+class AncestryRegionalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet weak var tableView: UITableView!
   
-  var regional = [RegionalCatagory]()
+  //after a region is selected in the previous VC -> its subRegions are loaded in this tableView
+   var region : Regions!
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      // initiate variables
-      self.tableView.dataSource = self
-
-        // Do any additional setup after loading the view.
+   var subRegions = [SubRegion]()
+  
+  
+  override func viewDidLoad()
+  {
+    super.viewDidLoad()
+    // initiate variables
+    self.tableView.dataSource = self
+    self.tableView.delegate   = self
+    
+    self.tableView.registerNib(UINib(nibName: "RegionalCell",
+                                      bundle: NSBundle.mainBundle()),
+                      forCellReuseIdentifier: "REGIONAL_CELL")
+    
+    // populates the array of SubRegion objects -> these are inside of the region object
+    for subRegion in self.region.subRegions!
+    {
+      self.subRegions.append(subRegion)
     }
-  
-  // UITableViewDataSource
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // fulfills tableView requirement to tell how many rows to make
-    return self.regional.count
   }
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("REGIONAL_CELL", forIndexPath: indexPath) as RegionalCell
-    // return cell
-    
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+  {
+    return subRegions.count
+  }
 
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+  {
+    let cell = tableView.dequeueReusableCellWithIdentifier("REGIONAL_CELL", forIndexPath: indexPath) as RegionalCell
+  
+    cell.regionalNameLabel.text = self.subRegions[indexPath.row].region
+    let proportion = self.subRegions[indexPath.row].proportion
     
-    let regional2 = self.regional[indexPath.row]
+    let stringConvert           = NSString(format: "%.2f", proportion)
+    let numberFormatter         = NSNumberFormatter()
+    numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
     
-    //    println("\(regional2)")
-    //
-    // Puts on the labels
-    
-    cell.regionalNameLabel.text = regional2.regionalName
-    cell.regionalPercentageLabel.text = regional2.regionalNamePercentage
-    
+    cell.regionalPercentageLabel.text = numberFormatter.stringFromNumber(proportion)
+
     return cell
   }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func didReceiveMemoryWarning()
+    {
+      super.didReceiveMemoryWarning()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -10,12 +10,12 @@ import Foundation
 
 struct Country
 {
-  var country : String
+  var country    : String
   var proportion : Float
   
   init(jsonDictionary: [String:AnyObject])
   {
-    self.country = jsonDictionary["label"] as String
+    self.country    = jsonDictionary["label"] as String
     self.proportion = jsonDictionary["proportion"] as Float
   }
 }

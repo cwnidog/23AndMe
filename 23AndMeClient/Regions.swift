@@ -20,7 +20,7 @@ class Regions
     self.region     = jsonDictionary["label"] as String
     self.proportion = jsonDictionary["proportion"] as Float
     
-    if let unknown = jsonDictionary["unassigned"] as? Float
+    if let unknown  = jsonDictionary["unassigned"] as? Float
     {
       self.unassigned = unknown
     }

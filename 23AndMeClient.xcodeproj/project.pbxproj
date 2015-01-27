@@ -10,6 +10,7 @@
 		4383FCCE1A781377009538D0 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCCD1A781377009538D0 /* Regions.swift */; };
 		4383FCD01A78139B009538D0 /* SubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCCF1A78139B009538D0 /* SubRegion.swift */; };
 		4383FCD21A78195F009538D0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCD11A78195F009538D0 /* Country.swift */; };
+		4383FCD41A783605009538D0 /* RegionalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4383FCD31A783605009538D0 /* RegionalCell.xib */; };
 		5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907521A758C7B009D92C2 /* AppDelegate.swift */; };
 		5DA907581A758C7C009D92C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907561A758C7B009D92C2 /* Main.storyboard */; };
 		5DA9075A1A758C7C009D92C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907591A758C7C009D92C2 /* Images.xcassets */; };
@@ -59,6 +60,7 @@
 		4383FCCD1A781377009538D0 /* Regions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 		4383FCCF1A78139B009538D0 /* SubRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubRegion.swift; sourceTree = "<group>"; };
 		4383FCD11A78195F009538D0 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		4383FCD31A783605009538D0 /* RegionalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegionalCell.xib; sourceTree = "<group>"; };
 		5DA9074D1A758C7B009D92C2 /* 23AndMeClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 23AndMeClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA907511A758C7B009D92C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DA907521A758C7B009D92C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,10 +197,8 @@
 				5DA907561A758C7B009D92C2 /* Main.storyboard */,
 				7915CDCE1A777ECC00597B50 /* GlobalCell.swift */,
 				79A49B221A778F7D007520C8 /* RegionalCell.swift */,
+				4383FCD31A783605009538D0 /* RegionalCell.xib */,
 				7915CDC21A7753F800597B50 /* CelebrityView.xib */,
-				4383FCCD1A781377009538D0 /* Regions.swift */,
-				4383FCCF1A78139B009538D0 /* SubRegion.swift */,
-				4383FCD11A78195F009538D0 /* Country.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -207,6 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				7915CDC81A77705A00597B50 /* AncestryGlobal.swift */,
+				4383FCCD1A781377009538D0 /* Regions.swift */,
+				4383FCCF1A78139B009538D0 /* SubRegion.swift */,
+				4383FCD11A78195F009538D0 /* Country.swift */,
 				7915CDD01A77814000597B50 /* AncestryRegional.swift */,
 				5DA907A61A758F43009D92C2 /* JSON Files */,
 			);
@@ -331,6 +334,7 @@
 				5DA9075A1A758C7C009D92C2 /* Images.xcassets in Resources */,
 				5DA9079F1A758D85009D92C2 /* relatives_get.json in Resources */,
 				5DA907951A758D85009D92C2 /* haplogroups_get.json in Resources */,
+				4383FCD41A783605009538D0 /* RegionalCell.xib in Resources */,
 				5DA9079E1A758D85009D92C2 /* publish.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

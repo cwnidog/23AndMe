@@ -415,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYk-GI-k8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3136" y="-60"/>
+            <point key="canvasLocation" x="3220" y="-60"/>
         </scene>
         <!--Ancestry Regional View Controller-->
         <scene sceneID="rmN-7v-r7I">
@@ -429,68 +429,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regional Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEL-Tf-fwQ">
-                                <rect key="frame" x="8" y="72" width="584" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Q3t-42-5TZ">
-                                <rect key="frame" x="0.0" y="101" width="600" height="499"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Q3t-42-5TZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="REGIONAL_CELL" id="vmq-OE-EA3" customClass="RegionalCell" customModule="_3AndMeClient" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Mfl-u4-dvD">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vmq-OE-EA3" id="jJD-N8-YLq">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mfl-u4-dvD" id="N4P-7G-BTF">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7Z-2S-7MK">
-                                                    <rect key="frame" x="8" y="24" width="37" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="9dE-oP-c8O"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regional Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5o-j7-7Gg">
-                                                    <rect key="frame" x="53" y="24" width="118" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="fl1-Gh-nXv"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="T5o-j7-7Gg" firstAttribute="leading" secondItem="h7Z-2S-7MK" secondAttribute="trailing" constant="8" id="6Is-42-IcX"/>
-                                                <constraint firstItem="h7Z-2S-7MK" firstAttribute="top" secondItem="jJD-N8-YLq" secondAttribute="topMargin" constant="16" id="RR8-rn-xIh"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="h7Z-2S-7MK" secondAttribute="bottom" constant="16" id="ji5-gY-A0S"/>
-                                                <constraint firstItem="h7Z-2S-7MK" firstAttribute="leading" secondItem="jJD-N8-YLq" secondAttribute="leadingMargin" id="qGX-3N-X3o"/>
-                                                <constraint firstItem="T5o-j7-7Gg" firstAttribute="centerY" secondItem="h7Z-2S-7MK" secondAttribute="centerY" id="zTF-Ho-Rlp"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="regionalNameLabel" destination="T5o-j7-7Gg" id="yDE-58-gFr"/>
-                                            <outlet property="regionalPercentageLabel" destination="h7Z-2S-7MK" id="t0i-9p-rdx"/>
-                                            <segue destination="v2z-AI-C8K" kind="show" id="rgd-Wv-3Vu"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gEL-Tf-fwQ" firstAttribute="top" secondItem="eHV-gn-mRe" secondAttribute="bottom" constant="8" id="DUS-hb-x2D"/>
-                            <constraint firstItem="Q3t-42-5TZ" firstAttribute="leading" secondItem="6vF-wO-NDj" secondAttribute="leading" id="GLu-3I-tLx"/>
-                            <constraint firstAttribute="trailing" secondItem="Q3t-42-5TZ" secondAttribute="trailing" id="Mru-3K-ysy"/>
-                            <constraint firstItem="gEL-Tf-fwQ" firstAttribute="leading" secondItem="6vF-wO-NDj" secondAttribute="leading" constant="8" id="Nfp-sa-jN5"/>
-                            <constraint firstAttribute="trailing" secondItem="gEL-Tf-fwQ" secondAttribute="trailing" constant="8" id="OMm-xM-8JV"/>
-                            <constraint firstItem="FJp-Jc-uCS" firstAttribute="top" secondItem="Q3t-42-5TZ" secondAttribute="bottom" id="dO2-kP-QVV"/>
-                            <constraint firstItem="Q3t-42-5TZ" firstAttribute="top" secondItem="gEL-Tf-fwQ" secondAttribute="bottom" constant="8" id="z9M-P6-rcB"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Q3t-42-5TZ" id="4S6-Zn-IFr"/>
@@ -629,7 +582,4 @@
             <point key="canvasLocation" x="1283" y="601"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="rgd-Wv-3Vu"/>
-    </inferredMetricsTieBreakers>
 </document>
