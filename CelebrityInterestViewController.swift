@@ -1,15 +1,26 @@
 //
-//  AncestryCompositionViewController.swift
+//  CelebrityInterestViewController.swift
 //  23AndMeClient
 //
-//  Created by John Leonard on 1/25/15.
+//  Created by Annemarie Ketola on 1/27/15.
 //  Copyright (c) 2015 John Leonard. All rights reserved.
 //
 
 import UIKit
 
-class AncestryCompositionViewController: UIViewController {
+class CelebrityInterestViewController: UIViewController {
 
+  @IBOutlet weak var countryDescriptionLabel: UILabel!
+  
+  @IBOutlet weak var celebrityMaleImage: UIImageView!
+  @IBOutlet weak var celebrityFemaleImage: UIImageView!
+  @IBOutlet weak var historicalImage: UIImageView!
+  
+  @IBOutlet weak var celebrityMaleLabel: UILabel!
+  @IBOutlet weak var celebrityFemaleLabel: UILabel!
+  @IBOutlet weak var historicalLabel: UILabel!
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FCCA01A1A76C62200A281AF /* RegionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCA0191A76C62200A281AF /* RegionalViewController.swift */; };
-		2FCCA01C1A76CBA800A281AF /* PointOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCCA01B1A76CBA800A281AF /* PointOfInterestViewController.swift */; };
-		5D1A30731A75CA6300479A3E /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1A30721A75CA6300479A3E /* SearchUserViewController.swift */; };
-		5D1A30751A75CC6E00479A3E /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1A30741A75CC6E00479A3E /* UserCell.swift */; };
 		5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907521A758C7B009D92C2 /* AppDelegate.swift */; };
 		5DA907581A758C7C009D92C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907561A758C7B009D92C2 /* Main.storyboard */; };
 		5DA9075A1A758C7C009D92C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907591A758C7C009D92C2 /* Images.xcassets */; };
@@ -31,13 +27,19 @@
 		5DA9079F1A758D85009D92C2 /* relatives_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907891A758D85009D92C2 /* relatives_get.json */; };
 		5DA907A31A758D85009D92C2 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9078D1A758D85009D92C2 /* user.json */; };
 		5DA907A81A7597E0009D92C2 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907A71A7597E0009D92C2 /* MenuTableViewController.swift */; };
-		5DA907AC1A759E36009D92C2 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907AB1A759E36009D92C2 /* UserDetailsViewController.swift */; };
 		5DA907B01A75A3E1009D92C2 /* Inherited Conditions ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907AF1A75A3E1009D92C2 /* Inherited Conditions ViewController.swift */; };
-		5DA907B21A75A582009D92C2 /* AncestryCompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907B11A75A582009D92C2 /* AncestryCompositionViewController.swift */; };
-		5DA907B41A75A7BB009D92C2 /* MaternalLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907B31A75A7BB009D92C2 /* MaternalLineViewController.swift */; };
 		5DA907B61A75A886009D92C2 /* PaternalLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907B51A75A885009D92C2 /* PaternalLineViewController.swift */; };
 		5DA907B81A75A91F009D92C2 /* NeanderthalAncestryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */; };
 		5DA907BC1A75ACB4009D92C2 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907BB1A75ACB4009D92C2 /* NetworkController.swift */; };
+		7915CDC31A7753F800597B50 /* CelebrityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7915CDC21A7753F800597B50 /* CelebrityView.xib */; };
+		7915CDC71A77661000597B50 /* MaternalWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDC61A77661000597B50 /* MaternalWebViewController.swift */; };
+		7915CDC91A77705A00597B50 /* AncestryGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDC81A77705A00597B50 /* AncestryGlobal.swift */; };
+		7915CDCD1A77761D00597B50 /* AncestryGlobalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDCC1A77761D00597B50 /* AncestryGlobalViewController.swift */; };
+		7915CDCF1A777ECC00597B50 /* GlobalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDCE1A777ECC00597B50 /* GlobalCell.swift */; };
+		7915CDD11A77814000597B50 /* AncestryRegional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDD01A77814000597B50 /* AncestryRegional.swift */; };
+		796DDB7D1A77881A00E6FFAE /* CelebrityInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DDB7C1A77881A00E6FFAE /* CelebrityInterestViewController.swift */; };
+		796DDB7F1A77898900E6FFAE /* AncestryRegionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DDB7E1A77898900E6FFAE /* AncestryRegionalViewController.swift */; };
+		79A49B231A778F7D007520C8 /* RegionalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A49B221A778F7D007520C8 /* RegionalCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2FCCA0191A76C62200A281AF /* RegionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionalViewController.swift; sourceTree = "<group>"; };
-		2FCCA01B1A76CBA800A281AF /* PointOfInterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointOfInterestViewController.swift; sourceTree = "<group>"; };
-		5D1A30721A75CA6300479A3E /* SearchUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
-		5D1A30741A75CC6E00479A3E /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5DA9074D1A758C7B009D92C2 /* 23AndMeClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 23AndMeClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA907511A758C7B009D92C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DA907521A758C7B009D92C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,13 +77,19 @@
 		5DA907891A758D85009D92C2 /* relatives_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = relatives_get.json; sourceTree = "<group>"; };
 		5DA9078D1A758D85009D92C2 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		5DA907A71A7597E0009D92C2 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		5DA907AB1A759E36009D92C2 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		5DA907AF1A75A3E1009D92C2 /* Inherited Conditions ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inherited Conditions ViewController.swift"; sourceTree = "<group>"; };
-		5DA907B11A75A582009D92C2 /* AncestryCompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AncestryCompositionViewController.swift; sourceTree = "<group>"; };
-		5DA907B31A75A7BB009D92C2 /* MaternalLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaternalLineViewController.swift; sourceTree = "<group>"; };
 		5DA907B51A75A885009D92C2 /* PaternalLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaternalLineViewController.swift; sourceTree = "<group>"; };
 		5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeanderthalAncestryViewController.swift; sourceTree = "<group>"; };
 		5DA907BB1A75ACB4009D92C2 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		7915CDC21A7753F800597B50 /* CelebrityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CelebrityView.xib; path = ../CelebrityView.xib; sourceTree = "<group>"; };
+		7915CDC61A77661000597B50 /* MaternalWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaternalWebViewController.swift; path = ../MaternalWebViewController.swift; sourceTree = "<group>"; };
+		7915CDC81A77705A00597B50 /* AncestryGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AncestryGlobal.swift; sourceTree = "<group>"; };
+		7915CDCC1A77761D00597B50 /* AncestryGlobalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AncestryGlobalViewController.swift; path = ../AncestryGlobalViewController.swift; sourceTree = "<group>"; };
+		7915CDCE1A777ECC00597B50 /* GlobalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalCell.swift; sourceTree = "<group>"; };
+		7915CDD01A77814000597B50 /* AncestryRegional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AncestryRegional.swift; sourceTree = "<group>"; };
+		796DDB7C1A77881A00E6FFAE /* CelebrityInterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CelebrityInterestViewController.swift; path = ../CelebrityInterestViewController.swift; sourceTree = "<group>"; };
+		796DDB7E1A77898900E6FFAE /* AncestryRegionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AncestryRegionalViewController.swift; path = ../AncestryRegionalViewController.swift; sourceTree = "<group>"; };
+		79A49B221A778F7D007520C8 /* RegionalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegionalCell.swift; path = ../RegionalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +135,6 @@
 				5DA907731A758CD3009D92C2 /* Views */,
 				5DA907721A758CC6009D92C2 /* Controllers */,
 				5DA907521A758C7B009D92C2 /* AppDelegate.swift */,
-				5DA907561A758C7B009D92C2 /* Main.storyboard */,
 				5DA907AF1A75A3E1009D92C2 /* Inherited Conditions ViewController.swift */,
 				5DA907591A758C7C009D92C2 /* Images.xcassets */,
 				5DA9075B1A758C7C009D92C2 /* LaunchScreen.xib */,
@@ -168,6 +171,13 @@
 		5DA907721A758CC6009D92C2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5DA907A71A7597E0009D92C2 /* MenuTableViewController.swift */,
+				7915CDCC1A77761D00597B50 /* AncestryGlobalViewController.swift */,
+				796DDB7E1A77898900E6FFAE /* AncestryRegionalViewController.swift */,
+				796DDB7C1A77881A00E6FFAE /* CelebrityInterestViewController.swift */,
+				5DA907B51A75A885009D92C2 /* PaternalLineViewController.swift */,
+				7915CDC61A77661000597B50 /* MaternalWebViewController.swift */,
+				5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */,
 				5DA907BB1A75ACB4009D92C2 /* NetworkController.swift */,
 			);
 			name = Controllers;
@@ -176,15 +186,10 @@
 		5DA907731A758CD3009D92C2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5DA907B11A75A582009D92C2 /* AncestryCompositionViewController.swift */,
-				5DA907A71A7597E0009D92C2 /* MenuTableViewController.swift */,
-				5DA907AB1A759E36009D92C2 /* UserDetailsViewController.swift */,
-				5DA907B31A75A7BB009D92C2 /* MaternalLineViewController.swift */,
-				5DA907B51A75A885009D92C2 /* PaternalLineViewController.swift */,
-				5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */,
-				5D1A30721A75CA6300479A3E /* SearchUserViewController.swift */,
-				2FCCA0191A76C62200A281AF /* RegionalViewController.swift */,
-				2FCCA01B1A76CBA800A281AF /* PointOfInterestViewController.swift */,
+				5DA907561A758C7B009D92C2 /* Main.storyboard */,
+				7915CDCE1A777ECC00597B50 /* GlobalCell.swift */,
+				79A49B221A778F7D007520C8 /* RegionalCell.swift */,
+				7915CDC21A7753F800597B50 /* CelebrityView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -192,8 +197,9 @@
 		5DA907741A758CDF009D92C2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7915CDC81A77705A00597B50 /* AncestryGlobal.swift */,
+				7915CDD01A77814000597B50 /* AncestryRegional.swift */,
 				5DA907A61A758F43009D92C2 /* JSON Files */,
-				5D1A30741A75CC6E00479A3E /* UserCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 				5DA907941A758D85009D92C2 /* grfs_get.json in Resources */,
 				5DA9078E1A758D85009D92C2 /* ancestry_get.json in Resources */,
 				5DA9079D1A758D85009D92C2 /* picture_get.json in Resources */,
+				7915CDC31A7753F800597B50 /* CelebrityView.xib in Resources */,
 				5DA9075D1A758C7C009D92C2 /* LaunchScreen.xib in Resources */,
 				5DA9079B1A758D85009D92C2 /* phenotype_get.json in Resources */,
 				5DA907931A758D85009D92C2 /* genotypes_get.json in Resources */,
@@ -333,18 +340,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796DDB7F1A77898900E6FFAE /* AncestryRegionalViewController.swift in Sources */,
 				5DA907BC1A75ACB4009D92C2 /* NetworkController.swift in Sources */,
-				5D1A30751A75CC6E00479A3E /* UserCell.swift in Sources */,
-				5D1A30731A75CA6300479A3E /* SearchUserViewController.swift in Sources */,
 				5DA907A81A7597E0009D92C2 /* MenuTableViewController.swift in Sources */,
 				5DA907B61A75A886009D92C2 /* PaternalLineViewController.swift in Sources */,
-				5DA907B21A75A582009D92C2 /* AncestryCompositionViewController.swift in Sources */,
 				5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */,
-				2FCCA01A1A76C62200A281AF /* RegionalViewController.swift in Sources */,
-				2FCCA01C1A76CBA800A281AF /* PointOfInterestViewController.swift in Sources */,
-				5DA907B41A75A7BB009D92C2 /* MaternalLineViewController.swift in Sources */,
-				5DA907AC1A759E36009D92C2 /* UserDetailsViewController.swift in Sources */,
+				7915CDCD1A77761D00597B50 /* AncestryGlobalViewController.swift in Sources */,
+				7915CDCF1A777ECC00597B50 /* GlobalCell.swift in Sources */,
+				7915CDD11A77814000597B50 /* AncestryRegional.swift in Sources */,
+				796DDB7D1A77881A00E6FFAE /* CelebrityInterestViewController.swift in Sources */,
+				7915CDC71A77661000597B50 /* MaternalWebViewController.swift in Sources */,
 				5DA907B81A75A91F009D92C2 /* NeanderthalAncestryViewController.swift in Sources */,
+				7915CDC91A77705A00597B50 /* AncestryGlobal.swift in Sources */,
+				79A49B231A778F7D007520C8 /* RegionalCell.swift in Sources */,
 				5DA907B01A75A3E1009D92C2 /* Inherited Conditions ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
