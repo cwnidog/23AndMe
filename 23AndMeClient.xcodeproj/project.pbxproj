@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4383FCCE1A781377009538D0 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCCD1A781377009538D0 /* Regions.swift */; };
+		4383FCD01A78139B009538D0 /* SubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCCF1A78139B009538D0 /* SubRegion.swift */; };
+		4383FCD21A78195F009538D0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCD11A78195F009538D0 /* Country.swift */; };
 		5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907521A758C7B009D92C2 /* AppDelegate.swift */; };
 		5DA907581A758C7C009D92C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907561A758C7B009D92C2 /* Main.storyboard */; };
 		5DA9075A1A758C7C009D92C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907591A758C7C009D92C2 /* Images.xcassets */; };
@@ -53,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4383FCCD1A781377009538D0 /* Regions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
+		4383FCCF1A78139B009538D0 /* SubRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubRegion.swift; sourceTree = "<group>"; };
+		4383FCD11A78195F009538D0 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		5DA9074D1A758C7B009D92C2 /* 23AndMeClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 23AndMeClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA907511A758C7B009D92C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DA907521A758C7B009D92C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 				7915CDCE1A777ECC00597B50 /* GlobalCell.swift */,
 				79A49B221A778F7D007520C8 /* RegionalCell.swift */,
 				7915CDC21A7753F800597B50 /* CelebrityView.xib */,
+				4383FCCD1A781377009538D0 /* Regions.swift */,
+				4383FCCF1A78139B009538D0 /* SubRegion.swift */,
+				4383FCD11A78195F009538D0 /* Country.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -347,6 +356,9 @@
 				5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */,
 				7915CDCD1A77761D00597B50 /* AncestryGlobalViewController.swift in Sources */,
 				7915CDCF1A777ECC00597B50 /* GlobalCell.swift in Sources */,
+				4383FCCE1A781377009538D0 /* Regions.swift in Sources */,
+				4383FCD01A78139B009538D0 /* SubRegion.swift in Sources */,
+				4383FCD21A78195F009538D0 /* Country.swift in Sources */,
 				7915CDD11A77814000597B50 /* AncestryRegional.swift in Sources */,
 				796DDB7D1A77881A00E6FFAE /* CelebrityInterestViewController.swift in Sources */,
 				7915CDC71A77661000597B50 /* MaternalWebViewController.swift in Sources */,
