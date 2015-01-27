@@ -10,6 +10,9 @@ import UIKit
 
 class NeanderthalAncestryViewController: UIViewController {
 
+  @IBOutlet weak var NeanderthalImage: UIImageView!
+  @IBOutlet weak var percentageNeanderthalLabel: UILabel!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
