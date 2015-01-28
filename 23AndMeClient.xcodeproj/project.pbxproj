@@ -37,7 +37,6 @@
 		5DA907B81A75A91F009D92C2 /* NeanderthalAncestryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */; };
 		5DA907BC1A75ACB4009D92C2 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907BB1A75ACB4009D92C2 /* NetworkController.swift */; };
 		7915CDC31A7753F800597B50 /* CelebrityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7915CDC21A7753F800597B50 /* CelebrityView.xib */; };
-		7915CDC71A77661000597B50 /* MaternalWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDC61A77661000597B50 /* MaternalWebViewController.swift */; };
 		7915CDC91A77705A00597B50 /* AncestryGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDC81A77705A00597B50 /* AncestryGlobal.swift */; };
 		7915CDCD1A77761D00597B50 /* AncestryGlobalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDCC1A77761D00597B50 /* AncestryGlobalViewController.swift */; };
 		7915CDCF1A777ECC00597B50 /* GlobalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDCE1A777ECC00597B50 /* GlobalCell.swift */; };
@@ -94,7 +93,6 @@
 		5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeanderthalAncestryViewController.swift; sourceTree = "<group>"; };
 		5DA907BB1A75ACB4009D92C2 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		7915CDC21A7753F800597B50 /* CelebrityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CelebrityView.xib; path = ../CelebrityView.xib; sourceTree = "<group>"; };
-		7915CDC61A77661000597B50 /* MaternalWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaternalWebViewController.swift; path = ../MaternalWebViewController.swift; sourceTree = "<group>"; };
 		7915CDC81A77705A00597B50 /* AncestryGlobal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AncestryGlobal.swift; sourceTree = "<group>"; };
 		7915CDCC1A77761D00597B50 /* AncestryGlobalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AncestryGlobalViewController.swift; path = ../AncestryGlobalViewController.swift; sourceTree = "<group>"; };
 		7915CDCE1A777ECC00597B50 /* GlobalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalCell.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 				796DDB7E1A77898900E6FFAE /* AncestryRegionalViewController.swift */,
 				796DDB7C1A77881A00E6FFAE /* CelebrityInterestViewController.swift */,
 				5DA907B51A75A885009D92C2 /* PaternalLineViewController.swift */,
-				7915CDC61A77661000597B50 /* MaternalWebViewController.swift */,
 				5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */,
 				5DA907BB1A75ACB4009D92C2 /* NetworkController.swift */,
 				2FC1EB7B1A78022B000A1935 /* WebViewController.swift */,
@@ -376,7 +373,6 @@
 				7915CDD11A77814000597B50 /* AncestryRegional.swift in Sources */,
 				796DDB7D1A77881A00E6FFAE /* CelebrityInterestViewController.swift in Sources */,
 				79A49B271A786D05007520C8 /* CelebrityArray copy.swift in Sources */,
-				7915CDC71A77661000597B50 /* MaternalWebViewController.swift in Sources */,
 				5DA907B81A75A91F009D92C2 /* NeanderthalAncestryViewController.swift in Sources */,
 				79A49B251A783CF0007520C8 /* CelebrityArray.swift in Sources */,
 				7915CDC91A77705A00597B50 /* AncestryGlobal.swift in Sources */,
