@@ -27,9 +27,9 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
     // initiate variables
     self.tableView.dataSource = self
     self.tableView.registerNib(UINib(nibName: "GlobalCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "GLOBAL_CELL")
-
-    self.netController.fetchUserID()
     
+    
+    //TODO: need to pass userID here, or store it in netController
     self.netController.fetchAncestryComposition(nil, callback: { (region, errorString) -> (Void) in
       if(errorString == nil)
       {
