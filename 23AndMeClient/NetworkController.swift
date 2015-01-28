@@ -35,7 +35,7 @@ class NetworkController
   var tokenType : String?
   var needRefresh = false
   
-  var profileID : String?
+  var profiles = [UserProfile]() // an array of all the prfiles a user belongs to
   
   var urlSession : NSURLSession
   
@@ -198,7 +198,7 @@ class NetworkController
     dataTask.resume()
   } // fetchAncestryComposition()
   
-  func fetchProfileID((), callback : (UserProfile?, String?) -> (Void))
+  func fetchProfileID((), callback : ([UserProfile]?, String?) -> (Void))
   {
     // set up the request
     let url = NSURL(string: "https://api.23andme.com/1/demo/user/")
@@ -214,12 +214,17 @@ class NetworkController
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
               if let profilesArray = jsonDictionary["profiles"] as? [[String:AnyObject]] {
                 // build the array of users
-                let profile = profilesArray.first
-                let userProfile = UserProfile(jsonDictionary: profile!)
+                for item in profilesArray
+                {
+                  let profile = UserProfile(jsonDictionary: item)
+                  self.profiles.append(profile)
+                } // for item
+                //let profile = profilesArray.first
+                //let userProfile = UserProfile(jsonDictionary: profile!)
                 
                 // go back to the main thread and execute the callback
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                  callback(userProfile, nil)
+                  callback(self.profiles, nil)
                 }) // enclosure
               } // if let items_array
             } // if let jsonDictionary

@@ -40,9 +40,8 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     if navigationAction.request.URL.description.rangeOfString("code=") != nil {
       NetworkController.sharedNetworkController.handleCallbackURL(navigationAction.request.URL, completionHandler: { () -> () in
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
-          NetworkController.sharedNetworkController.fetchProfileID((), callback: { (userProfile, errorDescription) -> (Void) in
-            NetworkController.sharedNetworkController.profileID = userProfile!.profileID
-            println("Profile ID : \(NetworkController.sharedNetworkController.profileID)")
+          NetworkController.sharedNetworkController.fetchProfileID((), callback: { (profiles, errorDescription) -> (Void) in
+            NetworkController.sharedNetworkController.profiles = profiles!
           })
         })
       })
