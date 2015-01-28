@@ -45,10 +45,11 @@ class NetworkController
     self.urlSession = NSURLSession(configuration: ephemeralConfig)
     
     // if we have a stored access token, that is less than a day old, use it
-    if let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(self.accessTokenUserDefaultsKey) as? String
+    if let tempAccessToken = NSUserDefaults.standardUserDefaults().valueForKey(self.accessTokenUserDefaultsKey) as? String
     {
+      self.accessToken = tempAccessToken
       let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(tokenStoredDateDefaultKey) as? NSDate
-      
+      self.tokenType = NSUserDefaults.standardUserDefaults().valueForKey(tokenTypeDefaultKey) as? String
       // check age of token
       let calendar = NSCalendar.currentCalendar()
       let now = NSDate()
@@ -62,9 +63,8 @@ class NetworkController
           self.needRefresh = true // signal we need to refresh the access token
         } // if let refreshToken
       } // if components
-      
-    } // if let accessToken
-    
+    }
+    // if let accessToken
   } // init ()
   
   
@@ -127,7 +127,6 @@ class NetworkController
               NSUserDefaults.standardUserDefaults().setValue(self.refreshToken!, forKey: self.refreshTokenUserDefaultsKey)
               NSUserDefaults.standardUserDefaults().setValue(currentDate, forKey: self.tokenStoredDateDefaultKey)
               NSUserDefaults.standardUserDefaults().setValue(self.tokenType, forKey: self.tokenTypeDefaultKey)
-
               NSUserDefaults.standardUserDefaults().synchronize()
               NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 completionHandler()
@@ -152,9 +151,11 @@ class NetworkController
   
   func fetchAncestryComposition(userID: String?, callback:(region:[Regions]?, errorString: String?) -> (Void))
   {
-    
-    let url = NSURL(string: "https://api.23andme.com/1/user/1/ancestry/profile_id/threshold=0.9") //TODO: this is probably wrong!!
+    let url = NSURL(string: "https://api.23andme.com/1/ancestry/\(userID!)/?threshold=0.9") //TODO: this is probably wrong!!
+    println(url)
     let requestedURL = NSMutableURLRequest(URL: url!)
+    println("\(self.accessToken)")
+    
     requestedURL.setValue("\(self.tokenType) \(self.accessToken)", forHTTPHeaderField: "Authorization")
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
       if(error == nil)
@@ -194,4 +195,26 @@ class NetworkController
     }) // dataTask enclosure
     dataTask.resume()
   } // fetchAncestryComposition()
+
+  
+    
+  /*
+  func fetchUserHaplogroup(userID:String? callback:(haplogroup:[String:AnyObject]?, errorString: String?) -> (Void))
+  {
+    let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(userID)")
+    let requestedURL = NSMutableURLRequest(URL: url!)
+    requestedURL.setValue("\(self.tokenType) \(self.accessToken)", forHTTPHeaderField: "Authorization")
+    let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
+      if(error == nil)
+      {
+        var haplogroup: [String:AnyObject]
+        
+      }
+    })
+    dataTask.resume()
+    
+  }
+  */
+  
+  
 } // NetworkController
