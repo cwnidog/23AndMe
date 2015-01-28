@@ -40,6 +40,7 @@
 		796DDB7D1A77881A00E6FFAE /* CelebrityInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DDB7C1A77881A00E6FFAE /* CelebrityInterestViewController.swift */; };
 		796DDB7F1A77898900E6FFAE /* AncestryRegionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DDB7E1A77898900E6FFAE /* AncestryRegionalViewController.swift */; };
 		79A49B231A778F7D007520C8 /* RegionalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A49B221A778F7D007520C8 /* RegionalCell.swift */; };
+		79A49B251A783CF0007520C8 /* CelebrityArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A49B241A783CF0007520C8 /* CelebrityArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		796DDB7C1A77881A00E6FFAE /* CelebrityInterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CelebrityInterestViewController.swift; path = ../CelebrityInterestViewController.swift; sourceTree = "<group>"; };
 		796DDB7E1A77898900E6FFAE /* AncestryRegionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AncestryRegionalViewController.swift; path = ../AncestryRegionalViewController.swift; sourceTree = "<group>"; };
 		79A49B221A778F7D007520C8 /* RegionalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegionalCell.swift; path = ../RegionalCell.swift; sourceTree = "<group>"; };
+		79A49B241A783CF0007520C8 /* CelebrityArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelebrityArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			children = (
 				7915CDC81A77705A00597B50 /* AncestryGlobal.swift */,
 				7915CDD01A77814000597B50 /* AncestryRegional.swift */,
+				79A49B241A783CF0007520C8 /* CelebrityArray.swift */,
 				5DA907A61A758F43009D92C2 /* JSON Files */,
 			);
 			name = Models;
@@ -351,6 +354,7 @@
 				796DDB7D1A77881A00E6FFAE /* CelebrityInterestViewController.swift in Sources */,
 				7915CDC71A77661000597B50 /* MaternalWebViewController.swift in Sources */,
 				5DA907B81A75A91F009D92C2 /* NeanderthalAncestryViewController.swift in Sources */,
+				79A49B251A783CF0007520C8 /* CelebrityArray.swift in Sources */,
 				7915CDC91A77705A00597B50 /* AncestryGlobal.swift in Sources */,
 				79A49B231A778F7D007520C8 /* RegionalCell.swift in Sources */,
 				5DA907B01A75A3E1009D92C2 /* Inherited Conditions ViewController.swift in Sources */,

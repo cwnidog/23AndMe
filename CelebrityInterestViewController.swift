@@ -14,12 +14,10 @@ class CelebrityInterestViewController: UIViewController {
   
   @IBOutlet weak var celebrityMaleImage: UIImageView!
   @IBOutlet weak var celebrityFemaleImage: UIImageView!
-  @IBOutlet weak var historicalImage: UIImageView!
   
   @IBOutlet weak var celebrityMaleLabel: UILabel!
   @IBOutlet weak var celebrityFemaleLabel: UILabel!
-  @IBOutlet weak var historicalLabel: UILabel!
-  
+
   
     override func viewDidLoad() {
         super.viewDidLoad()
