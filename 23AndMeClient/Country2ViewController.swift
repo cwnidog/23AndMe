@@ -12,7 +12,7 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
   
   @IBOutlet weak var tableView: UITableView!
   
-  var subRegions : subRegions!
+  var subRegion : SubRegion!
   
   var countries = [Country]()
 
@@ -24,7 +24,7 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
       
       self.tableView.registerNib(UINib(nibName: "RegionalCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "COUNTRY_CELL")
       
-      for country in self.subRegions.country {
+      for country in self.subRegion.countries {
         self.countries.append(country)
       }
   }
@@ -36,7 +36,7 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell.regionalNameLabel.text = currentCountry.country
         
-        cell.regionalPercentageLabel.text = self.subRegions.convertFloatToString(currentCountry.proportion)
+        cell.regionalPercentageLabel.text = self.subRegion.convertFloatToString(currentCountry.proportion)
         
         return cell
       }
@@ -48,12 +48,10 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
       // custom segue to go to the next page
       override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SHOW_CELEBS" {
-          let destinationVC = segue.destinationViewController as AncestryRegionalViewController
+          let destinationVC = segue.destinationViewController as CelebrityInterestViewController
 //          let selectedIndexPath = self.tableView[indexPath.row].first as NSIndexPath  // <- not sure what the first does
           let selectedIndexPath = self.tableView.indexPathForSelectedRow()! as NSIndexPath
           //          let selectedIndexPath = self.tableView.indexPathsForSelectedItems().first as NSIndexPath  // <- not sure what the first does
-          
-          
           destinationVC.country = self.countries[selectedIndexPath.row]
         }
       }

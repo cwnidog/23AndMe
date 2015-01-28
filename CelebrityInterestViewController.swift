@@ -10,6 +10,8 @@ import UIKit
 
 class CelebrityInterestViewController: UIViewController {
   
+  var country : Country!
+  
   var celebCountry = CelebrityNameDictionaryDemo[]()  // calls the celebArray content array I made
   
   var pg2Country = Country[]() // calls the struct that holds the country info
