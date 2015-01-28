@@ -42,22 +42,21 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
     return subRegions.count
   }
 
+  
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
   {
     let cell = tableView.dequeueReusableCellWithIdentifier("REGIONAL_CELL", forIndexPath: indexPath) as RegionalCell
-  
-    cell.regionalNameLabel.text = self.subRegions[indexPath.row].region
-    let proportion = self.subRegions[indexPath.row].proportion
     
-    let stringConvert           = NSString(format: "%.2f", proportion)
-    let numberFormatter         = NSNumberFormatter()
-    numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+    let currentSubRegion = self.subRegions[indexPath.row]
     
-    cell.regionalPercentageLabel.text = numberFormatter.stringFromNumber(proportion)
-
+    cell.regionalNameLabel.text = currentSubRegion.region
+    //this method will convert the proportion(a Float) to a string
+    cell.regionalPercentageLabel.text = self.region.convertFloatToString(currentSubRegion.proportion)
+    
     return cell
   }
 
+  
     override func didReceiveMemoryWarning()
     {
       super.didReceiveMemoryWarning()

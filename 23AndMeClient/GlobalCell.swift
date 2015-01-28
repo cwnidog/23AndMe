@@ -8,8 +8,20 @@
 
 import UIKit
 
-class GlobalCell: UITableViewCell {
-  @IBOutlet weak var globalPercentageLabel: UILabel!
-  @IBOutlet weak var globalNameLabel: UILabel!
+class GlobalCell: UITableViewCell
+{
 
+  @IBOutlet weak var countryImage     : UIImageView!
+  @IBOutlet weak var globalLabel      : UILabel!
+  @IBOutlet weak var globalProportion : UILabel!
+  
+  override func awakeFromNib()
+  {
+    super.awakeFromNib()
+  }
+  
+  override func setSelected(selected: Bool, animated: Bool)
+  {
+    super.setSelected(selected, animated: animated)
+  }
 }

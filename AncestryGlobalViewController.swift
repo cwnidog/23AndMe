@@ -10,18 +10,32 @@ import UIKit
 
 class AncestryGlobalViewController: UIViewController, UITableViewDataSource
 {
+  var netController : NetworkController!
   
   @IBOutlet weak var tableView: UITableView!
   
-  var global = [GlobalCatagory]()
+  var global = [Regions]()
 
   override func viewDidLoad()
   {
     super.viewDidLoad()
     
+    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+    //gives us access to the netController (now a singleton) initilized in the appDelegate
+    self.netController = appDelegate.netController
+    
     // initiate variables
     self.tableView.dataSource = self
-      // Do any additional setup after loading the view.
+    self.tableView.registerNib(UINib(nibName: "GlobalCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "GLOBAL_CELL")
+
+    self.netController.fetchUserID()
+    
+    self.netController.fetchAncestryComposition(nil, callback: { (region, errorString) -> (Void) in
+      if(errorString == nil)
+      {
+        self.global = region!
+      }
+    })
   }
   
   
@@ -31,35 +45,24 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
   }
   
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as GlobalCell
-    // return cell
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+  {
+    let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as GlobalCell 
     
-    let global2 = self.global[indexPath.row]  // defines the single repo
-    //    println("\(repository)")
-    //
-    // Puts on the labels
-    cell.globalNameLabel.text = global2.globalName
-    cell.globalPercentageLabel.text = global2.globalNamePercentage
-  
+    let currentRegion = self.global[indexPath.row]
     
+    cell.globalLabel.text = currentRegion.region
+    //this method will convert the proportion(a Float) to a string
+    cell.globalProportion.text = currentRegion.convertFloatToString(currentRegion.proportion)
+    
+    cell.countryImage.image = UIImage(named: "oceania0.jpeg")
+
     return cell
   }
+  
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  override func didReceiveMemoryWarning()
+  {
+    super.didReceiveMemoryWarning()
+  }
 }
