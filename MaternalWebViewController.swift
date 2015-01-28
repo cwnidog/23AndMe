@@ -21,7 +21,8 @@ class MaternalWebViewController: UIViewController, UIWebViewDelegate
   {
     super.viewDidLoad()
       
-      
+    self.maternalWebURL = "https://www.23andme.com/you/haplogroup/maternal/"
+    
     if(self.maternalWebURL != nil)
     {
       let request = NSURLRequest(URL: NSURL(string: self.maternalWebURL!)!)

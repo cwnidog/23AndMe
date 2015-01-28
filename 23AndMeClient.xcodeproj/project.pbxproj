@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2FC1EB7C1A78022B000A1935 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1EB7B1A78022B000A1935 /* WebViewController.swift */; };
+		4313C0EE1A785CEE0097DC7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4313C0ED1A785CEE0097DC7E /* Images.xcassets */; };
+		4330F8091A78589000E5BA72 /* GlobalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4330F8081A78589000E5BA72 /* GlobalCell.xib */; };
 		4383FCCE1A781377009538D0 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCCD1A781377009538D0 /* Regions.swift */; };
 		4383FCD01A78139B009538D0 /* SubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCCF1A78139B009538D0 /* SubRegion.swift */; };
 		4383FCD21A78195F009538D0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCD11A78195F009538D0 /* Country.swift */; };
 		4383FCD41A783605009538D0 /* RegionalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4383FCD31A783605009538D0 /* RegionalCell.xib */; };
 		5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907521A758C7B009D92C2 /* AppDelegate.swift */; };
 		5DA907581A758C7C009D92C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907561A758C7B009D92C2 /* Main.storyboard */; };
-		5DA9075A1A758C7C009D92C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907591A758C7C009D92C2 /* Images.xcassets */; };
 		5DA9075D1A758C7C009D92C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9075B1A758C7C009D92C2 /* LaunchScreen.xib */; };
 		5DA907691A758C7C009D92C2 /* _3AndMeClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907681A758C7C009D92C2 /* _3AndMeClientTests.swift */; };
 		5DA9078E1A758D85009D92C2 /* ancestry_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907781A758D85009D92C2 /* ancestry_get.json */; };
@@ -60,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		2FC1EB7B1A78022B000A1935 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		4313C0ED1A785CEE0097DC7E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4330F8081A78589000E5BA72 /* GlobalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlobalCell.xib; sourceTree = "<group>"; };
 		4383FCCD1A781377009538D0 /* Regions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 		4383FCCF1A78139B009538D0 /* SubRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubRegion.swift; sourceTree = "<group>"; };
 		4383FCD11A78195F009538D0 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 		5DA907511A758C7B009D92C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DA907521A758C7B009D92C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DA907571A758C7C009D92C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5DA907591A758C7C009D92C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5DA9075C1A758C7C009D92C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5DA907621A758C7C009D92C2 /* 23AndMeClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 23AndMeClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA907671A758C7C009D92C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,8 +150,8 @@
 				5DA907721A758CC6009D92C2 /* Controllers */,
 				5DA907521A758C7B009D92C2 /* AppDelegate.swift */,
 				5DA907AF1A75A3E1009D92C2 /* Inherited Conditions ViewController.swift */,
-				5DA907591A758C7C009D92C2 /* Images.xcassets */,
 				5DA9075B1A758C7C009D92C2 /* LaunchScreen.xib */,
+				4313C0ED1A785CEE0097DC7E /* Images.xcassets */,
 				5DA907501A758C7B009D92C2 /* Supporting Files */,
 			);
 			path = 23AndMeClient;
@@ -200,6 +202,7 @@
 			children = (
 				5DA907561A758C7B009D92C2 /* Main.storyboard */,
 				7915CDCE1A777ECC00597B50 /* GlobalCell.swift */,
+				4330F8081A78589000E5BA72 /* GlobalCell.xib */,
 				79A49B221A778F7D007520C8 /* RegionalCell.swift */,
 				4383FCD31A783605009538D0 /* RegionalCell.xib */,
 				7915CDC21A7753F800597B50 /* CelebrityView.xib */,
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DA907911A758D85009D92C2 /* family_members_get.json in Resources */,
+				4313C0EE1A785CEE0097DC7E /* Images.xcassets in Resources */,
 				5DA9079A1A758D85009D92C2 /* neanderthal_get.json in Resources */,
 				5DA907921A758D85009D92C2 /* genome_get.json in Resources */,
 				5DA907991A758D85009D92C2 /* names_get.json in Resources */,
@@ -331,13 +335,13 @@
 				5DA9079C1A758D85009D92C2 /* phenotype_put.json in Resources */,
 				5DA907A31A758D85009D92C2 /* user.json in Resources */,
 				5DA907941A758D85009D92C2 /* grfs_get.json in Resources */,
+				4330F8091A78589000E5BA72 /* GlobalCell.xib in Resources */,
 				5DA9078E1A758D85009D92C2 /* ancestry_get.json in Resources */,
 				5DA9079D1A758D85009D92C2 /* picture_get.json in Resources */,
 				7915CDC31A7753F800597B50 /* CelebrityView.xib in Resources */,
 				5DA9075D1A758C7C009D92C2 /* LaunchScreen.xib in Resources */,
 				5DA9079B1A758D85009D92C2 /* phenotype_get.json in Resources */,
 				5DA907931A758D85009D92C2 /* genotypes_get.json in Resources */,
-				5DA9075A1A758C7C009D92C2 /* Images.xcassets in Resources */,
 				5DA9079F1A758D85009D92C2 /* relatives_get.json in Resources */,
 				5DA907951A758D85009D92C2 /* haplogroups_get.json in Resources */,
 				4383FCD41A783605009538D0 /* RegionalCell.xib in Resources */,
