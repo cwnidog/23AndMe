@@ -8,10 +8,11 @@
 
 import UIKit
 
-class RegionalCell: UITableViewCell {
+class RegionalCell: UITableViewCell
+{
 
-  @IBOutlet weak var regionalPercentageLabel: UILabel!
-  @IBOutlet weak var regionalNameLabel: UILabel!
+  @IBOutlet weak var regionalPercentageLabel  : UILabel!
+  @IBOutlet weak var regionalNameLabel        : UILabel!
   
   
     override func awakeFromNib() {
@@ -24,5 +25,4 @@ class RegionalCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

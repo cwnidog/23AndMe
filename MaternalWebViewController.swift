@@ -9,15 +9,33 @@
 import UIKit
 import WebKit
 
-class MaternalWebViewController: UIViewController {
+class MaternalWebViewController: UIViewController, UIWebViewDelegate
+{
   
-  let webView = WKWebView()
-  var maternalUrl : String!
+  @IBOutlet weak var webView  : UIWebView!
+  
+  var maternalWebURL : String?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      self.webView.frame = self.view.frame  // define's the webView's size
-      self.view.addSubview(self.webView) // add it to the subView
+  
+  override func viewDidLoad()
+  {
+    super.viewDidLoad()
+      
+      
+    if(self.maternalWebURL != nil)
+    {
+      let request = NSURLRequest(URL: NSURL(string: self.maternalWebURL!)!)
+      self.webView.loadRequest(request)
+    } else {  // go to google
+      let url     = NSURL(string: "http://www.google.com")
+      let request = NSURLRequest(URL: url!)
+      self.webView.loadRequest(request)
+    }
+  }
+
+      
+      //self.webView.frame = self.view.frame  // define's the webView's size
+      //self.view.addSubview(self.webView) // add it to the subView
       
       //let request = NSURLRequest(URL: NSURL(string: self.maternalUrl)!)  // sends the request to the website. Where does the URL come from????
       //self.webView.loadRequest(request)  // loads the website into the WebView
@@ -25,22 +43,9 @@ class MaternalWebViewController: UIViewController {
       // self.navigationController?.delegate = nil // <- I don't think we need this
 
         // Do any additional setup after loading the view.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  override func didReceiveMemoryWarning()
+  {
+    super.didReceiveMemoryWarning()
+  }
 }

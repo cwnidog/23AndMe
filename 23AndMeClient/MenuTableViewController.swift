@@ -21,10 +21,22 @@ class MenuTableViewController: UITableViewController {
     }
   
   
-  override func viewDidAppear(animated: Bool) {
+  override func viewDidAppear(animated: Bool)
+  {
     super.viewDidAppear(animated)
-    
     self.navigationController?.delegate = nil // make sure that here are no zombies
+    
+    // if we don't have a stored access token or refresh token, we need to ask for a new access token
+    if NetworkController.sharedNetworkController.accessToken == nil
+    {
+      let webVC = WebViewController()
+      self.presentViewController(webVC, animated: true, completion: { () -> Void in
+        
+        //pop the web view
+        //self.dismissViewControllerAnimated(true, completion: { () -> Void in
+        //})
+      })
+    }
     
     //if we don't have a stored access token, need to ask for one
     //   if NetworkController.sharedNetworkController.accessToken == nil {
