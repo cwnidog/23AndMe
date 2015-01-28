@@ -27,10 +27,11 @@ class NetworkController
   let accessTokenUserDefaultsKey = "accessToken"
   let refreshTokenUserDefaultsKey = "refreshToken"
   let tokenStoredDateDefaultKey = "tokenStoredDate"
-  let tokenAgeOut = 82800
-  
+  let tokenTypeDefaultKey = "tokenType"
+    
   var accessToken : String?
   var refreshToken : String?
+  var tokenType : String?
   var needRefresh = false
   
   var urlSession : NSURLSession
@@ -115,12 +116,14 @@ class NetworkController
             {
               self.accessToken = jsonDictionary["access_token"] as? String
               self.refreshToken = jsonDictionary["refresh_token"] as? String
+              self.tokenType = jsonDictionary["token_type"] as? String
               let currentDate = NSDate()
               
               // store the access and refresh tokens away for reuse
               NSUserDefaults.standardUserDefaults().setValue(self.accessToken!, forKey: self.accessTokenUserDefaultsKey)
               NSUserDefaults.standardUserDefaults().setValue(self.refreshToken!, forKey: self.refreshTokenUserDefaultsKey)
               NSUserDefaults.standardUserDefaults().setValue(currentDate, forKey: self.tokenStoredDateDefaultKey)
+              NSUserDefaults.standardUserDefaults().setValue(self.tokenType, forKey: self.tokenTypeDefaultKey)
 
               NSUserDefaults.standardUserDefaults().synchronize()
               NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
@@ -168,25 +171,25 @@ class NetworkController
               var regions = [Regions]()
               if let ancestry = jsonData["ancestry"] as? [String:AnyObject] // "ancestry" could be nil TODO: add alertcontroler for this condition
               {
-                let ancestryRegion = ancestry["sub_populations"] as [[String:AnyObject]]
+                let ancestryRegion = ancestry["sub_populations"] as? [[String:AnyObject]]
                 
-                for region in ancestryRegion
+                for region in ancestryRegion!
                 {
                   let addRegion = Regions(jsonDictionary: region)
                   regions.append(addRegion)
-                }
+                } // for region
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                   callback(region: regions, errorString: nil)
-                })
-              }
-             }
-            }
+                }) // addOperationWithBlock enclosure
+              } // if let ancestry
+             } // if no error
+            } // if let jsonData
           default:
             println(urlResponse.statusCode)
-          }
-        }
-      }
-    })
+          } // switch
+        } // if let urlResponse
+      } // if no error
+    }) // dataTask enclosure
     dataTask.resume()
-  }
+  } // fetchAncestryComposition()
 } // NetworkController
