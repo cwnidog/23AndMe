@@ -38,6 +38,7 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
     })
   }
   
+
   
   // UITableViewDataSource
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // fulfills tableView requirement to tell how many rows to make
@@ -59,6 +60,33 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
 
     return cell
   }
+  
+  // function to let you tap the cell and go to the subRegion page
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    println("Did select item") }
+    
+    // custom segue to go to the next page
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+      if segue.identifier == "SHOW_SUBREGIONAL" {
+        let destinationVC = segue.destinationViewController as AncestryRegionalViewController
+        // let selectedIndexPath = self.tableView[indexPath.row] as NSIndexPath  // <- not sure what the first does
+        let selectedIndexPath = self.tableView.indexPathForSelectedRow()! as NSIndexPath
+//          let selectedIndexPath = self.tableView.indexPathsForSelectedItems().first as NSIndexPath  // <- not sure what the first does
+        
+        
+        destinationVC.region = self.global[selectedIndexPath.row]
+      }
+    }
+
+
+//    // Instantiates the view controller with the specified identifier (the detailed page)
+//    let globalVC = self.storyboard?.instantiateViewControllerWithIdentifier("GLOBAL_VC") as AncestryGlobalViewController
+//    globalVC.networkController = self.networkController
+//    globalVC.currentRegion = self.global[indexPath.row]
+//    
+//    // Pushes a view controller onto the receiver’s stack and updates the display
+//    self.navigationController?.pushViewController(globalVC, animated: true)
+//  }
   
 
   override func didReceiveMemoryWarning()

@@ -9,6 +9,10 @@
 import UIKit
 
 class CelebrityInterestViewController: UIViewController {
+  
+  var celebCountry = CelebrityNameDictionaryDemo[]()  // calls the celebArray content array I made
+  
+  var pg2Country = Country[]() // calls the struct that holds the country info
 
   @IBOutlet weak var countryDescriptionLabel: UILabel!
   
@@ -17,13 +21,32 @@ class CelebrityInterestViewController: UIViewController {
   
   @IBOutlet weak var celebrityMaleLabel: UILabel!
   @IBOutlet weak var celebrityFemaleLabel: UILabel!
+  
 
   
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+//      if pg2Country.country = celebCountry.
+//      
+//      self.countryDescriptionLabel.text = "jhghj"
+//      
+//      self.celebrityMaleLabel.text = "sdfsdf"
+//      self.celebrityFemaleLabel.text = "dfdfg"
+      
+      // self.celebrityFemaleImage.image =
+      // self.celebrityMaleImage.image =
 
         // Do any additional setup after loading the view.
     }
+//  
+//  func fetchCelebrityStuff {
+//    
+//  }
+  
+  
+  
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
