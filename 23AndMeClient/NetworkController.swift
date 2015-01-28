@@ -21,6 +21,7 @@ class NetworkController
     return Static.instance
   } // sharedNetworkController
   
+  // OAuth properties
   let clientSecret = "25959db5672ef3b67399713f140c0302"
   let clientID = "98d783a58c22cc274221088f60e99d5e"
   
@@ -28,11 +29,13 @@ class NetworkController
   let refreshTokenUserDefaultsKey = "refreshToken"
   let tokenStoredDateDefaultKey = "tokenStoredDate"
   let tokenTypeDefaultKey = "tokenType"
-    
+  
   var accessToken : String?
   var refreshToken : String?
   var tokenType : String?
   var needRefresh = false
+  
+  var profileID : String?
   
   var urlSession : NSURLSession
   
@@ -52,7 +55,7 @@ class NetworkController
       // check age of token
       let calendar = NSCalendar.currentCalendar()
       let now = NSDate()
-    
+      
       let components = calendar.components(NSCalendarUnit.HourCalendarUnit, fromDate: tokenDate!, toDate: now, options: nil)
       
       if components.hour > 23 // token timed out, need a new one
@@ -127,7 +130,7 @@ class NetworkController
               NSUserDefaults.standardUserDefaults().setValue(self.refreshToken!, forKey: self.refreshTokenUserDefaultsKey)
               NSUserDefaults.standardUserDefaults().setValue(currentDate, forKey: self.tokenStoredDateDefaultKey)
               NSUserDefaults.standardUserDefaults().setValue(self.tokenType, forKey: self.tokenTypeDefaultKey)
-
+              
               NSUserDefaults.standardUserDefaults().synchronize()
               NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 completionHandler()
@@ -168,23 +171,23 @@ class NetworkController
             var error:NSError?
             if let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as? [String:AnyObject]
             {
-             if (error == nil)
-             {
-              var regions = [Regions]()
-              if let ancestry = jsonData["ancestry"] as? [String:AnyObject] // "ancestry" could be nil TODO: add alertcontroler for this condition
+              if (error == nil)
               {
-                let ancestryRegion = ancestry["sub_populations"] as? [[String:AnyObject]]
-                
-                for region in ancestryRegion!
+                var regions = [Regions]()
+                if let ancestry = jsonData["ancestry"] as? [String:AnyObject] // "ancestry" could be nil TODO: add alertcontroler for this condition
                 {
-                  let addRegion = Regions(jsonDictionary: region)
-                  regions.append(addRegion)
-                } // for region
-                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                  callback(region: regions, errorString: nil)
-                }) // addOperationWithBlock enclosure
-              } // if let ancestry
-             } // if no error
+                  let ancestryRegion = ancestry["sub_populations"] as? [[String:AnyObject]]
+                  
+                  for region in ancestryRegion!
+                  {
+                    let addRegion = Regions(jsonDictionary: region)
+                    regions.append(addRegion)
+                  } // for region
+                  NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    callback(region: regions, errorString: nil)
+                  }) // addOperationWithBlock enclosure
+                } // if let ancestry
+              } // if no error
             } // if let jsonData
           default:
             println(urlResponse.statusCode)
@@ -194,4 +197,56 @@ class NetworkController
     }) // dataTask enclosure
     dataTask.resume()
   } // fetchAncestryComposition()
+  
+  func fetchProfileID((), callback : (UserProfile?, String?) -> (Void))
+  {
+    // set up the request
+    let url = NSURL(string: "https://api.23andme.com/1/demo/user/")
+    let request = NSMutableURLRequest(URL: url!)
+    
+    request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
+    println(request.allHTTPHeaderFields)
+    let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+      if error == nil {
+        if let httpResponse = response as? NSHTTPURLResponse {
+          switch httpResponse.statusCode {
+          case 200 ... 299 :
+            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
+              if let profilesArray = jsonDictionary["profiles"] as? [[String:AnyObject]] {
+                // build the array of users
+                let profile = profilesArray.first
+                let userProfile = UserProfile(jsonDictionary: profile!)
+                
+                // go back to the main thread and execute the callback
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                  callback(userProfile, nil)
+                }) // enclosure
+              } // if let items_array
+            } // if let jsonDictionary
+            
+          case 400 ... 499:
+            println("Got response saying error at our end with status code: \(httpResponse.statusCode)")
+            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
+              println(jsonDictionary)
+            }
+            
+            
+          case 500 ... 599:
+            println("Got response saying error at server end with status code: \(httpResponse.statusCode)")
+            
+          default :
+            println("Hit default case with status code: \(httpResponse.statusCode)")
+          } // switch
+        } // if let httpResponse
+      } // error = nil
+        
+      else {
+        println(error.localizedDescription) // what was the error?
+      }
+    }) // callback enclosure
+    dataTask.resume()
+  } // fetchUsersForSearchTerm()
+  
+  
+  
 } // NetworkController

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F57952E1A799F1700FEC223 /* UaserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57952D1A799F1700FEC223 /* UaserProfile.swift */; };
 		2FC1EB7C1A78022B000A1935 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1EB7B1A78022B000A1935 /* WebViewController.swift */; };
 		4313C0EE1A785CEE0097DC7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4313C0ED1A785CEE0097DC7E /* Images.xcassets */; };
 		4330F8091A78589000E5BA72 /* GlobalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4330F8081A78589000E5BA72 /* GlobalCell.xib */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F57952D1A799F1700FEC223 /* UaserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UaserProfile.swift; sourceTree = "<group>"; };
 		2FC1EB7B1A78022B000A1935 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4313C0ED1A785CEE0097DC7E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4330F8081A78589000E5BA72 /* GlobalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlobalCell.xib; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				4383FCD11A78195F009538D0 /* Country.swift */,
 				79A49B261A786D05007520C8 /* CelebrityArray copy.swift */,
 				5DA907A61A758F43009D92C2 /* JSON Files */,
+				2F57952D1A799F1700FEC223 /* UaserProfile.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			files = (
 				796DDB7F1A77898900E6FFAE /* AncestryRegionalViewController.swift in Sources */,
 				5DA907BC1A75ACB4009D92C2 /* NetworkController.swift in Sources */,
+				2F57952E1A799F1700FEC223 /* UaserProfile.swift in Sources */,
 				5DA907A81A7597E0009D92C2 /* MenuTableViewController.swift in Sources */,
 				5DA907B61A75A886009D92C2 /* PaternalLineViewController.swift in Sources */,
 				5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */,
