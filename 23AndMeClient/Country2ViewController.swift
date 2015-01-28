@@ -54,7 +54,7 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
           //          let selectedIndexPath = self.tableView.indexPathsForSelectedItems().first as NSIndexPath  // <- not sure what the first does
           
           
-          destinationVC.region = self.countries[selectedIndexPath.row]
+          destinationVC.country = self.countries[selectedIndexPath.row]
         }
       }
       
