@@ -30,10 +30,10 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
                       forCellReuseIdentifier: "REGIONAL_CELL")
     
     // populates the array of SubRegion objects -> these are inside of the region object
-    for subRegion in self.region.subRegions!
-    {
-      self.subRegions.append(subRegion)
-    }
+   if let subRegion = self.region.subRegions
+   {
+      self.subRegions = subRegion
+   }
   }
   
   
@@ -49,6 +49,8 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
     
     let currentSubRegion = self.subRegions[indexPath.row]
     
+    println("\(self.subRegions[indexPath.row].region)")
+    
     cell.regionalNameLabel.text = currentSubRegion.region
     //this method will convert the proportion(a Float) to a string
     cell.regionalPercentageLabel.text = self.region.convertFloatToString(currentSubRegion.proportion)
@@ -57,18 +59,31 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
   }
   
   // function to let you tap the cell and go to the country page
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    println("Did select item") }
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+  {
+    println("\(indexPath.row) selected")
+    
+    let subRegionToCountry = self.region.subRegions
+    
+  }
   
-  // custom segue to go to the next page
+  
+  
+  
+  
+  
+  
+  
+  
+  /* custom segue to go to the next page
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "SHOW_COUNTRY" {
       let destinationVC = segue.destinationViewController as Country2ViewController
-//      let selectedIndexPath = self.tableView[indexPath.row] as NSIndexPath  // <- not sure what the first does
+      //let selectedIndexPath = self.tableView[indexPath.row] as NSIndexPath  // <- not sure what the first does
       let selectedIndexPath = self.tableView.indexPathForSelectedRow()! as NSIndexPath
       destinationVC.subRegion = self.subRegions[selectedIndexPath.row]
     }
-  }
+  }*/
 
   
     override func didReceiveMemoryWarning()

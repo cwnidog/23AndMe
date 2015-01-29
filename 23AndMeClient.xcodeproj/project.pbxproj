@@ -188,8 +188,8 @@
 			children = (
 				5DA907A71A7597E0009D92C2 /* MenuTableViewController.swift */,
 				7915CDCC1A77761D00597B50 /* AncestryGlobalViewController.swift */,
-				79CFF22C1A797BD700FD578E /* Country2ViewController.swift */,
 				796DDB7E1A77898900E6FFAE /* AncestryRegionalViewController.swift */,
+				79CFF22C1A797BD700FD578E /* Country2ViewController.swift */,
 				796DDB7C1A77881A00E6FFAE /* CelebrityInterestViewController.swift */,
 				5DA907B51A75A885009D92C2 /* PaternalLineViewController.swift */,
 				5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */,
