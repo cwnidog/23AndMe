@@ -11,6 +11,9 @@ import UIKit
 class RegionalCell: UITableViewCell
 {
 
+  
+  @IBOutlet weak var backgroundImage: UIImageView!
+  
   @IBOutlet weak var regionalPercentageLabel  : UILabel!
   @IBOutlet weak var regionalNameLabel        : UILabel!
   

@@ -14,9 +14,6 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
   @IBOutlet weak var tableView: UITableView!
   
   var global = [Regions]()
-  
-  //this is just the default value for testing
-  let profileID = "SP1_FATHER_V4"
 
   override func viewDidLoad()
   {
@@ -29,7 +26,7 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
     
     
     //TODO: need to pass userID here, or store it in netController
-    NetworkController.sharedNetworkController.fetchAncestryComposition(self.profileID, callback: { (region, errorString) -> (Void) in
+    NetworkController.sharedNetworkController.fetchAncestryComposition({ (region, errorString) -> (Void) in
       if(errorString == nil)
       {
         self.global = region!
@@ -60,12 +57,11 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
   
     cell.countryImage.image = UIImage(named: "background\(indexPath.row)")
     
-    
-    //little bit o'razzle dazzle
+    //cell load animation - grows from center of cell row
     cell.alpha     = 0.0
     cell.transform = CGAffineTransformMakeScale(0.1, 0.5) // alertView.transforms initial value
     
-    UIView.animateWithDuration(0.4, delay: 0.2, options: nil, animations: { () -> Void in
+    UIView.animateWithDuration(0.3, delay: 0.1, options: nil, animations: { () -> Void in
       cell.alpha     = 0.75
       cell.transform = CGAffineTransformMakeScale(1.0, 1.0)
       }) { (finished) -> Void in
@@ -78,23 +74,23 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
   // function to let you tap the cell and go to the subRegion page
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
   {
-    
-    //TODO: need to check if subRegions exist - if no - directly segue into celebrities list 
-    
-    // need to figure out which region was selected
     let regionToSubRegion = self.global[indexPath.row]
     
-    let toVC = storyboard?.instantiateViewControllerWithIdentifier("REGIONAL_VC") as AncestryRegionalViewController
-    
-    toVC.region = regionToSubRegion
-    
-    self.navigationController?.pushViewController(toVC, animated: true)
-    
-    // init the ancestry region vc
-    
-    // send the selected region over to the ancestry region vc
-    
-    
+    if (regionToSubRegion.subRegions == nil) //this will skip to the celebrityVC if subRegions is epmpty
+    {
+      let toVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as CelebrityInterestViewController
+      
+      toVC.Region = regionToSubRegion
+      
+      self.navigationController?.pushViewController(toVC, animated: true)
+    } else {
+      
+      let toVC = storyboard?.instantiateViewControllerWithIdentifier("REGIONAL_VC") as AncestryRegionalViewController
+      
+      toVC.region = regionToSubRegion
+      
+      self.navigationController?.pushViewController(toVC, animated: true)
+    }
   }
   
     

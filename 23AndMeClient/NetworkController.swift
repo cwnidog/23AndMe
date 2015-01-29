@@ -86,7 +86,6 @@ class NetworkController
     if !self.needRefresh // need to ask for an initial token
     {
       let code = url.query
-      
       // send a POST back to 23AndMe asking for a token using the authorization code
       let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=http://localhost:5000/receive_code/&scope=basic"
       let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
@@ -159,10 +158,10 @@ class NetworkController
     dataTask.resume()
   } // handleCallbackURL()
   
-  func fetchAncestryComposition(profileID: String?, callback:(region:[Regions]?, errorString: String?) -> (Void))
+  //MARK: fetchAncestryComposition
+  func fetchAncestryComposition(callback:(region:[Regions]?, errorString: String?) -> (Void))
   {
-    let url = NSURL(string: "https://api.23andme.com/1/demo/ancestry/\(profileID!)/?threshold=0.9") //TODO: this is probably wrong!!
-    println(url)
+    let url = NSURL(string: "https://api.23andme.com/1/ancestry/\(self.profiles[0].profileID)/?threshold=0.51") //0.51 = speculative = more results
     let requestedURL = NSMutableURLRequest(URL: url!)
     requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
@@ -209,11 +208,12 @@ class NetworkController
     dataTask.resume()
   } // fetchAncestryComposition()
   
+  
   //MARK: fetchProfileID
   func fetchProfileID((), callback : ([UserProfile]?, String?, String?) -> (Void))
   {
     // set up the request
-    let url = NSURL(string: "https://api.23andme.com/1/demo/user/")
+    let url = NSURL(string: "https://api.23andme.com/1/user/")
     let request = NSMutableURLRequest(URL: url!)
     
     request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
@@ -236,6 +236,7 @@ class NetworkController
                 for item in profilesArray
                 {
                   let profile = UserProfile(jsonDictionary: item)
+                  println(profile)
                   self.profiles.append(profile)
                 } // for item
                 

@@ -10,7 +10,10 @@ import UIKit
 
 class CelebrityInterestViewController: UIViewController {
   
-  var country : Country!
+  // if a particular region does not contain a subregion and/or country -> will redirect here 
+  var Region    : Regions?
+  var subRegion : SubRegion?
+  var country   : Country?
   
   var celeb : Celebrity!
   

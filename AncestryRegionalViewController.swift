@@ -57,13 +57,21 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
     
     let currentSubRegion = self.subRegions[indexPath.row]
     
-    println("\(self.subRegions[indexPath.row].region)")
-    
     cell.regionalNameLabel.text = currentSubRegion.region
     //this method will convert the proportion(a Float) to a string
     cell.regionalPercentageLabel.text = self.region.convertFloatToString(currentSubRegion.proportion) + "%"
 
+    cell.backgroundImage.image = UIImage(named: "sub\(indexPath.row)")
     
+    cell.alpha     = 0.0
+    cell.transform = CGAffineTransformMakeScale(0.1, 0.5) // alertView.transforms initial value
+    
+    UIView.animateWithDuration(0.3, delay: 0.1, options: nil, animations: { () -> Void in
+      cell.alpha     = 0.75
+      cell.transform = CGAffineTransformMakeScale(1.0, 1.0)
+      }) { (finished) -> Void in
+        cell.alpha   = 1.0
+    }
     
     
     return cell
@@ -73,15 +81,23 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
   // function to let you tap the cell and go to the country page
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
   {
-    println("\(indexPath.row) selected")
-    
     let subRegionToCountry = self.subRegions[indexPath.row]
     
-    let toCountryVC = storyboard?.instantiateViewControllerWithIdentifier("COUNTRY_VC") as Country2ViewController
-    
-    toCountryVC.subRegion = subRegionToCountry
-    
-    self.navigationController?.pushViewController(toCountryVC, animated: true)
+    if (subRegionToCountry.countries == nil) // this will skip to the celebrities VC if the countires array is empty.
+    {
+      let toCountryVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as CelebrityInterestViewController
+      
+      toCountryVC.subRegion = subRegionToCountry
+      
+      self.navigationController?.pushViewController(toCountryVC, animated: true)
+    } else {
+      
+      let toCountryVC = storyboard?.instantiateViewControllerWithIdentifier("COUNTRY_VC") as Country2ViewController
+      
+      toCountryVC.subRegion = subRegionToCountry
+      
+      self.navigationController?.pushViewController(toCountryVC, animated: true)
+    }
   }
   
   

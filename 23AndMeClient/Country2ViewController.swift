@@ -45,7 +45,19 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
     cell.regionalNameLabel.text = currentCountry.country
         
     cell.regionalPercentageLabel.text = self.subRegion.convertFloatToString(currentCountry.proportion) + "%"
-
+    
+    cell.backgroundImage.image = UIImage(named: "country\(indexPath.row)")
+    
+    cell.alpha     = 0.0
+    
+    cell.transform = CGAffineTransformMakeScale(0.1, 0.5) // alertView.transforms initial value
+    
+    UIView.animateWithDuration(0.3, delay: 0.1, options: nil, animations: { () -> Void in
+      cell.alpha     = 0.75
+      cell.transform = CGAffineTransformMakeScale(1.0, 1.0)
+      }) { (finished) -> Void in
+        cell.alpha   = 1.0
+    }
         
     return cell
   }
