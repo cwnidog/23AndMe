@@ -54,7 +54,7 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
     
     cell.globalLabel.text = currentRegion.region
     //this method will convert the proportion(a Float) to a string
-    cell.globalProportion.text = currentRegion.convertFloatToString(currentRegion.proportion)
+    cell.globalProportion.text = currentRegion.convertFloatToString(currentRegion.proportion) + "%"
     
     //quick & sloppy randomization of the images
   
@@ -79,8 +79,9 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
   {
     
-    println("\(indexPath.row) selected")
-      // need to figure out which region was selected
+    //TODO: need to check if subRegions exist - if no - directly segue into celebrities list 
+    
+    // need to figure out which region was selected
     let regionToSubRegion = self.global[indexPath.row]
     
     let toVC = storyboard?.instantiateViewControllerWithIdentifier("REGIONAL_VC") as AncestryRegionalViewController

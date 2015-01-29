@@ -61,7 +61,10 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
     
     cell.regionalNameLabel.text = currentSubRegion.region
     //this method will convert the proportion(a Float) to a string
-    cell.regionalPercentageLabel.text = self.region.convertFloatToString(currentSubRegion.proportion)
+    cell.regionalPercentageLabel.text = self.region.convertFloatToString(currentSubRegion.proportion) + "%"
+
+    
+    
     
     return cell
   }

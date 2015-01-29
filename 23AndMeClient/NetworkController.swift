@@ -52,9 +52,8 @@ class NetworkController
     self.urlSession = NSURLSession(configuration: ephemeralConfig)
     
     // if we have a stored access token, that is less than a day old, use it
-    if let tempAccessToken = NSUserDefaults.standardUserDefaults().valueForKey(self.accessTokenUserDefaultsKey) as? String
+    if let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(self.accessTokenUserDefaultsKey) as? String
     {
-      self.accessToken = tempAccessToken
       let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(tokenStoredDateDefaultKey) as? NSDate
       self.tokenType = NSUserDefaults.standardUserDefaults().valueForKey(tokenTypeDefaultKey) as? String
       

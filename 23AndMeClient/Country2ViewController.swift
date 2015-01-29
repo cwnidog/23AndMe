@@ -31,9 +31,8 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
         self.countries.append(item)
       }
     }
-      
+    
     self.tableView.registerNib(UINib(nibName: "RegionalCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "COUNTRY_CELL")
-      
   }
   
   
@@ -45,7 +44,8 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
         
     cell.regionalNameLabel.text = currentCountry.country
         
-    cell.regionalPercentageLabel.text = self.subRegion.convertFloatToString(currentCountry.proportion)
+    cell.regionalPercentageLabel.text = self.subRegion.convertFloatToString(currentCountry.proportion) + "%"
+
         
     return cell
   }

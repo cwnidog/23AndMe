@@ -222,8 +222,8 @@
 				437E5B031A7AAA820066073C /* Celebrity.swift */,
 				4383FCCF1A78139B009538D0 /* SubRegion.swift */,
 				4383FCD11A78195F009538D0 /* Country.swift */,
-				5DA907A61A758F43009D92C2 /* JSON Files */,
 				2F57952D1A799F1700FEC223 /* UaserProfile.swift */,
+				5DA907A61A758F43009D92C2 /* JSON Files */,
 			);
 			name = Models;
 			sourceTree = "<group>";

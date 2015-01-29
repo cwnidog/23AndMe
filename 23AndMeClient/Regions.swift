@@ -18,11 +18,13 @@ class Regions
   init(jsonDictionary : [String : AnyObject]) // will be passed a region dictionary that may contain sub
   {
     self.region     = jsonDictionary["label"] as String
-    self.proportion = jsonDictionary["proportion"] as Float
+    let percentage = jsonDictionary["proportion"] as Float
+    
+    self.proportion = percentage * 100
     
     if let unknown  = jsonDictionary["unassigned"] as? Float
     {
-      self.unassigned = unknown
+      self.unassigned = unknown * 100
     }
     
     if let subRegionData = jsonDictionary["sub_populations"] as? [[String:AnyObject]]
@@ -31,7 +33,7 @@ class Regions
     }
   }
   
-  //this function will hopefully convert its float parameter into a string
+  //this method converts a float to a string
   func convertFloatToString(floatToConvert:Float) -> String
   {
     let stringConvert           = NSString(format: "%.2f", floatToConvert)
