@@ -28,6 +28,9 @@ class NetworkController
   let refreshTokenUserDefaultsKey = "refreshToken"
   let tokenStoredDateDefaultKey = "tokenStoredDate"
   let tokenTypeDefaultKey = "tokenType"
+  let maternalDefaultKey = "maternal"
+  let paternalDefaultKey = "paternal"
+  
     
   var accessToken : String?
   var refreshToken : String?
@@ -36,8 +39,9 @@ class NetworkController
   
   var urlSession : NSURLSession
   
-  //use NSUSERDefaults to store these
-  var userHaplogroups : [String : AnyObject]?
+  //store string variables associated with the users Haplogroups - paternal could remain nil
+  var paternalHaplogroup : String?
+  var maternalHaplogroup : String?
   
   init()
   {
@@ -50,6 +54,11 @@ class NetworkController
       self.accessToken = tempAccessToken
       let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(tokenStoredDateDefaultKey) as? NSDate
       self.tokenType = NSUserDefaults.standardUserDefaults().valueForKey(tokenTypeDefaultKey) as? String
+      
+      //load stored user haplogroups
+      self.paternalHaplogroup = NSUserDefaults.standardUserDefaults().valueForKey(paternalDefaultKey) as? String
+      self.maternalHaplogroup = NSUserDefaults.standardUserDefaults().valueForKey(maternalDefaultKey) as? String
+
       // check age of token
       let calendar = NSCalendar.currentCalendar()
       let now = NSDate()
@@ -149,14 +158,12 @@ class NetworkController
   } // handleCallbackURL()
   
   
-  func fetchAncestryComposition(userID: String?, callback:(region:[Regions]?, errorString: String?) -> (Void))
+  func fetchAncestryComposition(profileID: String?, callback:(region:[Regions]?, errorString: String?) -> (Void))
   {
-    let url = NSURL(string: "https://api.23andme.com/1/ancestry/\(userID!)/?threshold=0.9") //TODO: this is probably wrong!!
+    let url = NSURL(string: "https://api.23andme.com/1/demo/ancestry/SP1_FATHER_V4/?threshold=0.9") //TODO: this is probably wrong!!
     println(url)
     let requestedURL = NSMutableURLRequest(URL: url!)
-    println("\(self.accessToken)")
-    
-    requestedURL.setValue("\(self.tokenType) \(self.accessToken)", forHTTPHeaderField: "Authorization")
+    requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
       if(error == nil)
       {
@@ -169,11 +176,13 @@ class NetworkController
             var error:NSError?
             if let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as? [String:AnyObject]
             {
+              //println(jsonData)
              if (error == nil)
              {
               var regions = [Regions]()
               if let ancestry = jsonData["ancestry"] as? [String:AnyObject] // "ancestry" could be nil TODO: add alertcontroler for this condition
               {
+                println(ancestry)
                 let ancestryRegion = ancestry["sub_populations"] as? [[String:AnyObject]]
                 
                 for region in ancestryRegion!
@@ -197,9 +206,9 @@ class NetworkController
   } // fetchAncestryComposition()
 
   
-    
-  /*
-  func fetchUserHaplogroup(userID:String? callback:(haplogroup:[String:AnyObject]?, errorString: String?) -> (Void))
+  /*  MARK: fetchUserHaplogroup  -  this method will return a paternal(if available) and maternal  **
+  **  haplogroup as 2 strings - these strings will be stored for future use using NSUserDefaults   */
+  func fetchUserHaplogroup(userID:String?, callback:(maternalHaplo:String?, paternalHaplo:String?, errorString: String?) -> (Void))
   {
     let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(userID)")
     let requestedURL = NSMutableURLRequest(URL: url!)
@@ -207,14 +216,29 @@ class NetworkController
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
       if(error == nil)
       {
-        var haplogroup: [String:AnyObject]
-        
-      }
-    })
+        var error:NSError?
+        var maternalHaplo:String?
+        var paternalHaplo:String?
+        if let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as? [String:AnyObject]
+        {
+          if(error == nil)
+          {
+            for dictionary in jsonData
+            {
+              if let maternal = jsonData["maternal"] as? String
+              {
+                maternalHaplo = maternal
+              } else if let paternal = jsonData["paternal"] as? String
+              {
+                paternalHaplo = paternal
+              }
+            }
+          }
+          callback(maternalHaplo:maternalHaplo, paternalHaplo:paternalHaplo, errorString: nil)
+        }// jsonData
+      }//if(error == nil)
+    })//completionHandler
     dataTask.resume()
-    
-  }
-  */
-  
+  }//fetchUserHaplogroup
   
 } // NetworkController

@@ -15,6 +15,8 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
   @IBOutlet weak var tableView: UITableView!
   
   var global = [Regions]()
+  
+  let profileID = "SP1_FATHER_V4"
 
   override func viewDidLoad()
   {
@@ -30,10 +32,11 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
     
     
     //TODO: need to pass userID here, or store it in netController
-    self.netController.fetchAncestryComposition(nil, callback: { (region, errorString) -> (Void) in
+    self.netController.fetchAncestryComposition(self.profileID, callback: { (region, errorString) -> (Void) in
       if(errorString == nil)
       {
         self.global = region!
+        self.tableView.reloadData()
       }
     })
   }
