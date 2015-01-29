@@ -230,17 +230,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CelebM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucv-49-Utg">
-                                <rect key="frame" x="81" y="559" width="60" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="kf8-Bd-zBZ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CelebF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2F-ZF-5Aa">
-                                <rect key="frame" x="461" y="559" width="55" height="21"/>
+                                <rect key="frame" x="272" y="559" width="55" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="X1J-DR-Tqn"/>
                                 </constraints>
@@ -249,7 +240,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-Oa-xRR">
-                                <rect key="frame" x="36" y="351" width="150" height="200"/>
+                                <rect key="frame" x="225" y="114" width="150" height="200"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="EFX-6g-Isz"/>
@@ -262,15 +253,15 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjZ-f6-Ktx">
-                                <rect key="frame" x="16" y="84" width="568" height="184"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Famous Celebrities with African Ancestory" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjZ-f6-Ktx">
+                                <rect key="frame" x="16" y="72" width="568" height="34"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lmd-BV-4ZW">
-                                <rect key="frame" x="414" y="351" width="150" height="200"/>
+                                <rect key="frame" x="225" y="351" width="150" height="200"/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lmd-BV-4ZW" secondAttribute="height" multiplier="1:1" id="4Sq-fi-jrb"/>
@@ -283,12 +274,12 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Famous Celebrities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8du-So-e58">
-                                <rect key="frame" x="16" y="307" width="266" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CelebM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucv-49-Utg">
+                                <rect key="frame" x="270" y="322" width="60" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="ehi-0Y-9OY"/>
+                                    <constraint firstAttribute="height" constant="21" id="kf8-Bd-zBZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -298,46 +289,15 @@
                             <constraint firstItem="EjZ-f6-Ktx" firstAttribute="leading" secondItem="Trd-O7-DAI" secondAttribute="leadingMargin" id="4t4-PZ-Ix7"/>
                             <constraint firstItem="m6m-Oa-xRR" firstAttribute="centerX" secondItem="ucv-49-Utg" secondAttribute="centerX" id="53J-UC-EDj"/>
                             <constraint firstItem="I2F-ZF-5Aa" firstAttribute="top" secondItem="Lmd-BV-4ZW" secondAttribute="bottom" constant="8" id="6N2-IM-1jv"/>
-                            <constraint firstItem="8du-So-e58" firstAttribute="leading" secondItem="Trd-O7-DAI" secondAttribute="leadingMargin" id="6gj-Dj-QHK"/>
-                            <constraint firstItem="bbL-Xc-ne0" firstAttribute="top" secondItem="I2F-ZF-5Aa" secondAttribute="bottom" constant="20" id="6yk-7H-9gg"/>
-                            <constraint firstItem="m6m-Oa-xRR" firstAttribute="leading" secondItem="Trd-O7-DAI" secondAttribute="leadingMargin" id="97o-vX-Vv1"/>
-                            <constraint firstItem="m6m-Oa-xRR" firstAttribute="leading" secondItem="Trd-O7-DAI" secondAttribute="leadingMargin" id="BZU-Zl-pZp"/>
-                            <constraint firstItem="bbL-Xc-ne0" firstAttribute="top" secondItem="ucv-49-Utg" secondAttribute="bottom" constant="20" id="GoK-XV-F1H"/>
-                            <constraint firstItem="m6m-Oa-xRR" firstAttribute="height" secondItem="Lmd-BV-4ZW" secondAttribute="height" id="IEq-Pg-A4B"/>
-                            <constraint firstItem="8du-So-e58" firstAttribute="top" secondItem="EjZ-f6-Ktx" secondAttribute="bottom" constant="8" id="Is6-hQ-n1U"/>
-                            <constraint firstItem="Lmd-BV-4ZW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m6m-Oa-xRR" secondAttribute="trailing" constant="8" id="JCf-di-AV8"/>
-                            <constraint firstItem="m6m-Oa-xRR" firstAttribute="top" secondItem="8du-So-e58" secondAttribute="bottom" constant="8" id="KPe-Te-3Ji"/>
-                            <constraint firstItem="EjZ-f6-Ktx" firstAttribute="top" secondItem="pkB-to-fQy" secondAttribute="bottom" constant="20" id="MVn-fQ-Kbo"/>
-                            <constraint firstItem="m6m-Oa-xRR" firstAttribute="centerX" secondItem="ucv-49-Utg" secondAttribute="centerX" id="N9N-qz-mbv"/>
+                            <constraint firstAttribute="centerX" secondItem="Lmd-BV-4ZW" secondAttribute="centerX" id="FdY-lj-dXx"/>
+                            <constraint firstItem="EjZ-f6-Ktx" firstAttribute="top" secondItem="pkB-to-fQy" secondAttribute="bottom" constant="8" id="MVn-fQ-Kbo"/>
                             <constraint firstItem="I2F-ZF-5Aa" firstAttribute="centerX" secondItem="Lmd-BV-4ZW" secondAttribute="centerX" constant="-1" id="Tzu-6A-4dh"/>
-                            <constraint firstItem="m6m-Oa-xRR" firstAttribute="width" secondItem="Lmd-BV-4ZW" secondAttribute="height" multiplier="1:1" id="VOP-GW-TXu"/>
                             <constraint firstItem="EjZ-f6-Ktx" firstAttribute="trailing" secondItem="Trd-O7-DAI" secondAttribute="trailingMargin" id="Wy6-Ik-pzL"/>
-                            <constraint firstItem="I2F-ZF-5Aa" firstAttribute="top" secondItem="Lmd-BV-4ZW" secondAttribute="bottom" constant="8" id="X7g-rE-993"/>
-                            <constraint firstItem="I2F-ZF-5Aa" firstAttribute="centerX" secondItem="Lmd-BV-4ZW" secondAttribute="centerX" constant="-1" id="YJR-ue-9Cs"/>
-                            <constraint firstItem="m6m-Oa-xRR" firstAttribute="width" secondItem="Lmd-BV-4ZW" secondAttribute="width" id="fOc-pZ-F5a"/>
-                            <constraint firstItem="m6m-Oa-xRR" firstAttribute="leading" secondItem="Trd-O7-DAI" secondAttribute="leadingMargin" constant="20" id="rSp-46-wGo"/>
-                            <constraint firstAttribute="centerX" secondItem="Lmd-BV-4ZW" secondAttribute="centerX" constant="-1" id="uCZ-wb-t7I"/>
-                            <constraint firstAttribute="centerX" secondItem="Lmd-BV-4ZW" secondAttribute="centerX" constant="-1" id="uqw-kH-bnS"/>
-                            <constraint firstItem="ucv-49-Utg" firstAttribute="top" secondItem="m6m-Oa-xRR" secondAttribute="bottom" constant="8" id="vQ5-F4-4ig"/>
-                            <constraint firstItem="Lmd-BV-4ZW" firstAttribute="top" secondItem="8du-So-e58" secondAttribute="bottom" constant="8" id="vgX-KY-VOI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Lmd-BV-4ZW" secondAttribute="trailing" constant="20" id="z6U-OI-ELT"/>
+                            <constraint firstItem="m6m-Oa-xRR" firstAttribute="top" secondItem="EjZ-f6-Ktx" secondAttribute="bottom" constant="8" id="bFg-E0-Pdq"/>
+                            <constraint firstItem="ucv-49-Utg" firstAttribute="top" secondItem="m6m-Oa-xRR" secondAttribute="bottom" constant="8" id="cGb-Ld-IdQ"/>
+                            <constraint firstItem="Lmd-BV-4ZW" firstAttribute="top" secondItem="ucv-49-Utg" secondAttribute="bottom" constant="8" id="juZ-7h-nlo"/>
+                            <constraint firstAttribute="centerX" secondItem="m6m-Oa-xRR" secondAttribute="centerX" id="lIJ-4M-zpL"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="97o-vX-Vv1"/>
-                                <exclude reference="BZU-Zl-pZp"/>
-                                <exclude reference="IEq-Pg-A4B"/>
-                                <exclude reference="N9N-qz-mbv"/>
-                                <exclude reference="VOP-GW-TXu"/>
-                                <exclude reference="fOc-pZ-F5a"/>
-                                <exclude reference="vQ5-F4-4ig"/>
-                                <exclude reference="JCf-di-AV8"/>
-                                <exclude reference="uCZ-wb-t7I"/>
-                                <exclude reference="uqw-kH-bnS"/>
-                                <exclude reference="X7g-rE-993"/>
-                                <exclude reference="YJR-ue-9Cs"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="celebrityFemaleImage" destination="Lmd-BV-4ZW" id="tGx-Pj-BnE"/>
