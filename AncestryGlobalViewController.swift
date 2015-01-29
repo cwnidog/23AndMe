@@ -15,14 +15,15 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
   @IBOutlet weak var tableView: UITableView!
   
   var global = [Regions]()
+  
+  //this is just the default value for testing
+  let profileID = "SP1_FATHER_V4"
 
   override func viewDidLoad()
   {
     super.viewDidLoad()
     
     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-    //gives us access to the netController (now a singleton) initilized in the appDelegate
-    self.netController = appDelegate.netController
     
     // initiate variables
     self.tableView.dataSource = self
@@ -30,10 +31,11 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
     
     
     //TODO: need to pass userID here, or store it in netController
-    self.netController.fetchAncestryComposition(nil, callback: { (region, errorString) -> (Void) in
+    NetworkController.sharedNetworkController.fetchAncestryComposition(self.profileID, callback: { (region, errorString) -> (Void) in
       if(errorString == nil)
       {
         self.global = region!
+        self.tableView.reloadData()
       }
     })
   }
@@ -56,8 +58,28 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
     //this method will convert the proportion(a Float) to a string
     cell.globalProportion.text = currentRegion.convertFloatToString(currentRegion.proportion)
     
-    cell.countryImage.image = UIImage(named: "oceania0.jpeg")
-
+    //quick & sloppy randomization of the images
+    if(indexPath.row % 2 == 0)
+    {
+       cell.countryImage.image = UIImage(named: "oceania0.jpeg")
+    } else if(indexPath.row % 3 == 0)
+    {
+       cell.countryImage.image = UIImage(named: "europe0.jpeg")
+    } else {
+       cell.countryImage.image = UIImage(named: "southAsia0.jpeg")
+    }
+  
+    //little bit o'razzle dazzle
+    cell.alpha     = 0.0
+    cell.transform = CGAffineTransformMakeScale(0.1, 0.5) // alertView.transforms initial value
+    
+    UIView.animateWithDuration(0.4, delay: 0.2, options: nil, animations: { () -> Void in
+      cell.alpha     = 0.75
+      cell.transform = CGAffineTransformMakeScale(1.0, 1.0)
+      }) { (finished) -> Void in
+        cell.alpha   = 1.0
+    }
+    
     return cell
   }
   
