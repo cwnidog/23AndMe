@@ -71,9 +71,6 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
         let destinationVC = segue.destinationViewController as AncestryRegionalViewController
         // let selectedIndexPath = self.tableView[indexPath.row] as NSIndexPath  // <- not sure what the first does
         let selectedIndexPath = self.tableView.indexPathForSelectedRow()! as NSIndexPath
-//          let selectedIndexPath = self.tableView.indexPathsForSelectedItems().first as NSIndexPath  // <- not sure what the first does
-        
-        
         destinationVC.region = self.global[selectedIndexPath.row]
       }
     }
