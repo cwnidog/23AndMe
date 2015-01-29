@@ -13,26 +13,19 @@ class NeanderthalAncestryViewController: UIViewController {
   @IBOutlet weak var NeanderthalImage: UIImageView!
   @IBOutlet weak var percentageNeanderthalLabel: UILabel!
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+  let neanderthalImage = UIImage(named: "neanderthalImage") // use a stored image to save time
+  
+    override func viewDidLoad()
+    {
+      super.viewDidLoad()
+      NetworkController.sharedNetworkController.fetchNeanderthal((), { (neanderDict, error) -> (Void) in
+        //initialize a Neanderthal with the provided JSON data
+        var neanderthal = Neanderthal(jsonDictionary: neanderDict)
+        
+        // display the data
+        self.NeanderthalImage.image = self.neanderthalImage
+        self.percentageNeanderthalLabel.text = neanderthal.proportion
+      }) // callback enclosure
+    } // viewDidLoad()
+  
+} // NeanderthalAncestryViewController()
