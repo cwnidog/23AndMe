@@ -20,7 +20,6 @@ class MenuTableViewController: UITableViewController {
     // self.navigationItem.rightBarButtonItem = self.editButtonItem()
   } // viewDidLoad()
   
-  
   override func viewDidAppear(animated: Bool)
   {
     super.viewDidAppear(animated)

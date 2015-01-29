@@ -15,9 +15,34 @@ class PaternalLineViewController: UIViewController, UIWebViewDelegate
   
   var paternalWebURL : String?
   
+  //temporary id
+  let profileID = "SP1_FATHER_V4"
+  
+  override func loadView() {
+    super.loadView()
+    if (NetworkController.sharedNetworkController.paternalHaplogroup == nil)
+    { // fetch info
+      NetworkController.sharedNetworkController.fetchUserHaplogroup(profileID, callback: { (maternalHaplo, paternalHaplo, errorString) -> (Void) in
+        if(errorString == nil)
+        {
+          if(paternalHaplo != nil)
+          {
+            self.paternalWebURL = "https://www.23andme.com/you/haplogroup/paternal/?viewgroup=\(paternalHaplo!)&tab=story"
+            NetworkController.sharedNetworkController.paternalHaplogroup = paternalHaplo
+          } else {
+            println("no paternal haplogroup listed, profile is of a female")
+          }
+          NetworkController.sharedNetworkController.maternalHaplogroup = maternalHaplo
+        } 
+      })
+    }
+  }
   
   override func viewDidLoad()
   {
+    
+    
+    
     super.viewDidLoad()
     self.webView.delegate = self
      
