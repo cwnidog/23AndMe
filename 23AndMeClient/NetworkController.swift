@@ -55,7 +55,7 @@ class NetworkController
       let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(tokenStoredDateDefaultKey) as? NSDate
       self.tokenType = NSUserDefaults.standardUserDefaults().valueForKey(tokenTypeDefaultKey) as? String
       
-      //load stored user haplogroups
+      //load stored user haplogroups - If user has an access token - then they should also have haplogroup data stored
       self.paternalHaplogroup = NSUserDefaults.standardUserDefaults().valueForKey(paternalDefaultKey) as? String
       self.maternalHaplogroup = NSUserDefaults.standardUserDefaults().valueForKey(maternalDefaultKey) as? String
 
@@ -182,7 +182,6 @@ class NetworkController
               var regions = [Regions]()
               if let ancestry = jsonData["ancestry"] as? [String:AnyObject] // "ancestry" could be nil TODO: add alertcontroler for this condition
               {
-                println(ancestry)
                 let ancestryRegion = ancestry["sub_populations"] as? [[String:AnyObject]]
                 
                 for region in ancestryRegion!
@@ -208,9 +207,9 @@ class NetworkController
   
   /*  MARK: fetchUserHaplogroup  -  this method will return a paternal(if available) and maternal  **
   **  haplogroup as 2 strings - these strings will be stored for future use using NSUserDefaults   */
-  func fetchUserHaplogroup(userID:String?, callback:(maternalHaplo:String?, paternalHaplo:String?, errorString: String?) -> (Void))
+  func fetchUserHaplogroup(profileID:String?, callback:(maternalHaplo:String?, paternalHaplo:String?, errorString: String?) -> (Void))
   {
-    let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(userID)")
+    let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(profileID!)")
     let requestedURL = NSMutableURLRequest(URL: url!)
     requestedURL.setValue("\(self.tokenType) \(self.accessToken)", forHTTPHeaderField: "Authorization")
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
@@ -223,18 +222,23 @@ class NetworkController
         {
           if(error == nil)
           {
+            println(jsonData)
             for dictionary in jsonData
             {
               if let maternal = jsonData["maternal"] as? String
               {
                 maternalHaplo = maternal
+                println(maternalHaplo)
               } else if let paternal = jsonData["paternal"] as? String
               {
+                println(paternalHaplo)
                 paternalHaplo = paternal
               }
             }
           }
-          callback(maternalHaplo:maternalHaplo, paternalHaplo:paternalHaplo, errorString: nil)
+          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            callback(maternalHaplo:maternalHaplo, paternalHaplo:paternalHaplo, errorString: nil)
+          })
         }// jsonData
       }//if(error == nil)
     })//completionHandler
