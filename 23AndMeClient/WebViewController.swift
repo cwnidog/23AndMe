@@ -43,12 +43,12 @@ class WebViewController: UIViewController, WKNavigationDelegate {
           NetworkController.sharedNetworkController.fetchProfileID((), callback: { (profiles, userID, errorDescription) -> (Void) in
             NetworkController.sharedNetworkController.profiles = profiles!
             NetworkController.sharedNetworkController.userID = userID!
-          })
-        })
-      })
-    }
+          }) // fetchProfileID enclosure
+        }) // dismissViewControllerAnimated enclosure
+      }) // handleCallbackURL enclosure
+    } // if navigationAction
     
-    decisionHandler(WKNavigationActionPolicy.Allow)
+    decisionHandler(WKNavigationActionPolicy.Allow) // OK to move away
     
   } // webView()
   

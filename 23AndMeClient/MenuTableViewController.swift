@@ -18,7 +18,7 @@ class MenuTableViewController: UITableViewController {
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-  }
+  } // viewDidLoad()
   
   
   override func viewDidAppear(animated: Bool)
@@ -31,9 +31,8 @@ class MenuTableViewController: UITableViewController {
     {
       let webVC = WebViewController()
       self.presentViewController(webVC, animated: true, completion: { () -> Void in
-        
-      })
-    }
+      }) // enclosure
+    } // if accessToken == nil
   } //viewDidAppear()
   
   
