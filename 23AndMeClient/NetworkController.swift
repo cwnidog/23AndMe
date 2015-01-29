@@ -46,15 +46,18 @@ class NetworkController
   var paternalHaplogroup : String?
   var maternalHaplogroup : String?
   
+  // neanderthal dictionary
+  var neanderDictionary : [String : AnyObject]!
+  
   init()
   {
     let ephemeralConfig = NSURLSessionConfiguration.ephemeralSessionConfiguration()
     self.urlSession = NSURLSession(configuration: ephemeralConfig)
     
     // if we have a stored access token, that is less than a day old, use it
-    if let tempAccessToken = NSUserDefaults.standardUserDefaults().valueForKey(self.accessTokenUserDefaultsKey) as? String
+    if let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(self.accessTokenUserDefaultsKey) as? String
     {
-      self.accessToken = tempAccessToken
+      self.accessToken = accessToken
       let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(tokenStoredDateDefaultKey) as? NSDate
       self.tokenType = NSUserDefaults.standardUserDefaults().valueForKey(tokenTypeDefaultKey) as? String
       
@@ -84,38 +87,41 @@ class NetworkController
   {
     var postRequest : NSMutableURLRequest!
     
-    if !self.needRefresh // need to ask for an initial token
-    {
-      let code = url.query
-      
-      // send a POST back to 23AndMe asking for a token using the authorization code
-      let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=http://localhost:5000/receive_code/&scope=basic"
-      let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
-      let length = bodyData!.length
-      
-      // put the POST request together
-      postRequest = NSMutableURLRequest(URL : NSURL(string: "https://api.23andme.com/token/")!)
-      postRequest.HTTPMethod = "POST"
-      postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
-      postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-      postRequest.HTTPBody = bodyData
-    } // need to ask for inital token
-      
-    else
-    {
-      // send a POST back to 23AndMe asking for a token using the refresh token
-      let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(refreshToken)&redirect_uri=https://localhost:5000/receive_code/&scope=basic"
-      let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
-      let length = bodyData!.length
-      
-      // put the POST request together
-      postRequest = NSMutableURLRequest(URL : NSURL(string: "http://api.23andme.com/token/")!)
-      postRequest.HTTPMethod = "POST"
-      postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
-      postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-      postRequest.HTTPBody = bodyData
-      
-    } // need to use refresh token
+    println("Access token: \(self.accessToken)")
+    println("Refresh token: \(self.refreshToken)")
+    
+      if self.accessToken == nil // need to ask for an initial token
+      {
+        let code = url.query
+        
+        // send a POST back to 23AndMe asking for a token using the authorization code
+        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=http://localhost:5000/receive_code/&scope=basic"
+        let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
+        let length = bodyData!.length
+        
+        // put the POST request together
+        postRequest = NSMutableURLRequest(URL : NSURL(string: "https://api.23andme.com/token/")!)
+        postRequest.HTTPMethod = "POST"
+        postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
+        postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        postRequest.HTTPBody = bodyData
+      } // need to ask for inital token
+        
+      else if self.needRefresh // use the refresh token to get a new access token
+      {
+        // send a POST back to 23AndMe asking for a token using the refresh token
+        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(refreshToken)&redirect_uri=https://localhost:5000/receive_code/&scope=basic"
+        let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
+        let length = bodyData!.length
+        
+        // put the POST request together
+        postRequest = NSMutableURLRequest(URL : NSURL(string: "http://api.23andme.com/token/")!)
+        postRequest.HTTPMethod = "POST"
+        postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
+        postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        postRequest.HTTPBody = bodyData
+        
+      } // need to use refresh token
     
     // deal with the response
     let dataTask = self.urlSession.dataTaskWithRequest(postRequest, completionHandler: { (data, response, error) -> Void in
@@ -216,9 +222,8 @@ class NetworkController
     // set up the request
     let url = NSURL(string: "https://api.23andme.com/1/demo/user/")
     let request = NSMutableURLRequest(URL: url!)
-    
     request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
-    println(request.allHTTPHeaderFields)
+    
     let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
       if error == nil {
         if let httpResponse = response as? NSHTTPURLResponse {
@@ -310,5 +315,60 @@ class NetworkController
     })//completionHandler
     dataTask.resume()
   }//fetchUserHaplogroup
+  
+  
+  // MARK: fetchNeanderthal()
+  func fetchNeanderthal((), callback : ([String : AnyObject], String?) -> (Void))
+  {
+    println("Access token = \(self.accessToken)")
+    let url = NSURL(string: "https://api.23andme.com/1/demo/neanderthal/SP1_FATHER_V4/")
+    
+    let request = NSMutableURLRequest(URL: url!)
+    request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
+    
+    println(request.allHTTPHeaderFields)
+    
+    let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+      if error == nil {
+        if let httpResponse = response as? NSHTTPURLResponse {
+          switch httpResponse.statusCode {
+          case 200 ... 299 :
+            // get the neanderthal JSON
+            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject]
+            {
+              // we'll only want to use the neanderthal subdictionary
+              if let neanderDict = jsonDictionary["neanderthal"] as? [String:AnyObject]
+              {
+                self.neanderDictionary = neanderDict
+              }
+            } // if let jsonDictionary
+            
+          case 400 ... 499:
+            println("Got response saying error at our end with status code: \(httpResponse.statusCode)")
+            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
+              println(jsonDictionary)
+            }
+            
+          case 500 ... 599:
+            println("Got response saying error at server end with status code: \(httpResponse.statusCode)")
+            
+          default :
+            println("Hit default case with status code: \(httpResponse.statusCode)")
+          } // switch
+        } // if let httpResponse
+        
+        // get back onto the main thread
+        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+          callback(self.neanderDictionary, nil)
+        })
+      } // error = nil
+        
+      else {
+        println(error.localizedDescription) // what was the error?
+      }
+    }) // callback enclosure
+    dataTask.resume()
+
+  } // fetchNeanderthal
   
 } // NetworkController
