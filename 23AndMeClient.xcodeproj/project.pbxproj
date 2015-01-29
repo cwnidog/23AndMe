@@ -219,7 +219,7 @@
 				4383FCD11A78195F009538D0 /* Country.swift */,
 				792A65BD1A79AF0000C5AB28 /* Celebrity.swift */,
 				79A49B261A786D05007520C8 /* CelebrityArray copy.swift */,
-				79AA5B431A7A9F2200DC7205 /* CelebPropertyList.plist */,
+				79AA5B451A7AAD8E00DC7205 /* plist */,
 				5DA907A61A758F43009D92C2 /* JSON Files */,
 			);
 			name = Models;
@@ -244,6 +244,14 @@
 				5DA9078D1A758D85009D92C2 /* user.json */,
 			);
 			name = "JSON Files";
+			sourceTree = "<group>";
+		};
+		79AA5B451A7AAD8E00DC7205 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				79AA5B431A7A9F2200DC7205 /* CelebPropertyList.plist */,
+			);
+			name = plist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
