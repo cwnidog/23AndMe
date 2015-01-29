@@ -24,15 +24,9 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
     self.tableView.dataSource = self
     self.tableView.delegate   = self
     
-    self.tableView.registerNib(UINib(nibName: "RegionalCell",
+    self.tableView.registerNib(UINib(nibName: "GlobalCell",
                                       bundle: NSBundle.mainBundle()),
-                      forCellReuseIdentifier: "REGIONAL_CELL")
-    
-    // populates the array of SubRegion objects -> these are inside of the region object
-   /*if let subRegion = self.region.subRegions
-   {
-      self.subRegions = subRegion
-   }*/
+                      forCellReuseIdentifier: "GLOBAL_CELL")
     
     if let subRegion = self.region.subRegions
     {
@@ -41,6 +35,7 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
         let sub = SubRegion(jsonDictionary: item)
         subRegions.append(sub)
       }
+      self.tableView.reloadData()
     }
   }
   
@@ -53,15 +48,14 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
   {
-    let cell = tableView.dequeueReusableCellWithIdentifier("REGIONAL_CELL", forIndexPath: indexPath) as RegionalCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as GlobalCell
     
     let currentSubRegion = self.subRegions[indexPath.row]
-    
-    cell.regionalNameLabel.text = currentSubRegion.region
-    //this method will convert the proportion(a Float) to a string
-    cell.regionalPercentageLabel.text = self.region.convertFloatToString(currentSubRegion.proportion) + "%"
+    cell.globalLabel.text = currentSubRegion.region
+        //this method will convert the proportion(a Float) to a string
+    cell.globalProportion.text = self.region.convertFloatToString(currentSubRegion.proportion) + "%"
 
-    cell.backgroundImage.image = UIImage(named: "sub\(indexPath.row)")
+    cell.countryImage.image = UIImage(named: "sub\(indexPath.row)")
     
     cell.alpha     = 0.0
     cell.transform = CGAffineTransformMakeScale(0.1, 0.5) // alertView.transforms initial value

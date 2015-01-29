@@ -30,23 +30,24 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
         let item = Country(jsonDictionary: country)
         self.countries.append(item)
       }
+      self.tableView.reloadData()
     }
     
-    self.tableView.registerNib(UINib(nibName: "RegionalCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "COUNTRY_CELL")
+    self.tableView.registerNib(UINib(nibName: "GlobalCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "GLOBAL_CELL")
   }
   
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
   {
-    let cell = tableView.dequeueReusableCellWithIdentifier("COUNTRY_CELL", forIndexPath: indexPath) as RegionalCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as GlobalCell
         
     let currentCountry = self.countries[indexPath.row]
         
-    cell.regionalNameLabel.text = currentCountry.country
+    cell.globalLabel.text = currentCountry.country
         
-    cell.regionalPercentageLabel.text = self.subRegion.convertFloatToString(currentCountry.proportion) + "%"
+    cell.globalProportion.text = self.subRegion.convertFloatToString(currentCountry.proportion) + "%"
     
-    cell.backgroundImage.image = UIImage(named: "country\(indexPath.row)")
+    cell.countryImage.image = UIImage(named: "country\(indexPath.row)")
     
     cell.alpha     = 0.0
     
