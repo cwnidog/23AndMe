@@ -21,6 +21,7 @@ class NetworkController
     return Static.instance
   } // sharedNetworkController
   
+  // OAuth properties
   let clientSecret = "25959db5672ef3b67399713f140c0302"
   let clientID = "98d783a58c22cc274221088f60e99d5e"
   
@@ -31,11 +32,13 @@ class NetworkController
   let maternalDefaultKey = "maternal"
   let paternalDefaultKey = "paternal"
   
-    
   var accessToken : String?
   var refreshToken : String?
   var tokenType : String?
   var needRefresh = false
+  
+  var userID : String? // the if for this user
+  var profiles = [UserProfile]() // an array of all the prfiles associated with this user (mother, father, etc.)
   
   var urlSession : NSURLSession
   
@@ -62,7 +65,7 @@ class NetworkController
       // check age of token
       let calendar = NSCalendar.currentCalendar()
       let now = NSDate()
-    
+      
       let components = calendar.components(NSCalendarUnit.HourCalendarUnit, fromDate: tokenDate!, toDate: now, options: nil)
       
       if components.hour > 23 // token timed out, need a new one
@@ -76,7 +79,7 @@ class NetworkController
     // if let accessToken
   } // init ()
   
-  
+  // MARK: handleCallbackURL
   func handleCallbackURL(url : NSURL, completionHandler : () -> ())
   {
     var postRequest : NSMutableURLRequest!
@@ -157,7 +160,6 @@ class NetworkController
     dataTask.resume()
   } // handleCallbackURL()
   
-  
   func fetchAncestryComposition(profileID: String?, callback:(region:[Regions]?, errorString: String?) -> (Void))
   {
     let url = NSURL(string: "https://api.23andme.com/1/demo/ancestry/\(profileID!)/?threshold=0.9") //TODO: this is probably wrong!!
@@ -182,20 +184,24 @@ class NetworkController
               var regions = [Regions]()
               if let ancestry = jsonData["ancestry"] as? [String:AnyObject] // "ancestry" could be nil TODO: add alertcontroler for this condition
               {
-                let ancestryRegion = ancestry["sub_populations"] as? [[String:AnyObject]]
-                
-                for region in ancestryRegion!
+                var regions = [Regions]()
+                if let ancestry = jsonData["ancestry"] as? [String:AnyObject] // "ancestry" could be nil TODO: add alertcontroler for this condition
                 {
-                  let addRegion = Regions(jsonDictionary: region)
-                  regions.append(addRegion)
-                } // for region
-                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                  callback(region: regions, errorString: nil)
-                }) // addOperationWithBlock enclosure
-              } // if let ancestry
-             } // if no error
+                  let ancestryRegion = ancestry["sub_populations"] as? [[String:AnyObject]]
+
+                  for region in ancestryRegion!
+                  {
+                    let addRegion = Regions(jsonDictionary: region)
+                    regions.append(addRegion)
+                  } // for region
+                  NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    callback(region: regions, errorString: nil)
+                  }) // addOperationWithBlock enclosure
+                } // if let ancestry
+              } // if no error
             } // if let jsonData
-          default:
+            }
+              default:
             println(urlResponse.statusCode)
           } // switch
         } // if let urlResponse
@@ -203,7 +209,67 @@ class NetworkController
     }) // dataTask enclosure
     dataTask.resume()
   } // fetchAncestryComposition()
-
+  
+  //MARK: fetchProfileID
+  func fetchProfileID((), callback : ([UserProfile]?, String?, String?) -> (Void))
+  {
+    // set up the request
+    let url = NSURL(string: "https://api.23andme.com/1/demo/user/")
+    let request = NSMutableURLRequest(URL: url!)
+    
+    request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
+    println(request.allHTTPHeaderFields)
+    let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+      if error == nil {
+        if let httpResponse = response as? NSHTTPURLResponse {
+          switch httpResponse.statusCode {
+          case 200 ... 299 :
+            // get the user's ID
+            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
+              if let userID = jsonDictionary["id"] as? String
+              {
+                self.userID = userID
+              } // if let id
+              
+              // get the ID of any profiles associated with this user, e.g. parents, siblings, etc
+              if let profilesArray = jsonDictionary["profiles"] as? [[String:AnyObject]] {
+                // build the array of users
+                for item in profilesArray
+                {
+                  let profile = UserProfile(jsonDictionary: item)
+                  self.profiles.append(profile)
+                } // for item
+                
+                // go back to the main thread and execute the callback
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                  callback(self.profiles, self.userID, nil)
+                }) // enclosure
+              } // if let items_array
+            } // if let jsonDictionary
+            
+          case 400 ... 499:
+            println("Got response saying error at our end with status code: \(httpResponse.statusCode)")
+            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
+              println(jsonDictionary)
+            }
+            
+            
+          case 500 ... 599:
+            println("Got response saying error at server end with status code: \(httpResponse.statusCode)")
+            
+          default :
+            println("Hit default case with status code: \(httpResponse.statusCode)")
+          } // switch
+        } // if let httpResponse
+      } // error = nil
+        
+      else {
+        println(error.localizedDescription) // what was the error?
+      }
+    }) // callback enclosure
+    dataTask.resume()
+  } // fetchUsersForSearchTerm()
+  
   
   /*  MARK: fetchUserHaplogroup  -  this method will return a paternal(if available) and maternal  **
   **  haplogroup as 2 strings - these strings will be stored for future use using NSUserDefaults   */
