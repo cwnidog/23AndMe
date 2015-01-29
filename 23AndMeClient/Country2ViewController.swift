@@ -24,7 +24,7 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
       
       self.tableView.registerNib(UINib(nibName: "RegionalCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "COUNTRY_CELL")
       
-      for country in self.subRegion.countries {
+      for country in self.subRegion.countries! {
         self.countries.append(country)
       }
   }
@@ -55,7 +55,10 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
           destinationVC.country = self.countries[selectedIndexPath.row]
         }
       }
-      
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.countries.count 
+  }
       
 
         // Do any additional setup after loading the view.

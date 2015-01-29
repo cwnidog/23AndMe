@@ -14,7 +14,7 @@ class CelebrityInterestViewController: UIViewController {
   
   var celeb : Celebrity!
   
-  var celebCountry : CelebrityNameDictionaryDemo  // calls the celebArray content array I made
+//  var celebCountry : CelebrityNameDictionaryDemo  // calls the celebArray content array I made
 
   @IBOutlet weak var countryDescriptionLabel: UILabel!
   
@@ -27,16 +27,18 @@ class CelebrityInterestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      if country == celebrityNameDictionary {
-        
-              self.celebrityMaleLabel.text = self.celeb.maleName
-              self.celebrityFemaleLabel.text = self.celeb.femaleName
-        
-        
-        
-      } else {
-        println("did not find match")
-      }
+//      if country == celebrityNameDictionary {
+//        
+//        func celeb {
+//        
+//              self.celebrityMaleLabel.text = self.celeb.maleName
+//              self.celebrityFemaleLabel.text = self.celeb.femaleName
+//        }
+//        
+//        
+//      } else {
+//        println("did not find match")
+//      }
       
 //      if pg2Country.country = celebCountry.
 //      

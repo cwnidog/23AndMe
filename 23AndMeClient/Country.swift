@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Country
+class Country
 {
   var country    : String
   var proportion : Float
