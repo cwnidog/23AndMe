@@ -35,7 +35,8 @@ class NetworkController
   var tokenType : String?
   var needRefresh = false
   
-  var profiles = [UserProfile]() // an array of all the prfiles a user belongs to
+  var userID : String? // the if for this user
+  var profiles = [UserProfile]() // an array of all the prfiles associated with this user (mother, father, etc.)
   
   var urlSession : NSURLSession
   
@@ -70,7 +71,7 @@ class NetworkController
     
   } // init ()
   
-  
+  // MARK: handleCallbackURL
   func handleCallbackURL(url : NSURL, completionHandler : () -> ())
   {
     var postRequest : NSMutableURLRequest!
@@ -152,7 +153,7 @@ class NetworkController
     dataTask.resume()
   } // handleCallbackURL()
   
-  
+  // MARK: fetchAncestryComposition
   func fetchAncestryComposition(userID: String?, callback:(region:[Regions]?, errorString: String?) -> (Void))
   {
     
@@ -198,6 +199,7 @@ class NetworkController
     dataTask.resume()
   } // fetchAncestryComposition()
   
+  //MARK: fetchProfileID
   func fetchProfileID((), callback : ([UserProfile]?, String?) -> (Void))
   {
     // set up the request
@@ -212,6 +214,11 @@ class NetworkController
           switch httpResponse.statusCode {
           case 200 ... 299 :
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
+              if let userID = jsonDictionary["id"] as? String
+              {
+                self.userID = userID
+              } // if let id
+              
               if let profilesArray = jsonDictionary["profiles"] as? [[String:AnyObject]] {
                 // build the array of users
                 for item in profilesArray
