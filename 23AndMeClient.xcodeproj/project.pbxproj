@@ -220,7 +220,9 @@
 				437E5B031A7AAA820066073C /* Celebrity.swift */,
 				4383FCCF1A78139B009538D0 /* SubRegion.swift */,
 				4383FCD11A78195F009538D0 /* Country.swift */,
-				2F57952D1A799F1700FEC223 /* UaserProfile.swift */,
+				792A65BD1A79AF0000C5AB28 /* Celebrity.swift */,
+				79A49B261A786D05007520C8 /* CelebrityArray copy.swift */,
+				79AA5B451A7AAD8E00DC7205 /* plist */,
 				5DA907A61A758F43009D92C2 /* JSON Files */,
 			);
 			name = Models;
@@ -389,6 +391,8 @@
 				437E5B041A7AAA820066073C /* Celebrity.swift in Sources */,
 				5DA907B81A75A91F009D92C2 /* NeanderthalAncestryViewController.swift in Sources */,
 				437E5B021A7AAA1E0066073C /* CelebrityArray copy.swift in Sources */,
+				79A49B231A778F7D007520C8 /* RegionalCell.swift in Sources */,
+				2F62D8A51A7ABAD8008F4620 /* Neanderthal.swift in Sources */,
 				5DA907B01A75A3E1009D92C2 /* Inherited Conditions ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
