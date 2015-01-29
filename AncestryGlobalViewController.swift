@@ -10,7 +10,6 @@ import UIKit
 
 class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-  var netController : NetworkController!
   
   @IBOutlet weak var tableView: UITableView!
   
@@ -22,8 +21,6 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    
-    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     
     // initiate variables
     self.tableView.dataSource = self

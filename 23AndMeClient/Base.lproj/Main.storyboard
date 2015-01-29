@@ -221,7 +221,7 @@
         <!--Celebrity Interest View Controller-->
         <scene sceneID="wOF-pc-h1j">
             <objects>
-                <viewController id="v2z-AI-C8K" customClass="CelebrityInterestViewController" customModule="_3AndMeClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CELEBRITY_VC" id="v2z-AI-C8K" customClass="CelebrityInterestViewController" customModule="_3AndMeClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pkB-to-fQy"/>
                         <viewControllerLayoutGuide type="bottom" id="bbL-Xc-ne0"/>

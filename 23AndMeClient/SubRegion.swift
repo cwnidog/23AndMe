@@ -13,7 +13,7 @@ class SubRegion
   var region     : String
   var proportion : Float
   var unassigned : Float?
-  var countries  : [Country]?
+  var countries  : [[String:AnyObject]]?
   
   init(jsonDictionary: [String:AnyObject])
   {
@@ -23,13 +23,10 @@ class SubRegion
     {
       self.unassigned = unknown
     }
+    
     if let country = jsonDictionary["sub_populations"] as? [[String:AnyObject]]
     {
-      for item in country
-      {
-        let newCountry = Country(jsonDictionary: item)
-        self.countries?.append(newCountry)
-      }
+      self.countries = country
     }
   }
   
@@ -41,5 +38,4 @@ class SubRegion
     
     return numberFormatter.stringFromNumber(floatToConvert)!
   }
-
 }

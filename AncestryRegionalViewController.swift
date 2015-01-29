@@ -17,7 +17,6 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
   
    var subRegions = [SubRegion]()
   
-  
   override func viewDidLoad()
   {
     super.viewDidLoad()
@@ -30,10 +29,19 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
                       forCellReuseIdentifier: "REGIONAL_CELL")
     
     // populates the array of SubRegion objects -> these are inside of the region object
-   if let subRegion = self.region.subRegions
+   /*if let subRegion = self.region.subRegions
    {
       self.subRegions = subRegion
-   }
+   }*/
+    
+    if let subRegion = self.region.subRegions
+    {
+      for item in subRegion
+      {
+        let sub = SubRegion(jsonDictionary: item)
+        subRegions.append(sub)
+      }
+    }
   }
   
   
@@ -58,13 +66,19 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
     return cell
   }
   
+  
   // function to let you tap the cell and go to the country page
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
   {
     println("\(indexPath.row) selected")
     
-    let subRegionToCountry = self.region.subRegions
+    let subRegionToCountry = self.subRegions[indexPath.row]
     
+    let toCountryVC = storyboard?.instantiateViewControllerWithIdentifier("COUNTRY_VC") as Country2ViewController
+    
+    toCountryVC.subRegion = subRegionToCountry
+    
+    self.navigationController?.pushViewController(toCountryVC, animated: true)
   }
   
   

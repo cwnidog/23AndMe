@@ -13,7 +13,7 @@ class Regions
   var region     : String
   var proportion : Float
   var unassigned : Float?
-  var subRegions : [SubRegion]? // array of SubRegion objects storing the regions ie "European", "Asian"
+  var subRegions : [[String:AnyObject]]? // array of SubRegion objects storing the regions ie "European", "Asian"
 
   init(jsonDictionary : [String : AnyObject]) // will be passed a region dictionary that may contain sub
   {
@@ -25,12 +25,9 @@ class Regions
       self.unassigned = unknown
     }
     
-    if let subRegion = jsonDictionary["sub_populations"] as? [[String:AnyObject]]
+    if let subRegionData = jsonDictionary["sub_populations"] as? [[String:AnyObject]]
     {
-      for item in subRegion
-      {
-        let sub = SubRegion(jsonDictionary: item)
-      }
+      self.subRegions = subRegionData
     }
   }
   
