@@ -24,8 +24,6 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
     super.viewDidLoad()
     
     let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-    //gives us access to the netController (now a singleton) initilized in the appDelegate
-    self.netController = appDelegate.netController
     
     // initiate variables
     self.tableView.dataSource = self
@@ -33,7 +31,7 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
     
     
     //TODO: need to pass userID here, or store it in netController
-    self.netController.fetchAncestryComposition(self.profileID, callback: { (region, errorString) -> (Void) in
+    NetworkController.sharedNetworkController.fetchAncestryComposition(self.profileID, callback: { (region, errorString) -> (Void) in
       if(errorString == nil)
       {
         self.global = region!
