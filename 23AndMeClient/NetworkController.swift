@@ -160,7 +160,7 @@ class NetworkController
   
   func fetchAncestryComposition(profileID: String?, callback:(region:[Regions]?, errorString: String?) -> (Void))
   {
-    let url = NSURL(string: "https://api.23andme.com/1/demo/ancestry/SP1_FATHER_V4/?threshold=0.9") //TODO: this is probably wrong!!
+    let url = NSURL(string: "https://api.23andme.com/1/demo/ancestry/\(profileID!)/?threshold=0.9") //TODO: this is probably wrong!!
     println(url)
     let requestedURL = NSMutableURLRequest(URL: url!)
     requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
