@@ -9,23 +9,57 @@
 import UIKit
 
 class CelebrityInterestViewController: UIViewController {
+  
+  var country : Country!
+  
+  var celeb : Celebrity!
+  
+//  var celebCountry : CelebrityNameDictionaryDemo  // calls the celebArray content array I made
 
   @IBOutlet weak var countryDescriptionLabel: UILabel!
   
   @IBOutlet weak var celebrityMaleImage: UIImageView!
   @IBOutlet weak var celebrityFemaleImage: UIImageView!
-  @IBOutlet weak var historicalImage: UIImageView!
   
   @IBOutlet weak var celebrityMaleLabel: UILabel!
   @IBOutlet weak var celebrityFemaleLabel: UILabel!
-  @IBOutlet weak var historicalLabel: UILabel!
-  
   
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+//      if country == celebrityNameDictionary {
+//        
+//        func celeb {
+//        
+//              self.celebrityMaleLabel.text = self.celeb.maleName
+//              self.celebrityFemaleLabel.text = self.celeb.femaleName
+//        }
+//        
+//        
+//      } else {
+//        println("did not find match")
+//      }
+      
+//      if pg2Country.country = celebCountry.
+//      
+//      self.countryDescriptionLabel.text = "jhghj"
+//      
+//      self.celebrityMaleLabel.text = "sdfsdf"
+//      self.celebrityFemaleLabel.text = "dfdfg"
+      
+      // self.celebrityFemaleImage.image =
+      // self.celebrityMaleImage.image =
 
         // Do any additional setup after loading the view.
     }
+//  
+//  func fetchCelebrityStuff {
+//    
+//  }
+  
+  
+  
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

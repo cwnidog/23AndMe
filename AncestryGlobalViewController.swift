@@ -42,6 +42,7 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
     })
   }
   
+
   
   // UITableViewDataSource
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // fulfills tableView requirement to tell how many rows to make

@@ -32,4 +32,14 @@ class SubRegion
       }
     }
   }
+  
+  func convertFloatToString(floatToConvert:Float) -> String
+  {
+    let stringConvert           = NSString(format: "%.2f", floatToConvert)
+    let numberFormatter         = NSNumberFormatter()
+    numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+    
+    return numberFormatter.stringFromNumber(floatToConvert)!
+  }
+
 }

@@ -55,6 +55,20 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
     
     return cell
   }
+  
+  // function to let you tap the cell and go to the country page
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    println("Did select item") }
+  
+  // custom segue to go to the next page
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "SHOW_COUNTRY" {
+      let destinationVC = segue.destinationViewController as Country2ViewController
+//      let selectedIndexPath = self.tableView[indexPath.row] as NSIndexPath  // <- not sure what the first does
+      let selectedIndexPath = self.tableView.indexPathForSelectedRow()! as NSIndexPath
+      destinationVC.subRegion = self.subRegions[selectedIndexPath.row]
+    }
+  }
 
   
     override func didReceiveMemoryWarning()
