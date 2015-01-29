@@ -231,7 +231,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CelebM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucv-49-Utg">
-                                <rect key="frame" x="51" y="559" width="60" height="21"/>
+                                <rect key="frame" x="81" y="559" width="60" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="kf8-Bd-zBZ"/>
                                 </constraints>
@@ -240,7 +240,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CelebF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2F-ZF-5Aa">
-                                <rect key="frame" x="491" y="559" width="55" height="21"/>
+                                <rect key="frame" x="461" y="559" width="55" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="X1J-DR-Tqn"/>
                                 </constraints>
@@ -249,11 +249,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-Oa-xRR">
-                                <rect key="frame" x="36" y="461" width="90" height="90"/>
+                                <rect key="frame" x="36" y="351" width="150" height="200"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="EFX-6g-Isz"/>
-                                    <constraint firstAttribute="width" constant="90" id="MEs-dC-gwT"/>
+                                    <constraint firstAttribute="height" constant="200" id="EFX-6g-Isz"/>
+                                    <constraint firstAttribute="width" constant="150" id="MEs-dC-gwT"/>
                                     <constraint firstAttribute="width" secondItem="m6m-Oa-xRR" secondAttribute="height" multiplier="1:1" id="k5l-QN-bW5"/>
                                 </constraints>
                                 <variation key="default">
@@ -262,29 +262,20 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Famous Celebrities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8du-So-e58">
-                                <rect key="frame" x="16" y="407" width="266" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="ehi-0Y-9OY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjZ-f6-Ktx">
-                                <rect key="frame" x="16" y="84" width="568" height="315"/>
+                                <rect key="frame" x="16" y="84" width="568" height="184"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lmd-BV-4ZW">
-                                <rect key="frame" x="474" y="461" width="90" height="90"/>
+                                <rect key="frame" x="414" y="351" width="150" height="200"/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lmd-BV-4ZW" secondAttribute="height" multiplier="1:1" id="4Sq-fi-jrb"/>
-                                    <constraint firstAttribute="width" constant="90" id="DFw-dj-Vap"/>
-                                    <constraint firstAttribute="height" constant="90" id="g89-yq-9Rl"/>
+                                    <constraint firstAttribute="width" constant="150" id="DFw-dj-Vap"/>
+                                    <constraint firstAttribute="height" constant="200" id="g89-yq-9Rl"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -292,6 +283,15 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Famous Celebrities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8du-So-e58">
+                                <rect key="frame" x="16" y="307" width="266" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="ehi-0Y-9OY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

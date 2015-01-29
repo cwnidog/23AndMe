@@ -10,9 +10,11 @@ import UIKit
 
 class CelebrityInterestViewController: UIViewController {
   
-  var celebCountry = CelebrityNameDictionaryDemo[]()  // calls the celebArray content array I made
+  var country : Country!
   
-  var pg2Country = Country[]() // calls the struct that holds the country info
+  var celeb : Celebrity!
+  
+//  var celebCountry : CelebrityNameDictionaryDemo  // calls the celebArray content array I made
 
   @IBOutlet weak var countryDescriptionLabel: UILabel!
   
@@ -22,10 +24,21 @@ class CelebrityInterestViewController: UIViewController {
   @IBOutlet weak var celebrityMaleLabel: UILabel!
   @IBOutlet weak var celebrityFemaleLabel: UILabel!
   
-
-  
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+//      if country == celebrityNameDictionary {
+//        
+//        func celeb {
+//        
+//              self.celebrityMaleLabel.text = self.celeb.maleName
+//              self.celebrityFemaleLabel.text = self.celeb.femaleName
+//        }
+//        
+//        
+//      } else {
+//        println("did not find match")
+//      }
       
 //      if pg2Country.country = celebCountry.
 //      
