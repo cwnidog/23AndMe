@@ -188,7 +188,7 @@ class NetworkController
                 if let ancestry = jsonData["ancestry"] as? [String:AnyObject] // "ancestry" could be nil TODO: add alertcontroler for this condition
                 {
                   let ancestryRegion = ancestry["sub_populations"] as? [[String:AnyObject]]
-                  
+
                   for region in ancestryRegion!
                   {
                     let addRegion = Regions(jsonDictionary: region)
@@ -200,7 +200,8 @@ class NetworkController
                 } // if let ancestry
               } // if no error
             } // if let jsonData
-          default:
+            }
+              default:
             println(urlResponse.statusCode)
           } // switch
         } // if let urlResponse
