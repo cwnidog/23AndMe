@@ -46,6 +46,9 @@ class NetworkController
   var paternalHaplogroup : String?
   var maternalHaplogroup : String?
   
+  // neanderthal dictionary
+  var neanderDictionary : [String : AnyObject]!
+  
   init()
   {
     let ephemeralConfig = NSURLSessionConfiguration.ephemeralSessionConfiguration()
@@ -215,9 +218,8 @@ class NetworkController
     // set up the request
     let url = NSURL(string: "https://api.23andme.com/1/user/")
     let request = NSMutableURLRequest(URL: url!)
-    
     request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
-    println(request.allHTTPHeaderFields)
+    
     let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
       if error == nil {
         if let httpResponse = response as? NSHTTPURLResponse {
@@ -310,5 +312,60 @@ class NetworkController
     })//completionHandler
     dataTask.resume()
   }//fetchUserHaplogroup
+  
+  
+  // MARK: fetchNeanderthal()
+  func fetchNeanderthal((), callback : ([String : AnyObject], String?) -> (Void))
+  {
+    println("Access token = \(self.accessToken)")
+    let url = NSURL(string: "https://api.23andme.com/1/demo/neanderthal/SP1_FATHER_V4/")
+    
+    let request = NSMutableURLRequest(URL: url!)
+    request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
+    
+    println(request.allHTTPHeaderFields)
+    
+    let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+      if error == nil {
+        if let httpResponse = response as? NSHTTPURLResponse {
+          switch httpResponse.statusCode {
+          case 200 ... 299 :
+            // get the neanderthal JSON
+            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject]
+            {
+              // we'll only want to use the neanderthal subdictionary
+              if let neanderDict = jsonDictionary["neanderthal"] as? [String:AnyObject]
+              {
+                self.neanderDictionary = neanderDict
+              }
+            } // if let jsonDictionary
+            
+          case 400 ... 499:
+            println("Got response saying error at our end with status code: \(httpResponse.statusCode)")
+            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
+              println(jsonDictionary)
+            }
+            
+          case 500 ... 599:
+            println("Got response saying error at server end with status code: \(httpResponse.statusCode)")
+            
+          default :
+            println("Hit default case with status code: \(httpResponse.statusCode)")
+          } // switch
+        } // if let httpResponse
+        
+        // get back onto the main thread
+        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+          callback(self.neanderDictionary, nil)
+        })
+      } // error = nil
+        
+      else {
+        println(error.localizedDescription) // what was the error?
+      }
+    }) // callback enclosure
+    dataTask.resume()
+
+  } // fetchNeanderthal
   
 } // NetworkController
