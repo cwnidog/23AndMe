@@ -14,6 +14,8 @@ class CelebrityInterestViewController: UIViewController {
   
   var celeb : Celebrity!
   
+
+  
 //  var celebCountry : CelebrityNameDictionaryDemo  // calls the celebArray content array I made
 
   @IBOutlet weak var countryDescriptionLabel: UILabel!
