@@ -200,7 +200,7 @@ class NetworkController
   } // fetchAncestryComposition()
   
   //MARK: fetchProfileID
-  func fetchProfileID((), callback : ([UserProfile]?, String?) -> (Void))
+  func fetchProfileID((), callback : ([UserProfile]?, String?, String?) -> (Void))
   {
     // set up the request
     let url = NSURL(string: "https://api.23andme.com/1/demo/user/")
@@ -213,12 +213,14 @@ class NetworkController
         if let httpResponse = response as? NSHTTPURLResponse {
           switch httpResponse.statusCode {
           case 200 ... 299 :
+            // get the user's ID
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
               if let userID = jsonDictionary["id"] as? String
               {
                 self.userID = userID
               } // if let id
               
+              // get the ID of any profiles associated with this user, e.g. parents, siblings, etc
               if let profilesArray = jsonDictionary["profiles"] as? [[String:AnyObject]] {
                 // build the array of users
                 for item in profilesArray
@@ -226,12 +228,10 @@ class NetworkController
                   let profile = UserProfile(jsonDictionary: item)
                   self.profiles.append(profile)
                 } // for item
-                //let profile = profilesArray.first
-                //let userProfile = UserProfile(jsonDictionary: profile!)
                 
                 // go back to the main thread and execute the callback
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                  callback(self.profiles, nil)
+                  callback(self.profiles, self.userID, nil)
                 }) // enclosure
               } // if let items_array
             } // if let jsonDictionary
