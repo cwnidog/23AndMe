@@ -22,7 +22,6 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
       
     self.tableView.dataSource = self
     self.tableView.delegate   = self
-    self.tableView.backgroundColor = UIColor.grayColor()
     
     if let countryData = self.subRegion.countries
     {
