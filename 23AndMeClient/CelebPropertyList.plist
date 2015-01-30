@@ -13,6 +13,17 @@
 		<key>femaleImage</key>
 		<string>http://zodiacadvice.com/wp-content/uploads/2013/12/gisele-bundchen-hairstyle-719x1024.jpg</string>
 	</dict>
+	<key>French &amp; German</key>
+	<dict>
+		<key>male</key>
+		<string>Jean-Luc Bilodeau</string>
+		<key>female</key>
+		<string>Gisele Bundchen</string>
+		<key>maleImage</key>
+		<string>http://thehollywoodbillboard.com/wp-content/uploads/2014/07/jean-luc-bilodeau2.jpg</string>
+		<key>femaleImage</key>
+		<string>http://zodiacadvice.com/wp-content/uploads/2013/12/gisele-bundchen-hairstyle-719x1024.jpg</string>
+	</dict>
 	<key>Scandinavian</key>
 	<dict>
 		<key>male</key>
@@ -24,7 +35,18 @@
 		<key>femaleImage</key>
 		<string>http://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/v2_article_large/public/2014/10/21/renee-zellweger-2004.jpg?itok=g40rYpV2</string>
 	</dict>
-  <key>British and Irish</key>
+	<key>British and Irish</key>
+	<dict>
+		<key>male</key>
+		<string>Brad Pitt</string>
+		<key>female</key>
+		<string>Taylor Swift</string>
+		<key>maleImage</key>
+		<string>http://thehollywoodbillboard.com/wp-content/uploads/2014/10/brad-pitt-2.jpg</string>
+		<key>femaleImage</key>
+		<string>http://images4.fanpop.com/image/photos/19200000/Taylor-Swift-Beautiful-taylor-swift-19209287-571-572.jpg</string>
+	</dict>
+  <key>British &amp; Irish</key>
   <dict>
     <key>male</key>
     <string>Brad Pitt</string>
@@ -35,205 +57,216 @@
     <key>femaleImage</key>
     <string>http://images4.fanpop.com/image/photos/19200000/Taylor-Swift-Beautiful-taylor-swift-19209287-571-572.jpg</string>
   </dict>
-  <key>Finnish</key>
-  <dict>
-    <key>male</key>
-    <string>Matt Damon</string>
-    <key>female</key>
-    <string>Leslie Mann</string>
-    <key>maleImage</key>
-    <string>http://www.urbansplatter.com/wp-content/uploads/2014/08/Matt_Damon_12.jpg</string>
-    <key>femaleImage</key>
-    <string>http://www.hairstylestime.com/images/leslie-mann-hairstyles/Leslie-mann0012958503.jpg</string>
-  </dict>
-  <key>Sardinian</key>
-  <dict>
-    <key>male</key>
-    <string>Christopher Meloni</string>
-    <key>female</key>
-    <string>Caterina Murino</string>
-    <key>maleImage</key>
-    <string>http://ia.media-imdb.com/images/M/MV5BMTYyODc0MTI2N15BMl5BanBnXkFtZTcwNDYwMjk3Mw@@._V1_SY317_CR9,0,214,317_AL_.jpg</string>
-    <key>femaleImage</key>
-    <string>http://madame.lefigaro.fr/sites/default/files/imagecache/image-diaporama-photo/2010/12/dia_murino1.jpg</string>
-  </dict>
-  <key>Italian</key>
-  <dict>
-    <key>male</key>
-    <string>Nick Jonas</string>
-    <key>female</key>
-    <string>Lady Gaga</string>
-    <key>maleImage</key>
-    <string>http://healthyceleb.com/wp-content/uploads/2013/12/nick-jonas.jpg</string>
-    <key>femaleImage</key>
-    <string>http://www.revolvermag.com/wp-content/uploads/2014/07/1733332987_1357190174-216x300.jpg</string>
-  </dict>
-  <key>Iberian</key>
-  <dict>
-    <key>male</key>
-    <string>James Franco</string>
-    <key>female</key>
-    <string>Katy Perry</string>
-    <key>maleImage</key>
-    <string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQR-rnQqEI2fhZ_xwuFI_bwwDgaA9de_LJ-fXYGAu1VJoYaKAPhVg</string>
-    <key>femaleImage</key>
-    <string>http://imagopolo.info/img/katy_perry/7.jpeg</string>
-  </dict>
-  <key>Balkan</key>
-  <dict>
-    <key>male</key>
-    <string>Sebastian Stan</string>
-    <key>female</key>
-    <string>Jennifer Aniston</string>
-    <key>maleImage</key>
-    <string>http://pmcmovieline.files.wordpress.com/2011/12/sebastianstan300.jpg</string>
-    <key>femaleImage</key>
-    <string>http://www.newspaper.ge/wp-content/uploads/2014/12/aniston-fit-tips_0.jpg</string>
-  </dict>
-  <key>Eastern European</key>
-  <dict>
-    <key>male</key>
-    <string>John Krasinski</string>
-    <key>female</key>
-    <string>Kristen Bell</string>
-    <key>maleImage</key>
-    <string>http://img2.timeinc.net/ew/i/2013/12/17/John-Krasinski.jpg</string>
-    <key>femaleImage</key>
-    <string>http://stardomreport.com/wp-content/uploads/2013/04/Kristen-Bell.jpg</string>
-  </dict>
-  <key>Ashkenazi</key>
-  <dict>
-    <key>male</key>
-    <string>Joseph Gordon-Levitt</string>
-    <key>female</key>
-    <string>Natalie Portman</string>
-    <key>maleImage</key>
-    <string>http://news.doddleme.com/wp-content/uploads/2013/06/premium-rush-premiere-joseph-gordon-levitt-59f62cf4a5fb1ba6.jpg</string>
-    <key>femaleImage</key>
-    <string>https://thatglimpseofme19.files.wordpress.com/2013/10/ta1.jpg</string>
-  </dict>
-  <key>Yakut</key>
-  <dict>
-    <key>male</key>
-    <string>Mehmet Oz</string>
-    <key>female</key>
-    <string>Funda Onal</string>
-    <key>maleImage</key>
-    <string>https://healthcorps.org/wp-content/uploads/2013/10/dr-oz.png</string>
-    <key>femaleImage</key>
-    <string>https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ9tfOTru5PWXzUJlkkTabul1Yy4WoTU3aBvFHh77DGdKm94JIlYQ</string>
-  </dict>
-  <key>Japanese</key>
-  <dict>
-    <key>male</key>
-    <string>Apolo Ohno</string>
-    <key>female</key>
-    <string>Carrie Ann Inaba</string>
-    <key>maleImage</key>
-    <string>http://a1.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU0NzU1NDQ0MjM5.jpg</string>
-    <key>femaleImage</key>
-    <string>http://media2.popsugar-assets.com/files/2010/12/51/2/192/1922153/79faf3b2cdbf99d7_carrie-ann-inaba.jpg</string>
-  </dict>
-  <key>Korean</key>
-  <dict>
-    <key>male</key>
-    <string>Will Demps</string>
-    <key>female</key>
-    <string>Lindsay Price</string>
-    <key>maleImage</key>
-    <string>http://d236bkdxj385sg.cloudfront.net/wp-content/uploads/2012/11/Will-Demps.jpg</string>
-    <key>femaleImage</key>
-    <string>http://vignette2.wikia.nocookie.net/90210/images/6/60/Tide%2BDowny%2BUnveil%2BFashion%2BCare%2B-zGoWYMdnXgl.jpg/revision/latest?cb=20121219205218</string>
-  </dict>
-  <key>Mongolian</key>
-  <dict>
-    <key>male</key>
-    <string>Steven Seagal</string>
-    <key>female</key>
-    <string>Sarah Larson</string>
-    <key>maleImage</key>
-    <string>http://images2.fanpop.com/image/photos/14100000/Steve-steven-seagal-14163859-385-477.jpg</string>
-    <key>femaleImage</key>
-    <string>http://ia.media-imdb.com/images/M/MV5BNjkxMTczMjE5N15BMl5BanBnXkFtZTcwMzM2MTU2MQ@@._V1_SX640_SY720_.jpg</string>
-  </dict>
-  <key>Chinese</key>
-  <dict>
-    <key>male</key>
-    <string>Ne Yo</string>
-    <key>female</key>
-    <string>Vanessa Hudgens</string>
-    <key>maleImage</key>
-    <string>http://images.coveralia.com/autores/fotos/ne-yo46257.jpg</string>
-    <key>femaleImage</key>
-    <string>http://www.seventeen.com/cm/seventeen/images/bz/sev-vanessa-hudgens-beauty-makeover-01-2014-mdn.jpg</string>
-  </dict>
-  <key>East Asian</key>
-  <dict>
-    <key>male</key>
-    <string>Darren Criss</string>
-    <key>female</key>
-    <string>Brenda Song</string>
-    <key>maleImage</key>
-    <string>http://tvbythenumbers.zap2it.com/wp-content/uploads/2014/12/1.158028.jpg</string>
-    <key>femaleImage</key>
-    <string>http://www.hdwallpapersinn.com/wp-content/uploads/2014/09/brenda-song.jpg</string>
-  </dict>
-  <key>Native American</key>
-  <dict>
-    <key>male</key>
-    <string>Channing Tatum</string>
-    <key>female</key>
-    <string>Megan Fox</string>
-    <key>maleImage</key>
-    <string>http://act.mtv.com//wp-content/uploads/act/2014/03/channingtatum-998x1024.jpg</string>
-    <key>femaleImage</key>
-    <string>http://www.eonline.com/resize/300/300/www.eonline.com/eol_images/Entire_Site/201488/rs_300x300-140908133055-600-megan-fox-turtles-sydney.ls.98114.jpg</string>
-  </dict>
-  <key>Middle Eastern</key>
-  <dict>
-    <key>male</key>
-    <string>Wentworth Miller</string>
-    <key>female</key>
-    <string>Shakira</string>
-    <key>maleImage</key>
-    <string>http://i4.mirror.co.uk/incoming/article2204325.ece/alternates/s615b/Wentworth-Miller.jpg</string>
-    <key>femaleImage</key>
-    <string>http://assets.nydailynews.com/polopoly_fs/1.1732920!/img/httpImage/image.jpg_gen/derivatives/article_970/shakira26n-2-web.jpg</string>
-  </dict>
-  <key>North African</key>
-  <dict>
-  <key>male</key>
-    <string>Tahar Rahim</string>
-    <key>female</key>
-    <string>Moran Atias</string>
-    <key>maleImage</key>
-    <string>http://4.bp.blogspot.com/-Cfh9ivRTlAQ/UiSzauFq5zI/AAAAAAAABnQ/bECXjvuVPNo/s1600/Portrait.bmp</string>
-    <key>femaleImage</key>
-    <string>http://static.giantbomb.com/uploads/scale_small/2/22015/933501-moran_atias.jpg</string>
-  </dict>
-  <key>West African</key>
-  <dict>
-    <key>male</key>
-    <string>Usain Bolt</string>
-    <key>female</key>
-    <string>Rashida Jones</string>
-    <key>maleImage</key>
-    <string>http://www.saidaonline.com/en/newsgfx/Usain-Bolt-Laureus-Awards-saidaonline.jpg</string>
-    <key>femaleImage</key>
-    <string>http://thefilmstage.com/wp-content/uploads/2012/05/Rashida-Jones-4.jpg</string>
-  </dict>
-  <key>East African</key>
-  <dict>
-    <key>male</key>
-    <string>Marcus Samulesson</string>
-    <key>female</key>
-    <string>Liya Kebede</string>
-    <key>maleImage</key>
-    <string>http://harlemcondolife.com/wp-content/uploads/2012/06/marcus-samuelsson.jpg</string>
-    <key>femaleImage</key>
-    <string>http://static1.look-dei-vip.it/people/3/28/67/93/@/1892-liya-kebede-400x0-2.jpg</string>
-  </dict>
-  <key>Central and South African</key>
+	<key>Finnish</key>
+	<dict>
+		<key>male</key>
+		<string>Matt Damon</string>
+		<key>female</key>
+		<string>Leslie Mann</string>
+		<key>maleImage</key>
+		<string>http://www.urbansplatter.com/wp-content/uploads/2014/08/Matt_Damon_12.jpg</string>
+		<key>femaleImage</key>
+		<string>http://www.hairstylestime.com/images/leslie-mann-hairstyles/Leslie-mann0012958503.jpg</string>
+	</dict>
+	<key>Sardinian</key>
+	<dict>
+		<key>male</key>
+		<string>Christopher Meloni</string>
+		<key>female</key>
+		<string>Caterina Murino</string>
+		<key>maleImage</key>
+		<string>http://ia.media-imdb.com/images/M/MV5BMTYyODc0MTI2N15BMl5BanBnXkFtZTcwNDYwMjk3Mw@@._V1_SY317_CR9,0,214,317_AL_.jpg</string>
+		<key>femaleImage</key>
+		<string>http://madame.lefigaro.fr/sites/default/files/imagecache/image-diaporama-photo/2010/12/dia_murino1.jpg</string>
+	</dict>
+	<key>Italian</key>
+	<dict>
+		<key>male</key>
+		<string>Nick Jonas</string>
+		<key>female</key>
+		<string>Lady Gaga</string>
+		<key>maleImage</key>
+		<string>http://healthyceleb.com/wp-content/uploads/2013/12/nick-jonas.jpg</string>
+		<key>femaleImage</key>
+		<string>http://www.revolvermag.com/wp-content/uploads/2014/07/1733332987_1357190174-216x300.jpg</string>
+	</dict>
+	<key>Iberian</key>
+	<dict>
+		<key>male</key>
+		<string>James Franco</string>
+		<key>female</key>
+		<string>Katy Perry</string>
+		<key>maleImage</key>
+		<string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQR-rnQqEI2fhZ_xwuFI_bwwDgaA9de_LJ-fXYGAu1VJoYaKAPhVg</string>
+		<key>femaleImage</key>
+		<string>http://imagopolo.info/img/katy_perry/7.jpeg</string>
+	</dict>
+	<key>Balkan</key>
+	<dict>
+		<key>male</key>
+		<string>Sebastian Stan</string>
+		<key>female</key>
+		<string>Jennifer Aniston</string>
+		<key>maleImage</key>
+		<string>http://pmcmovieline.files.wordpress.com/2011/12/sebastianstan300.jpg</string>
+		<key>femaleImage</key>
+		<string>http://www.newspaper.ge/wp-content/uploads/2014/12/aniston-fit-tips_0.jpg</string>
+	</dict>
+	<key>Eastern European</key>
+	<dict>
+		<key>male</key>
+		<string>John Krasinski</string>
+		<key>female</key>
+		<string>Kristen Bell</string>
+		<key>maleImage</key>
+		<string>http://img2.timeinc.net/ew/i/2013/12/17/John-Krasinski.jpg</string>
+		<key>femaleImage</key>
+		<string>http://stardomreport.com/wp-content/uploads/2013/04/Kristen-Bell.jpg</string>
+	</dict>
+	<key>Ashkenazi</key>
+	<dict>
+		<key>male</key>
+		<string>Joseph Gordon-Levitt</string>
+		<key>female</key>
+		<string>Natalie Portman</string>
+		<key>maleImage</key>
+		<string>http://news.doddleme.com/wp-content/uploads/2013/06/premium-rush-premiere-joseph-gordon-levitt-59f62cf4a5fb1ba6.jpg</string>
+		<key>femaleImage</key>
+		<string>https://thatglimpseofme19.files.wordpress.com/2013/10/ta1.jpg</string>
+	</dict>
+	<key>Yakut</key>
+	<dict>
+		<key>male</key>
+		<string>Mehmet Oz</string>
+		<key>female</key>
+		<string>Funda Onal</string>
+		<key>maleImage</key>
+		<string>https://healthcorps.org/wp-content/uploads/2013/10/dr-oz.png</string>
+		<key>femaleImage</key>
+		<string>https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ9tfOTru5PWXzUJlkkTabul1Yy4WoTU3aBvFHh77DGdKm94JIlYQ</string>
+	</dict>
+	<key>Japanese</key>
+	<dict>
+		<key>male</key>
+		<string>Apolo Ohno</string>
+		<key>female</key>
+		<string>Carrie Ann Inaba</string>
+		<key>maleImage</key>
+		<string>http://a1.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU0NzU1NDQ0MjM5.jpg</string>
+		<key>femaleImage</key>
+		<string>http://media2.popsugar-assets.com/files/2010/12/51/2/192/1922153/79faf3b2cdbf99d7_carrie-ann-inaba.jpg</string>
+	</dict>
+	<key>Korean</key>
+	<dict>
+		<key>male</key>
+		<string>Will Demps</string>
+		<key>female</key>
+		<string>Lindsay Price</string>
+		<key>maleImage</key>
+		<string>http://d236bkdxj385sg.cloudfront.net/wp-content/uploads/2012/11/Will-Demps.jpg</string>
+		<key>femaleImage</key>
+		<string>http://vignette2.wikia.nocookie.net/90210/images/6/60/Tide%2BDowny%2BUnveil%2BFashion%2BCare%2B-zGoWYMdnXgl.jpg/revision/latest?cb=20121219205218</string>
+	</dict>
+	<key>Mongolian</key>
+	<dict>
+		<key>male</key>
+		<string>Steven Seagal</string>
+		<key>female</key>
+		<string>Sarah Larson</string>
+		<key>maleImage</key>
+		<string>http://images2.fanpop.com/image/photos/14100000/Steve-steven-seagal-14163859-385-477.jpg</string>
+		<key>femaleImage</key>
+		<string>http://ia.media-imdb.com/images/M/MV5BNjkxMTczMjE5N15BMl5BanBnXkFtZTcwMzM2MTU2MQ@@._V1_SX640_SY720_.jpg</string>
+	</dict>
+	<key>Chinese</key>
+	<dict>
+		<key>male</key>
+		<string>Ne Yo</string>
+		<key>female</key>
+		<string>Vanessa Hudgens</string>
+		<key>maleImage</key>
+		<string>http://images.coveralia.com/autores/fotos/ne-yo46257.jpg</string>
+		<key>femaleImage</key>
+		<string>http://www.seventeen.com/cm/seventeen/images/bz/sev-vanessa-hudgens-beauty-makeover-01-2014-mdn.jpg</string>
+	</dict>
+	<key>East Asian</key>
+	<dict>
+		<key>male</key>
+		<string>Darren Criss</string>
+		<key>female</key>
+		<string>Brenda Song</string>
+		<key>maleImage</key>
+		<string>http://tvbythenumbers.zap2it.com/wp-content/uploads/2014/12/1.158028.jpg</string>
+		<key>femaleImage</key>
+		<string>http://www.hdwallpapersinn.com/wp-content/uploads/2014/09/brenda-song.jpg</string>
+	</dict>
+	<key>Native American</key>
+	<dict>
+		<key>male</key>
+		<string>Channing Tatum</string>
+		<key>female</key>
+		<string>Megan Fox</string>
+		<key>maleImage</key>
+		<string>http://act.mtv.com//wp-content/uploads/act/2014/03/channingtatum-998x1024.jpg</string>
+		<key>femaleImage</key>
+		<string>http://www.eonline.com/resize/300/300/www.eonline.com/eol_images/Entire_Site/201488/rs_300x300-140908133055-600-megan-fox-turtles-sydney.ls.98114.jpg</string>
+	</dict>
+	<key>Middle Eastern</key>
+	<dict>
+		<key>male</key>
+		<string>Wentworth Miller</string>
+		<key>female</key>
+		<string>Shakira</string>
+		<key>maleImage</key>
+		<string>http://i4.mirror.co.uk/incoming/article2204325.ece/alternates/s615b/Wentworth-Miller.jpg</string>
+		<key>femaleImage</key>
+		<string>http://assets.nydailynews.com/polopoly_fs/1.1732920!/img/httpImage/image.jpg_gen/derivatives/article_970/shakira26n-2-web.jpg</string>
+	</dict>
+	<key>North African</key>
+	<dict>
+		<key>male</key>
+		<string>Tahar Rahim</string>
+		<key>female</key>
+		<string>Moran Atias</string>
+		<key>maleImage</key>
+		<string>http://4.bp.blogspot.com/-Cfh9ivRTlAQ/UiSzauFq5zI/AAAAAAAABnQ/bECXjvuVPNo/s1600/Portrait.bmp</string>
+		<key>femaleImage</key>
+		<string>http://static.giantbomb.com/uploads/scale_small/2/22015/933501-moran_atias.jpg</string>
+	</dict>
+	<key>West African</key>
+	<dict>
+		<key>male</key>
+		<string>Usain Bolt</string>
+		<key>female</key>
+		<string>Rashida Jones</string>
+		<key>maleImage</key>
+		<string>http://www.saidaonline.com/en/newsgfx/Usain-Bolt-Laureus-Awards-saidaonline.jpg</string>
+		<key>femaleImage</key>
+		<string>http://thefilmstage.com/wp-content/uploads/2012/05/Rashida-Jones-4.jpg</string>
+	</dict>
+	<key>East African</key>
+	<dict>
+		<key>male</key>
+		<string>Marcus Samulesson</string>
+		<key>female</key>
+		<string>Liya Kebede</string>
+		<key>maleImage</key>
+		<string>http://harlemcondolife.com/wp-content/uploads/2012/06/marcus-samuelsson.jpg</string>
+		<key>femaleImage</key>
+		<string>http://static1.look-dei-vip.it/people/3/28/67/93/@/1892-liya-kebede-400x0-2.jpg</string>
+	</dict>
+	<key>Central and South African</key>
+	<dict>
+		<key>male</key>
+		<string>Snoop Dogg</string>
+		<key>female</key>
+		<string>Thandie Newton</string>
+		<key>maleImage</key>
+		<string>http://oreowriter.files.wordpress.com/2012/08/snoop-dogg_5111005204050.jpg</string>
+		<key>femaleImage</key>
+		<string>http://data2.whicdn.com/images/100461748/original.png</string>
+	</dict>
+  <key>Central &amp; South African</key>
   <dict>
     <key>male</key>
     <string>Snoop Dogg</string>
@@ -244,50 +277,49 @@
     <key>femaleImage</key>
     <string>http://data2.whicdn.com/images/100461748/original.png</string>
   </dict>
-  <key>South Asian</key>
-  <dict>
-    <key>male</key>
-    <string>Zayn Malik</string>
-    <key>female</key>
-    <string>Mindy Kaling</string>
-    <key>maleImage</key>
-    <string>http://ar.cdn01.mundotkm.com/2014/07/zayn-malik-2014_1.jpg</string>
-    <key>femaleImage</key>
-    <string>http://img2.timeinc.net//ew/i/2012/09/19/mindy-project.jpg</string>
-  </dict>
-  <key>Oceanian</key>
-  <dict>
-    <key>male</key>
-    <string>Dwayne Johnson</string>
-    <key>female</key>
-    <string>Brooke Fraser</string>
-    <key>maleImage</key>
-    <string>http://images5.fanpop.com/image/photos/26500000/dwayne-the-rock-johnson-dwayne-the-rock-johnson-26510189-916-945.jpg</string>
-    <key>femaleImage</key>
-    <string>http://images5.fanpop.com/image/photos/27900000/Brooke-Fraser-brooke-fraser-27912836-1330-1344.jpg</string>
-  </dict>
-  <key>Sub-Saharan African</key>
-  <dict>
-    <key>male</key>
-    <string>Marc Lamont Hill</string>
-    <key>female</key>
-    <string>Oprah Winfrey</string>
-    <key>maleImage</key>
-    <string>http://patdollard.com/wp-content/uploads/2013/02/marc_lamont_hill_2_1028.jpg</string>
-    <key>femaleImage</key>
-    <string>http://newbesttop10.com/wp-content/uploads/2014/10/Oprah.jpeg</string>
-  </dict>
-
-  <key>Unassigned</key>
-  <dict>
-    <key>male</key>
-    <string>Superman</string>
-    <key>female</key>
-    <string>Superwoman</string>
-    <key>maleImage</key>
-    <string>http://www.scifinow.co.uk/wp-content/uploads/2014/07/Batman-V-Superman2.jpg</string>
-    <key>femaleImage</key>
-    <string>http://wallpapersinhq.com/images/medium/a-super_woman-1393458.jpg</string>
-  </dict>
+	<key>South Asian</key>
+	<dict>
+		<key>male</key>
+		<string>Zayn Malik</string>
+		<key>female</key>
+		<string>Mindy Kaling</string>
+		<key>maleImage</key>
+		<string>http://ar.cdn01.mundotkm.com/2014/07/zayn-malik-2014_1.jpg</string>
+		<key>femaleImage</key>
+		<string>http://img2.timeinc.net//ew/i/2012/09/19/mindy-project.jpg</string>
+	</dict>
+	<key>Oceanian</key>
+	<dict>
+		<key>male</key>
+		<string>Dwayne Johnson</string>
+		<key>female</key>
+		<string>Brooke Fraser</string>
+		<key>maleImage</key>
+		<string>http://images5.fanpop.com/image/photos/26500000/dwayne-the-rock-johnson-dwayne-the-rock-johnson-26510189-916-945.jpg</string>
+		<key>femaleImage</key>
+		<string>http://images5.fanpop.com/image/photos/27900000/Brooke-Fraser-brooke-fraser-27912836-1330-1344.jpg</string>
+	</dict>
+	<key>Sub-Saharan African</key>
+	<dict>
+		<key>male</key>
+		<string>Marc Lamont Hill</string>
+		<key>female</key>
+		<string>Oprah Winfrey</string>
+		<key>maleImage</key>
+		<string>http://patdollard.com/wp-content/uploads/2013/02/marc_lamont_hill_2_1028.jpg</string>
+		<key>femaleImage</key>
+		<string>http://newbesttop10.com/wp-content/uploads/2014/10/Oprah.jpeg</string>
+	</dict>
+	<key>Unassigned</key>
+	<dict>
+		<key>male</key>
+		<string>Superman</string>
+		<key>female</key>
+		<string>Superwoman</string>
+		<key>maleImage</key>
+		<string>http://www.scifinow.co.uk/wp-content/uploads/2014/07/Batman-V-Superman2.jpg</string>
+		<key>femaleImage</key>
+		<string>http://wallpapersinhq.com/images/medium/a-super_woman-1393458.jpg</string>
+	</dict>
 </dict>
 </plist>
