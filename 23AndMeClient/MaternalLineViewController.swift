@@ -36,7 +36,7 @@ class MaternalLineViewController: UIViewController, UIWebViewDelegate
           }
           NetworkController.sharedNetworkController.paternalHaplogroup = maternalHaplo
         }
-        if (self.maternalWebURL != nil)
+        if(self.maternalWebURL != nil)
         {
           let request = NSURLRequest(URL: NSURL(string: self.maternalWebURL!)!)
           self.webView.loadRequest(request)
