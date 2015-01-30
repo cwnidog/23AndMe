@@ -152,7 +152,6 @@
 				5DA907721A758CC6009D92C2 /* Controllers */,
 				5DA907521A758C7B009D92C2 /* AppDelegate.swift */,
 				5DA907AF1A75A3E1009D92C2 /* Inherited Conditions ViewController.swift */,
-				5DA9075B1A758C7C009D92C2 /* LaunchScreen.xib */,
 				4313C0ED1A785CEE0097DC7E /* Images.xcassets */,
 				5DA907501A758C7B009D92C2 /* Supporting Files */,
 			);
@@ -208,6 +207,7 @@
 				5DA907561A758C7B009D92C2 /* Main.storyboard */,
 				7915CDCE1A777ECC00597B50 /* GlobalCell.swift */,
 				4330F8081A78589000E5BA72 /* GlobalCell.xib */,
+				5DA9075B1A758C7C009D92C2 /* LaunchScreen.xib */,
 				7915CDC21A7753F800597B50 /* CelebrityView.xib */,
 			);
 			name = Views;
