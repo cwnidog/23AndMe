@@ -95,7 +95,7 @@ class NetworkController
         let code = url.query
         
         // send a POST back to 23AndMe asking for a token using the authorization code
-        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=http://localhost:5000/receive_code/&scope=basic"
+        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=http://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
         let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
         let length = bodyData!.length
         
@@ -111,7 +111,7 @@ class NetworkController
       {
         self.refreshToken = NSUserDefaults.standardUserDefaults().valueForKey(self.refreshTokenUserDefaultsKey) as? String
         // send a POST back to 23AndMe asking for a token using the refresh token
-        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(self.refreshToken!)&redirect_uri=https://localhost:5000/receive_code/&scope=basic"
+        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(self.refreshToken!)&redirect_uri=https://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
         let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
         let length = bodyData!.length
         
