@@ -62,7 +62,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
                         <imageView key="tableFooterView" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gel0" id="NSe-zV-xRb">
-                            <rect key="frame" x="0.0" y="464" width="600" height="142"/>
+                            <rect key="frame" x="0.0" y="424" width="600" height="210"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <sections>
@@ -181,16 +181,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Eu6-cP-GmM">
+                                <rect key="frame" x="290" y="290" width="37" height="37"/>
+                                <color key="color" red="0.40000000596046448" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Eu6-cP-GmM" secondAttribute="centerX" constant="-8.5" id="3x5-xL-esU"/>
                             <constraint firstItem="ZAs-j2-4nK" firstAttribute="top" secondItem="LKQ-TB-2Vh" secondAttribute="bottom" id="Lzy-JX-KgR"/>
                             <constraint firstAttribute="trailing" secondItem="LKQ-TB-2Vh" secondAttribute="trailing" id="aaP-ke-2Zt"/>
                             <constraint firstItem="LKQ-TB-2Vh" firstAttribute="top" secondItem="YFB-yH-T3M" secondAttribute="top" id="hvy-I9-d9k"/>
                             <constraint firstItem="LKQ-TB-2Vh" firstAttribute="leading" secondItem="YFB-yH-T3M" secondAttribute="leading" id="rxz-Bc-3z2"/>
+                            <constraint firstAttribute="centerY" secondItem="Eu6-cP-GmM" secondAttribute="centerY" constant="-8.5" id="vgx-yw-hat"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Eu6-cP-GmM" id="VCL-bQ-88a"/>
                         <outlet property="webView" destination="LKQ-TB-2Vh" id="Wyk-6R-uT0"/>
                     </connections>
                 </viewController>
@@ -214,9 +221,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RXm-Ts-XI9">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <color key="color" red="0.40000000596046448" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="RXm-Ts-XI9" secondAttribute="centerX" id="3BP-no-5ve"/>
+                            <constraint firstAttribute="centerY" secondItem="RXm-Ts-XI9" secondAttribute="centerY" id="BpP-MN-Ogx"/>
                             <constraint firstItem="DLP-p4-JhZ" firstAttribute="top" secondItem="Zus-hs-an4" secondAttribute="top" id="Z9H-Xm-a8L"/>
                             <constraint firstItem="DLP-p4-JhZ" firstAttribute="bottom" secondItem="ljr-w9-tDY" secondAttribute="top" id="k6C-Lh-zsk"/>
                             <constraint firstItem="DLP-p4-JhZ" firstAttribute="leading" secondItem="Zus-hs-an4" secondAttribute="leading" id="nf8-r3-6Nd"/>
@@ -224,6 +237,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="RXm-Ts-XI9" id="FiL-6V-dq1"/>
                         <outlet property="webView" destination="DLP-p4-JhZ" id="zNX-AU-Ihk"/>
                     </connections>
                 </viewController>
