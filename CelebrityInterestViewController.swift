@@ -12,7 +12,7 @@ class CelebrityInterestViewController: UIViewController {
   
   var country : Country!
   
-  // var celeb : Celebrity!
+  var countryHeadlineLabel : String?
   
   var maleName : String?
   var femaleName : String?
@@ -37,9 +37,12 @@ class CelebrityInterestViewController: UIViewController {
       let celebDictionary = NSDictionary(contentsOfFile: path!) // creates the dictionary out of the plist
       
       // loop through each country dictionary
+      
+      self.countryDescriptionLabel.text = "Celebrities with \(country.country) Ancestory"
 
       let countryDictionary = celebDictionary![country.country] as [String : AnyObject]
       self.celebrityMaleLabel.text = countryDictionary["male"] as? String
+      self.celebrityFemaleLabel.text = countryDictionary["female"] as? String
   }
     
 //      var maleName = celebDictionary?.valueForKey("male") as? String
