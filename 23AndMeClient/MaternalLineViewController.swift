@@ -24,38 +24,34 @@ class MaternalLineViewController: UIViewController, UIWebViewDelegate
   
   override func viewDidAppear(animated: Bool)
   {
-    if(self.maternalWebURL != nil)
-    {
-      println(self.maternalWebURL)
-      let request = NSURLRequest(URL: NSURL(string: maternalWebURL!)!)
-      self.webView.loadRequest(request)
-    } else {
-      if (NetworkController.sharedNetworkController.maternalHaplogroup == nil)
-      { // fetch info
-        NetworkController.sharedNetworkController.fetchUserHaplogroup( { (maternalHaplo, paternalHaplo, errorString) -> (Void) in
-          if(errorString == nil)
+    if (NetworkController.sharedNetworkController.maternalHaplogroup == nil)
+    { // fetch info
+      NetworkController.sharedNetworkController.fetchUserHaplogroup( { (maternalHaplo, paternalHaplo, errorString) -> (Void) in
+        if(errorString == nil)
+        {
+          println("paternalHaplo = \(maternalHaplo)")
+          if(maternalHaplo != nil)
           {
-            println("paternalHaplo = \(maternalHaplo)")
-            if(maternalHaplo != nil)
-            {
-              self.maternalWebURL = "https://www.23andme.com/you/haplogroup/maternal/?viewgroup=\(maternalHaplo!)&tab=story"
-              NetworkController.sharedNetworkController.maternalHaplogroup = maternalHaplo
-            }
-            NetworkController.sharedNetworkController.paternalHaplogroup = maternalHaplo
+            self.maternalWebURL = "https://www.23andme.com/you/haplogroup/maternal/?viewgroup=\(maternalHaplo!)&tab=story"
+            NetworkController.sharedNetworkController.maternalHaplogroup = maternalHaplo
           }
-          let request = NSURLRequest(URL: NSURL(string: self.maternalWebURL!)!)
-          self.webView.loadRequest(request)
-          self.webView.reload()
-        })
-      } else { // this will fire when the webView has been loaded previously.
-        let maternal = NetworkController.sharedNetworkController.maternalHaplogroup
-        self.maternalWebURL = "https://www.23andme.com/you/haplogroup/maternal/?viewgroup=\(maternal!)&tab=story"
+          NetworkController.sharedNetworkController.paternalHaplogroup = maternalHaplo
+        }
         let request = NSURLRequest(URL: NSURL(string: self.maternalWebURL!)!)
         self.webView.loadRequest(request)
         self.webView.reload()
-      }
+        println("in first else")
+        })
+    } else { // this will fire when the webView has been loaded previously.
+      let maternal = NetworkController.sharedNetworkController.maternalHaplogroup
+      self.maternalWebURL = "https://www.23andme.com/you/haplogroup/maternal/?viewgroup=\(maternal!)&tab=story"
+      let request = NSURLRequest(URL: NSURL(string: self.maternalWebURL!)!)
+      self.webView.loadRequest(request)
+      self.webView.reload()
+      println("in last else")
     }
   }
+  
 
   override func didReceiveMemoryWarning()
   {
