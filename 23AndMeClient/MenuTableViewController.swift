@@ -45,6 +45,11 @@ class MenuTableViewController: UITableViewController {
       self.presentViewController(webVC, animated: true, completion: { () -> Void in
       }) // enclosure
     } // if accessToken == nil
+    // we need to get the profile IDs
+      NetworkController.sharedNetworkController.fetchProfileID((), callback: { (profiles, userID, errorDescription) -> (Void) in
+        NetworkController.sharedNetworkController.profiles = profiles!
+        NetworkController.sharedNetworkController.userID = userID!
+      }) // fetchProfileID enclosure
   } //viewDidAppear()
   
   
