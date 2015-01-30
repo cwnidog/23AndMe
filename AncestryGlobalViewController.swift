@@ -8,30 +8,25 @@
 
 import UIKit
 
-class AncestryGlobalViewController: UIViewController, UITableViewDataSource
+class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-  var netController : NetworkController!
   
   @IBOutlet weak var tableView: UITableView!
   
   var global = [Regions]()
-  
-  //this is just the default value for testing
-  let profileID = "SP1_FATHER_V4"
 
   override func viewDidLoad()
   {
     super.viewDidLoad()
     
-    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-    
     // initiate variables
     self.tableView.dataSource = self
+    self.tableView.delegate   = self
     self.tableView.registerNib(UINib(nibName: "GlobalCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "GLOBAL_CELL")
-    
+    self.tableView.backgroundColor = UIColor.grayColor()
     
     //TODO: need to pass userID here, or store it in netController
-    NetworkController.sharedNetworkController.fetchAncestryComposition(self.profileID, callback: { (region, errorString) -> (Void) in
+    NetworkController.sharedNetworkController.fetchAncestryComposition({ (region, errorString) -> (Void) in
       if(errorString == nil)
       {
         self.global = region!
@@ -56,24 +51,17 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
     
     cell.globalLabel.text = currentRegion.region
     //this method will convert the proportion(a Float) to a string
-    cell.globalProportion.text = currentRegion.convertFloatToString(currentRegion.proportion)
+    cell.globalProportion.text = currentRegion.convertFloatToString(currentRegion.proportion) + "%"
     
     //quick & sloppy randomization of the images
-    if(indexPath.row % 2 == 0)
-    {
-       cell.countryImage.image = UIImage(named: "oceania0.jpeg")
-    } else if(indexPath.row % 3 == 0)
-    {
-       cell.countryImage.image = UIImage(named: "europe0.jpeg")
-    } else {
-       cell.countryImage.image = UIImage(named: "southAsia0.jpeg")
-    }
   
-    //little bit o'razzle dazzle
+    cell.countryImage.image = UIImage(named: "background\(indexPath.row)")
+    
+    //cell load animation - grows from center of cell row
     cell.alpha     = 0.0
     cell.transform = CGAffineTransformMakeScale(0.1, 0.5) // alertView.transforms initial value
     
-    UIView.animateWithDuration(0.4, delay: 0.2, options: nil, animations: { () -> Void in
+    UIView.animateWithDuration(0.3, delay: 0.1, options: nil, animations: { () -> Void in
       cell.alpha     = 0.75
       cell.transform = CGAffineTransformMakeScale(1.0, 1.0)
       }) { (finished) -> Void in
@@ -84,19 +72,40 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource
   }
   
   // function to let you tap the cell and go to the subRegion page
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    println("Did select item") }
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+  {
+    let regionToSubRegion = self.global[indexPath.row]
     
-    // custom segue to go to the next page
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      if segue.identifier == "SHOW_SUBREGIONAL" {
-        let destinationVC = segue.destinationViewController as AncestryRegionalViewController
-        // let selectedIndexPath = self.tableView[indexPath.row] as NSIndexPath  // <- not sure what the first does
-        let selectedIndexPath = self.tableView.indexPathForSelectedRow()! as NSIndexPath
-        destinationVC.region = self.global[selectedIndexPath.row]
-      }
+    if (regionToSubRegion.subRegions == nil) //this will skip to the celebrityVC if subRegions is epmpty
+    {
+      let toVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as CelebrityInterestViewController
+      
+      toVC.Region = regionToSubRegion
+      
+      self.navigationController?.pushViewController(toVC, animated: true)
+    } else {
+      
+      let toVC = storyboard?.instantiateViewControllerWithIdentifier("REGIONAL_VC") as AncestryRegionalViewController
+      
+      toVC.region = regionToSubRegion
+      
+      self.navigationController?.pushViewController(toVC, animated: true)
     }
+  }
+  
+    
+  
 
+
+/* custom segue to go to the next page
+override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  if segue.identifier == "SHOW_SUBREGIONAL" {
+    let destinationVC = segue.destinationViewController as AncestryRegionalViewController
+    // let selectedIndexPath = self.tableView[indexPath.row] as NSIndexPath  // <- not sure what the first does
+    let selectedIndexPath = self.tableView.indexPathForSelectedRow()! as NSIndexPath
+    destinationVC.region = self.global[selectedIndexPath.row]
+  }
+*/
 
 //    // Instantiates the view controller with the specified identifier (the detailed page)
 //    let globalVC = self.storyboard?.instantiateViewControllerWithIdentifier("GLOBAL_VC") as AncestryGlobalViewController

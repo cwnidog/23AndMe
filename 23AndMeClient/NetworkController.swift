@@ -57,7 +57,7 @@ class NetworkController
     // if we have a stored access token, that is less than a day old, use it
     if let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(self.accessTokenUserDefaultsKey) as? String
     {
-      self.accessToken = accessToken
+      //self.accessToken = accessToken
       let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(tokenStoredDateDefaultKey) as? NSDate
       self.tokenType = NSUserDefaults.standardUserDefaults().valueForKey(tokenTypeDefaultKey) as? String
       
@@ -167,10 +167,10 @@ class NetworkController
     dataTask.resume()
   } // handleCallbackURL()
   
-  func fetchAncestryComposition(profileID: String?, callback:(region:[Regions]?, errorString: String?) -> (Void))
+  //MARK: fetchAncestryComposition
+  func fetchAncestryComposition(callback:(region:[Regions]?, errorString: String?) -> (Void))
   {
-    let url = NSURL(string: "https://api.23andme.com/1/demo/ancestry/\(profileID!)/?threshold=0.9") //TODO: this is probably wrong!!
-    println(url)
+    let url = NSURL(string: "https://api.23andme.com/1/ancestry/\(self.profiles[0].profileID)/?threshold=0.51") //0.51 = speculative = more results
     let requestedURL = NSMutableURLRequest(URL: url!)
     requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
@@ -185,7 +185,7 @@ class NetworkController
             var error:NSError?
             if let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as? [String:AnyObject]
             {
-              //println(jsonData)
+             //println(jsonData)
              if (error == nil)
              {
               var regions = [Regions]()
@@ -217,11 +217,12 @@ class NetworkController
     dataTask.resume()
   } // fetchAncestryComposition()
   
+  
   //MARK: fetchProfileID
   func fetchProfileID((), callback : ([UserProfile]?, String?, String?) -> (Void))
   {
     // set up the request
-    let url = NSURL(string: "https://api.23andme.com/1/demo/user/")
+    let url = NSURL(string: "https://api.23andme.com/1/user/")
     let request = NSMutableURLRequest(URL: url!)
     request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
     
@@ -243,6 +244,7 @@ class NetworkController
                 for item in profilesArray
                 {
                   let profile = UserProfile(jsonDictionary: item)
+                  println(profile)
                   self.profiles.append(profile)
                 } // for item
                 
@@ -279,11 +281,12 @@ class NetworkController
   
   /*  MARK: fetchUserHaplogroup  -  this method will return a paternal(if available) and maternal  **
   **  haplogroup as 2 strings - these strings will be stored for future use using NSUserDefaults   */
-  func fetchUserHaplogroup(profileID:String?, callback:(maternalHaplo:String?, paternalHaplo:String?, errorString: String?) -> (Void))
+  func fetchUserHaplogroup(callback:(maternalHaplo:String?, paternalHaplo:String?, errorString: String?) -> (Void))
   {
-    let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(profileID!)")
+    let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(self.profiles[0].profileID)/")
     let requestedURL = NSMutableURLRequest(URL: url!)
-    requestedURL.setValue("\(self.tokenType) \(self.accessToken)", forHTTPHeaderField: "Authorization")
+    requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
+    
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
       if(error == nil)
       {
@@ -294,19 +297,18 @@ class NetworkController
         {
           if(error == nil)
           {
-            println(jsonData)
+            println("jsonData = \(jsonData)")
             for dictionary in jsonData
             {
               if let maternal = jsonData["maternal"] as? String
               {
                 maternalHaplo = maternal
-                println(maternalHaplo)
               } else if let paternal = jsonData["paternal"] as? String
               {
-                println(paternalHaplo)
                 paternalHaplo = paternal
               }
             }
+            println("maternal = \(maternalHaplo) - paternal = \(paternalHaplo)")
           }
           NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
             callback(maternalHaplo:maternalHaplo, paternalHaplo:paternalHaplo, errorString: nil)
@@ -322,7 +324,7 @@ class NetworkController
   func fetchNeanderthal((), callback : ([String : AnyObject], String?) -> (Void))
   {
     println("Access token = \(self.accessToken)")
-    let url = NSURL(string: "https://api.23andme.com/1/demo/neanderthal/SP1_FATHER_V4/")
+    let url = NSURL(string: "https://api.23andme.com/1/neanderthal/\(self.profiles[0].profileID)/")
     
     let request = NSMutableURLRequest(URL: url!)
     request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
