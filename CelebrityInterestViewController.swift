@@ -40,11 +40,14 @@ class CelebrityInterestViewController: UIViewController {
       let celebDictionary = NSDictionary(contentsOfFile: path!) // creates the dictionary out of the plist
       
       // loop through each country dictionary
-/*
-      let countryDictionary = celebDictionary![country.country] as? [String : AnyObject]
+      /*
+      self.countryDescriptionLabel.text = "Celebrities with \(country.country) Ancestory"
+
+      let countryDictionary = celebDictionary![country.country] as [String : AnyObject]
       self.celebrityMaleLabel.text = countryDictionary["male"] as? String
+      self.celebrityFemaleLabel.text = countryDictionary["female"] as? String
 */
-}
+  }
     
 //      var maleName = celebDictionary?.valueForKey("male") as? String
 //      var femaleName = celebDictionary?.valueForKey("female") as? String
