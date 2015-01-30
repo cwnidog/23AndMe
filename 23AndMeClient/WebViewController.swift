@@ -40,10 +40,10 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     if navigationAction.request.URL.description.rangeOfString("code=") != nil {
       NetworkController.sharedNetworkController.handleCallbackURL(navigationAction.request.URL, completionHandler: { () -> () in
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
-         /*   NetworkController.sharedNetworkController.fetchProfileID((), callback: { (profiles, userID, errorDescription) -> (Void) in
+         NetworkController.sharedNetworkController.fetchProfileID((), callback: { (profiles, userID, errorDescription) -> (Void) in
               NetworkController.sharedNetworkController.profiles = profiles!
               NetworkController.sharedNetworkController.userID = userID!
-            }) // fetchProfileID enclosure */
+            }) // fetchProfileID enclosure
         }) // dismissViewControllerAnimated enclosure
       }) // handleCallbackURL enclosure
     } // if navigationAction
