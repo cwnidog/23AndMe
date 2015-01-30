@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,11 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GlobalRegion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Usi-Aj-B0U" userLabel="GlobalRegion">
-                        <rect key="frame" x="10" y="10" width="285" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="285" id="5S8-qy-Ljf"/>
-                            <constraint firstAttribute="height" constant="35" id="wFE-eI-D26"/>
-                        </constraints>
+                        <rect key="frame" x="10" y="10" width="100" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -29,11 +25,7 @@
                         <size key="shadowOffset" width="1" height="1"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWW-Sq-GIR">
-                        <rect key="frame" x="100" y="50" width="100" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="100" id="AKi-pS-xnT"/>
-                            <constraint firstAttribute="height" constant="40" id="DmW-im-A7p"/>
-                        </constraints>
+                        <rect key="frame" x="106" y="49" width="89" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -42,15 +34,14 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="tWW-Sq-GIR" firstAttribute="top" secondItem="Usi-Aj-B0U" secondAttribute="bottom" constant="5" id="11A-vw-wyQ"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="05y-gd-mhI" secondAttribute="bottom" constant="-9" id="I6g-QO-rQr"/>
-                    <constraint firstItem="05y-gd-mhI" firstAttribute="leading" secondItem="F8e-zW-mjZ" secondAttribute="leading" id="JJ3-Ho-wy2"/>
-                    <constraint firstItem="05y-gd-mhI" firstAttribute="top" secondItem="F8e-zW-mjZ" secondAttribute="top" id="Xur-3h-HcI"/>
-                    <constraint firstItem="tWW-Sq-GIR" firstAttribute="leading" secondItem="F8e-zW-mjZ" secondAttribute="leadingMargin" constant="92" id="a6u-Lh-fz2"/>
-                    <constraint firstItem="Usi-Aj-B0U" firstAttribute="leading" secondItem="F8e-zW-mjZ" secondAttribute="leadingMargin" constant="2" id="fBr-OA-TDR"/>
-                    <constraint firstItem="Usi-Aj-B0U" firstAttribute="top" secondItem="F8e-zW-mjZ" secondAttribute="topMargin" constant="2" id="oeY-UH-uQt"/>
-                    <constraint firstAttribute="trailing" secondItem="05y-gd-mhI" secondAttribute="trailing" id="qrC-d3-fUt"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="tWW-Sq-GIR" secondAttribute="bottom" constant="1" id="vHt-L1-rbT"/>
+                    <constraint firstAttribute="trailing" secondItem="05y-gd-mhI" secondAttribute="trailing" id="7Pc-ow-U7e"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="05y-gd-mhI" secondAttribute="bottom" constant="-9" id="BCN-cB-OPL"/>
+                    <constraint firstItem="05y-gd-mhI" firstAttribute="leading" secondItem="F8e-zW-mjZ" secondAttribute="leading" id="D1f-0T-dOT"/>
+                    <constraint firstAttribute="centerX" secondItem="tWW-Sq-GIR" secondAttribute="centerX" constant="-0.5" id="Deh-T8-gQa"/>
+                    <constraint firstItem="05y-gd-mhI" firstAttribute="top" secondItem="F8e-zW-mjZ" secondAttribute="top" id="RwT-AU-4gr"/>
+                    <constraint firstItem="tWW-Sq-GIR" firstAttribute="top" secondItem="Usi-Aj-B0U" secondAttribute="bottom" constant="18" id="VmZ-jg-s5s"/>
+                    <constraint firstItem="Usi-Aj-B0U" firstAttribute="leading" secondItem="F8e-zW-mjZ" secondAttribute="leadingMargin" constant="2" id="kTQ-Ag-Onw"/>
+                    <constraint firstItem="Usi-Aj-B0U" firstAttribute="top" secondItem="F8e-zW-mjZ" secondAttribute="topMargin" constant="2" id="u08-wU-bXF"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

@@ -27,7 +27,6 @@ class PaternalLineViewController: UIViewController, UIWebViewDelegate
       NetworkController.sharedNetworkController.fetchUserHaplogroup( { (maternalHaplo, paternalHaplo, errorString) -> (Void) in
         if(errorString == nil)
         {
-          println("paternalHaplo = \(paternalHaplo)")
           if(paternalHaplo != nil)
           {
             self.paternalWebURL = "https://www.23andme.com/you/haplogroup/paternal/?viewgroup=\(paternalHaplo!)&tab=story"
@@ -37,9 +36,12 @@ class PaternalLineViewController: UIViewController, UIWebViewDelegate
           }
           NetworkController.sharedNetworkController.maternalHaplogroup = maternalHaplo
         }
-        let request = NSURLRequest(URL: NSURL(string: self.paternalWebURL!)!)
-        self.webView.loadRequest(request)
-        self.webView.reload()
+        if (self.paternalWebURL != nil)
+        {
+          let request = NSURLRequest(URL: NSURL(string: self.paternalWebURL!)!)
+          self.webView.loadRequest(request)
+          self.webView.reload()
+        }
       })
     } else { // this will fire when the webView has been loaded previously.
       let paternal = NetworkController.sharedNetworkController.paternalHaplogroup

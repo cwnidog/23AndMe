@@ -10,11 +10,12 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
   
+
+  @IBOutlet weak var accentImage: UIImageView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    
-    
+    self.accentImage.image = UIImage(named: "gel0.jpg")
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = false
     
@@ -44,6 +45,11 @@ class MenuTableViewController: UITableViewController {
       self.presentViewController(webVC, animated: true, completion: { () -> Void in
       }) // enclosure
     } // if accessToken == nil
+    // we need to get the profile IDs
+      NetworkController.sharedNetworkController.fetchProfileID((), callback: { (profiles, userID, errorDescription) -> (Void) in
+        NetworkController.sharedNetworkController.profiles = profiles!
+        NetworkController.sharedNetworkController.userID = userID!
+      }) // fetchProfileID enclosure
   } //viewDidAppear()
   
   
