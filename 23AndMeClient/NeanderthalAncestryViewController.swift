@@ -25,6 +25,9 @@ class NeanderthalAncestryViewController: UIViewController {
         // display the data
         self.NeanderthalImage.image = self.neanderthalImage
         self.percentageNeanderthalLabel.text = neanderthal.proportion
+        self.NeanderthalImage.layer.cornerRadius = 10.0
+        self.NeanderthalImage.clipsToBounds = true
+
       }) // callback enclosure
     } // viewDidLoad()
 
