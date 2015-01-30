@@ -242,7 +242,6 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-Oa-xRR">
                                 <rect key="frame" x="225" y="114" width="150" height="200"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="EFX-6g-Isz"/>
                                     <constraint firstAttribute="width" constant="150" id="MEs-dC-gwT"/>
@@ -262,7 +261,6 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lmd-BV-4ZW">
                                 <rect key="frame" x="225" y="351" width="150" height="200"/>
-                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lmd-BV-4ZW" secondAttribute="height" multiplier="1:1" id="4Sq-fi-jrb"/>
                                     <constraint firstAttribute="width" constant="150" id="DFw-dj-Vap"/>
@@ -409,7 +407,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aT3-s6-yb5">
                                 <rect key="frame" x="16" y="72" width="568" height="240"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aT3-s6-yb5" secondAttribute="height" id="SOJ-6f-nmI"/>
                                 </constraints>

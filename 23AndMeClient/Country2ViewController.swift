@@ -71,6 +71,9 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
     
     let toCelebrityVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as CelebrityInterestViewController
     
+    println("Country2View:")
+    println(countryToCelbrity.country)
+    
     toCelebrityVC.country = countryToCelbrity
     
     self.navigationController?.pushViewController(toCelebrityVC, animated: true)

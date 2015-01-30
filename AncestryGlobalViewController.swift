@@ -80,7 +80,7 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
     {
       let toVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as CelebrityInterestViewController
       
-      toVC.Region = regionToSubRegion
+      toVC.region = regionToSubRegion
       
       self.navigationController?.pushViewController(toVC, animated: true)
     } else {
