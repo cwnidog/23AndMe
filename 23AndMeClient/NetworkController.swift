@@ -57,7 +57,8 @@ class NetworkController
     // if we have a stored access token, that is less than a day old, use it
     if let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(self.accessTokenUserDefaultsKey) as? String
     {
-      //self.accessToken = accessToken
+      self.accessToken = accessToken // set access token, which may be timed out
+
       let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(tokenStoredDateDefaultKey) as? NSDate
       self.tokenType = NSUserDefaults.standardUserDefaults().valueForKey(tokenTypeDefaultKey) as? String
       
@@ -73,13 +74,13 @@ class NetworkController
       
       if components.hour > 23 // token timed out, need a new one
       {
+        println("Timed out, will request new token")
         if let refreshToken = NSUserDefaults.standardUserDefaults().valueForKey(refreshTokenUserDefaultsKey) as? String
         {
           self.needRefresh = true // signal we need to refresh the access token
         } // if let refreshToken
       } // if components
-    }
-    // if let accessToken
+   } // if let accessToken
   } // init ()
   
   // MARK: handleCallbackURL
@@ -87,15 +88,15 @@ class NetworkController
   {
     var postRequest : NSMutableURLRequest!
     
-    println("Access token: \(self.accessToken)")
-    println("Refresh token: \(self.refreshToken)")
+    //println("Access token: \(self.accessToken)")
+    //println("Refresh token: \(self.refreshToken)")
     
       if self.accessToken == nil // need to ask for an initial token
       {
         let code = url.query
         
         // send a POST back to 23AndMe asking for a token using the authorization code
-        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=http://localhost:5000/receive_code/&scope=basic"
+        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=http://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
         let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
         let length = bodyData!.length
         
@@ -111,7 +112,7 @@ class NetworkController
       {
         self.refreshToken = NSUserDefaults.standardUserDefaults().valueForKey(self.refreshTokenUserDefaultsKey) as? String
         // send a POST back to 23AndMe asking for a token using the refresh token
-        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(self.refreshToken!)&redirect_uri=https://localhost:5000/receive_code/&scope=basic"
+        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(self.refreshToken!)&redirect_uri=https://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
         let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
         let length = bodyData!.length
         
@@ -244,7 +245,7 @@ class NetworkController
                 for item in profilesArray
                 {
                   let profile = UserProfile(jsonDictionary: item)
-                  println(profile)
+                  //println(profile)
                   self.profiles.append(profile)
                 } // for item
                 
@@ -260,8 +261,6 @@ class NetworkController
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
               println(jsonDictionary)
             }
-            
-            
           case 500 ... 599:
             println("Got response saying error at server end with status code: \(httpResponse.statusCode)")
             
@@ -286,7 +285,6 @@ class NetworkController
     let url = NSURL(string: "https://api.23andme.com/1/demo/haplogroups/SP1_FATHER_V4/")
     let requestedURL = NSMutableURLRequest(URL: url!)
     requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
-    
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
       if(error == nil)
       {
@@ -297,18 +295,18 @@ class NetworkController
         {
           if(error == nil)
           {
-            println("jsonData = \(jsonData)")
-            for dictionary in jsonData
+            //println("jsonData = \(jsonData)")
+            if let paternal = jsonData["paternal"] as? String
             {
-              if let maternal = jsonData["maternal"] as? String
+              paternalHaplo = paternal
+              for dictoionary in jsonData
               {
-                maternalHaplo = maternal
-              } else if let paternal = jsonData["paternal"] as? String
-              {
-                paternalHaplo = paternal
+                if let maternal = jsonData["maternal"] as? String
+                {
+                  maternalHaplo = maternal
+                }
               }
             }
-            println("maternal = \(maternalHaplo) - paternal = \(paternalHaplo)")
           }
           NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
             callback(maternalHaplo:maternalHaplo, paternalHaplo:paternalHaplo, errorString: nil)
@@ -323,13 +321,13 @@ class NetworkController
   // MARK: fetchNeanderthal()
   func fetchNeanderthal((), callback : ([String : AnyObject], String?) -> (Void))
   {
-    println("Access token = \(self.accessToken)")
+    //println("Access token = \(self.accessToken)")
     let url = NSURL(string: "https://api.23andme.com/1/demo/neanderthal/SP1_FATHER_V4/")
     
     let request = NSMutableURLRequest(URL: url!)
     request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
     
-    println(request.allHTTPHeaderFields)
+    //println(request.allHTTPHeaderFields)
     
     let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
       if error == nil {

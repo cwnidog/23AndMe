@@ -14,10 +14,14 @@ class PaternalLineViewController: UIViewController, UIWebViewDelegate
   @IBOutlet weak var webView  : UIWebView!
   
   var paternalWebURL : String?
-  
-  override func loadView() {
-    super.loadView()
-    self.webView.delegate = self
+
+  override func viewDidLoad()
+  {
+    super.viewDidLoad()
+  }
+
+  override func viewDidAppear(animated: Bool)
+  {
     if (NetworkController.sharedNetworkController.paternalHaplogroup == nil)
     { // fetch info
       NetworkController.sharedNetworkController.fetchUserHaplogroup( { (maternalHaplo, paternalHaplo, errorString) -> (Void) in
@@ -28,34 +32,22 @@ class PaternalLineViewController: UIViewController, UIWebViewDelegate
           {
             self.paternalWebURL = "https://www.23andme.com/you/haplogroup/paternal/?viewgroup=\(paternalHaplo!)&tab=story"
             NetworkController.sharedNetworkController.paternalHaplogroup = paternalHaplo
-            let request = NSURLRequest(URL: NSURL(string: self.paternalWebURL!)!)
-            self.webView.loadRequest(request)
           } else {
             println("no paternal haplogroup listed, profile is of a female")
           }
           NetworkController.sharedNetworkController.maternalHaplogroup = maternalHaplo
-        } 
+        }
+        let request = NSURLRequest(URL: NSURL(string: self.paternalWebURL!)!)
+        self.webView.loadRequest(request)
+        self.webView.reload()
       })
+    } else { // this will fire when the webView has been loaded previously.
+      let paternal = NetworkController.sharedNetworkController.paternalHaplogroup
+      self.paternalWebURL = "https://www.23andme.com/you/haplogroup/paternal/?viewgroup=\(paternal!)&tab=story"
+      let request = NSURLRequest(URL: NSURL(string: self.paternalWebURL!)!)
+      self.webView.loadRequest(request)
+      self.webView.reload()
     }
-  }
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    println(self.paternalWebURL)
-    
-    self.webView.reload()
-    //self.webView.delegate = self
-     /*
-    if(self.paternalWebURL != nil)
-    {
-      let request = NSURLRequest(URL: NSURL(string: paternalWebURL!)!)
-      self.webView.loadRequest(request)
-    } else {  // go to reddit!
-      let url     = NSURL(string: "http://www.reddit.com")
-      let request = NSURLRequest(URL: url!)
-      self.webView.loadRequest(request)
-    }*/
   }
 
   
