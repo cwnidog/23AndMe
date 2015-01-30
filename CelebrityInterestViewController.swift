@@ -15,7 +15,7 @@ class CelebrityInterestViewController: UIViewController {
   var subRegion : SubRegion?
   var country   : Country?
   
-  // var celeb : Celebrity!
+  var countryHeadlineLabel : String?
   
   var maleName : String?
   var femaleName : String?
