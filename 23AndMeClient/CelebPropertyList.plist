@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>French &amp; German</key>
+	<key>French and German</key>
 	<dict>
 		<key>male</key>
 		<string>Jean-Luc Bilodeau</string>
@@ -24,7 +24,7 @@
 		<key>femaleImage</key>
 		<string>http://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/v2_article_large/public/2014/10/21/renee-zellweger-2004.jpg?itok=g40rYpV2</string>
 	</dict>
-  <key>British &amp; Irish</key>
+  <key>British and Irish</key>
   <dict>
     <key>male</key>
     <string>Brad Pitt</string>
@@ -44,7 +44,7 @@
     <key>maleImage</key>
     <string>http://www.urbansplatter.com/wp-content/uploads/2014/08/Matt_Damon_12.jpg</string>
     <key>femaleImage</key>
-    <string>http://www2.pictures.zimbio.com/bg/Rio+Premiere+7i2Ol3Ju7ZPx.jpg</string>
+    <string>http://www.hairstylestime.com/images/leslie-mann-hairstyles/Leslie-mann0012958503.jpg</string>
   </dict>
   <key>Sardinian</key>
   <dict>
@@ -55,7 +55,7 @@
     <key>maleImage</key>
     <string>http://ia.media-imdb.com/images/M/MV5BMTYyODc0MTI2N15BMl5BanBnXkFtZTcwNDYwMjk3Mw@@._V1_SY317_CR9,0,214,317_AL_.jpg</string>
     <key>femaleImage</key>
-    <string>http://hd.wallpaperswide.com/thumbs/caterina_murino_2011-t2.jpg</string>
+    <string>http://madame.lefigaro.fr/sites/default/files/imagecache/image-diaporama-photo/2010/12/dia_murino1.jpg</string>
   </dict>
   <key>Italian</key>
   <dict>
@@ -167,7 +167,7 @@
     <key>femaleImage</key>
     <string>http://www.seventeen.com/cm/seventeen/images/bz/sev-vanessa-hudgens-beauty-makeover-01-2014-mdn.jpg</string>
   </dict>
-  <key>Southeast Asian</key>
+  <key>East Asian</key>
   <dict>
     <key>male</key>
     <string>Darren Criss</string>
@@ -176,7 +176,7 @@
     <key>maleImage</key>
     <string>http://tvbythenumbers.zap2it.com/wp-content/uploads/2014/12/1.158028.jpg</string>
     <key>femaleImage</key>
-    <string>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTiNF2MlcrwfM691kpR4sswR_ug3gSf6LqM3bBlXMJdjhV-eQbd</string>
+    <string>http://www.hdwallpapersinn.com/wp-content/uploads/2014/09/brenda-song.jpg</string>
   </dict>
   <key>Native American</key>
   <dict>
@@ -187,7 +187,7 @@
     <key>maleImage</key>
     <string>http://act.mtv.com//wp-content/uploads/act/2014/03/channingtatum-998x1024.jpg</string>
     <key>femaleImage</key>
-    <string>http://upload.wikimedia.org/wikipedia/commons/b/b9/Megan_Fox_Jennifers_Body_TIFF09_(cropped).jpg</string>
+    <string>http://www.eonline.com/resize/300/300/www.eonline.com/eol_images/Entire_Site/201488/rs_300x300-140908133055-600-megan-fox-turtles-sydney.ls.98114.jpg</string>
   </dict>
   <key>Middle Eastern</key>
   <dict>
@@ -196,7 +196,7 @@
     <key>female</key>
     <string>Shakira</string>
     <key>maleImage</key>
-    <string>http://imstars.aufeminin.com/stars/fan/wentworth-miller/wentworth-miller-20060806-150568.jpg</string>
+    <string>http://i4.mirror.co.uk/incoming/article2204325.ece/alternates/s615b/Wentworth-Miller.jpg</string>
     <key>femaleImage</key>
     <string>http://assets.nydailynews.com/polopoly_fs/1.1732920!/img/httpImage/image.jpg_gen/derivatives/article_970/shakira26n-2-web.jpg</string>
   </dict>
@@ -233,7 +233,7 @@
     <key>femaleImage</key>
     <string>http://static1.look-dei-vip.it/people/3/28/67/93/@/1892-liya-kebede-400x0-2.jpg</string>
   </dict>
-  <key>Central &amp; South African</key>
+  <key>Central and South African</key>
   <dict>
     <key>male</key>
     <string>Snoop Dogg</string>
@@ -253,7 +253,7 @@
     <key>maleImage</key>
     <string>http://ar.cdn01.mundotkm.com/2014/07/zayn-malik-2014_1.jpg</string>
     <key>femaleImage</key>
-    <string>http://assets.rollingstone.com/assets/images/story/mindy-kaling-on-the-mindy-project-grueling-vacations-and-weird-smoothies-20121018/20121017-mindy-kaling-picture-x306-1350507689.jpg</string>
+    <string>http://img2.timeinc.net//ew/i/2012/09/19/mindy-project.jpg</string>
   </dict>
   <key>Oceanian</key>
   <dict>
@@ -262,10 +262,22 @@
     <key>female</key>
     <string>Brooke Fraser</string>
     <key>maleImage</key>
-    <string>http://cdn.collider.com/wp-content/uploads/dwayne__the_rock__johnson__1_.jpg</string>
+    <string>http://images5.fanpop.com/image/photos/26500000/dwayne-the-rock-johnson-dwayne-the-rock-johnson-26510189-916-945.jpg</string>
     <key>femaleImage</key>
     <string>http://images5.fanpop.com/image/photos/27900000/Brooke-Fraser-brooke-fraser-27912836-1330-1344.jpg</string>
   </dict>
+  <key>Sub-Saharan African</key>
+  <dict>
+    <key>male</key>
+    <string>Marc Lamont Hill</string>
+    <key>female</key>
+    <string>Oprah Winfrey</string>
+    <key>maleImage</key>
+    <string>http://patdollard.com/wp-content/uploads/2013/02/marc_lamont_hill_2_1028.jpg</string>
+    <key>femaleImage</key>
+    <string>http://newbesttop10.com/wp-content/uploads/2014/10/Oprah.jpeg</string>
+  </dict>
+
   <key>Unassigned</key>
   <dict>
     <key>male</key>
