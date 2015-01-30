@@ -26,18 +26,18 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" red="0.32125344490892321" green="0.29257082542978263" blue="0.54482323232323226" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
-                    <size key="shadowOffset" width="1" height="1"/>
+                    <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CelebriMe23" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
                     <rect key="frame" x="20" y="140" width="441" height="43"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="43" id="TQa-pG-Q4Z"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                    <fontDescription key="fontDescription" name="AlNile-Bold" family="Al Nile" pointSize="36"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" red="0.21624058944995253" green="0.21546669030994098" blue="0.54482323232323226" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
-                    <size key="shadowOffset" width="1" height="1"/>
+                    <size key="shadowOffset" width="0.0" height="1"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

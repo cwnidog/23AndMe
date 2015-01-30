@@ -37,6 +37,12 @@ class CelebrityInterestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+      self.celebrityMaleImage.layer.cornerRadius = 10.0
+      self.celebrityMaleImage.clipsToBounds = true
+
+      
+      self.celebrityFemaleImage.layer.cornerRadius = 10.0
+      self.celebrityFemaleImage.clipsToBounds = true
       // Plist code -> swift dictionary
       let path = NSBundle.mainBundle().pathForResource("CelebPropertyList", ofType: "plist") // creates a path to get the plist
       let celebDictionary = NSDictionary(contentsOfFile: path!) // creates the dictionary out of the plist
