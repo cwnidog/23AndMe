@@ -245,8 +245,8 @@ class NetworkController
                 for item in profilesArray
                 {
                   let profile = UserProfile(jsonDictionary: item)
-                  //println(profile)
                   self.profiles.append(profile)
+                  //println(self.profiles)
                 } // for item
                 
                 // go back to the main thread and execute the callback
