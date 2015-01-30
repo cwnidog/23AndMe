@@ -11,7 +11,7 @@ import UIKit
 class CelebrityInterestViewController: UIViewController {
   
   // if a particular region does not contain a subregion and/or country -> will redirect here 
-  var Region    : Regions?
+  var region    : Regions?
   var subRegion : SubRegion?
   var country   : Country?
   
@@ -21,7 +21,7 @@ class CelebrityInterestViewController: UIViewController {
   var femaleName : String?
   var maleImageUrl : String?
   var femaleImageUrl : String?
-  var finalCountry : String?
+  var finalCountry : String!
   var countryDictionary = [String:AnyObject]()
   
 //  var celebCountry : CelebrityNameDictionaryDemo  // calls the celebArray content array I made
@@ -43,17 +43,25 @@ class CelebrityInterestViewController: UIViewController {
       
       // println("CelebDictionary = \(celebDictionary)")
       
-      // loop through each country dictionary
-      
-//      if country!.country != nil {
-//        let finalCountry = country.country
-//      } else if Region.region != nil {
-//        let finalCountry = region.region
-//      } else if subRegion.subRegion != nil {
-//        let finalCountry = subRegion.subRegion
+//      if self.country != nil {
+//        println("Country exists: \(country)")
+//      } else if self.region != nil {
+//        println("Region exists: \(region)")
+//      } else if self.subRegion != nil {
+//        println("Sub-Region exists: \(subRegion)")
 //      }
+      if self.country != nil {
+        finalCountry = self.country!.country
+        println("finalCountry = \(finalCountry)")
+      } else if self.region != nil {
+        finalCountry = self.region!.region
+        println("finalCountry = \(finalCountry)")
+      } else if self.subRegion != nil {
+        finalCountry = self.subRegion!.region
+        println("finalCountry = \(finalCountry)")
+      }
       
-      var finalCountry = "Unassigned"
+       //var finalCountry = "North African"
   
       self.countryDescriptionLabel.text = "Celebrities with \(finalCountry) Ancestory"
 
@@ -64,12 +72,11 @@ class CelebrityInterestViewController: UIViewController {
       self.maleImageUrl = countryDictionary["maleImage"] as? String
       self.femaleImageUrl = countryDictionary["femaleImage"] as? String
       println("maleImageUrl = \(maleImageUrl)")
+      println("femaleImageUrl = \(femaleImageUrl)")
       
       requestImage()
       
   }
-  
-  
       // func didRequestImage(results: NSDictionary) {
       func requestImage() {
         var male_url = self.maleImageUrl
@@ -98,15 +105,5 @@ class CelebrityInterestViewController: UIViewController {
 //        super.didReceiveMemoryWarning()
 //        // Dispose of any resources that can be recreated.
 //    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

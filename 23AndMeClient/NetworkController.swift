@@ -187,7 +187,7 @@ class NetworkController
             var error:NSError?
             if let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as? [String:AnyObject]
             {
-             //println(jsonData)
+             println(jsonData)
              if (error == nil)
              {
               var regions = [Regions]()
