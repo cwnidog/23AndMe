@@ -26,7 +26,7 @@ class MenuTableViewController: UITableViewController {
     self.navigationController?.delegate = nil // make sure that here are no zombies
     
     // if we don't have a stored access token we need to ask for one
-    if NetworkController.sharedNetworkController.accessToken == nil
+    if (NetworkController.sharedNetworkController.accessToken == nil || NetworkController.sharedNetworkController.needRefresh)
     {
       let webVC = WebViewController()
       self.presentViewController(webVC, animated: true, completion: { () -> Void in
