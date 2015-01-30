@@ -76,7 +76,7 @@
 //  "male" : "Joseph Gordon-Levitt",
 //  "female" : "Natalie Portman",
 //  "maleImage" : "http://news.doddleme.com/wp-content/uploads/2013/06/premium-rush-premiere-joseph-gordon-levitt-59f62cf4a5fb1ba6.jpg",
-//  "femaleImage" : "http://allnewhdwallpapers.com/wp-content/uploads/2014/12/natalie-portman-hairstyles-4.jpg",
+//  "femaleImage" : "https://thatglimpseofme19.files.wordpress.com/2013/10/ta1.jpg",
 //  ], // ashkenazi closure
 //
 //  // ************ East Asian & Native American ************
