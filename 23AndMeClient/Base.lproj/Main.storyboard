@@ -61,10 +61,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <imageView key="tableFooterView" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gel0" id="NSe-zV-xRb">
+                            <rect key="frame" x="0.0" y="464" width="600" height="142"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <sections>
                             <tableViewSection headerTitle="Celebrify Me" id="TrZ-3c-TIF">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="z2v-Ty-UEZ" rowHeight="105" style="IBUITableViewCellStyleDefault" id="Zj0-bZ-cBZ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="z2v-Ty-UEZ" rowHeight="85" style="IBUITableViewCellStyleDefault" id="Zj0-bZ-cBZ">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zj0-bZ-cBZ" id="sz9-W4-Mk6">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -84,7 +88,7 @@
                                             <segue destination="ayE-d8-SEw" kind="show" id="bKS-xe-Xjf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="aFt-VT-yLC" rowHeight="105" style="IBUITableViewCellStyleDefault" id="Zwd-bn-5TN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="aFt-VT-yLC" rowHeight="85" style="IBUITableViewCellStyleDefault" id="Zwd-bn-5TN">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zwd-bn-5TN" id="vTq-b2-NVf">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -104,7 +108,7 @@
                                             <segue destination="hhp-Ag-uMo" kind="show" id="gwz-Xx-lRP"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ega-j8-uiI" rowHeight="105" style="IBUITableViewCellStyleDefault" id="5lu-aU-yAj">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ega-j8-uiI" rowHeight="85" style="IBUITableViewCellStyleDefault" id="5lu-aU-yAj">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5lu-aU-yAj" id="ZN9-UH-Pna">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -124,7 +128,7 @@
                                             <segue destination="i8j-jA-Wt8" kind="show" identifier="ToPaternal" id="Zlo-U8-LUc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="sMK-js-nlb" rowHeight="105" style="IBUITableViewCellStyleDefault" id="Szb-6b-mzg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="sMK-js-nlb" rowHeight="85" style="IBUITableViewCellStyleDefault" id="Szb-6b-mzg">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Szb-6b-mzg" id="ecG-Rx-iHy">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -153,6 +157,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="5ND-vF-4at"/>
+                    <connections>
+                        <outlet property="accentImage" destination="NSe-zV-xRb" id="ZC7-tD-pDU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saF-l9-sPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -532,4 +539,7 @@
             <point key="canvasLocation" x="1283" y="601"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gel0" width="1088" height="816"/>
+    </resources>
 </document>
