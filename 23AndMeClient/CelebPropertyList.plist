@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>French &amp; German</key>
+	<key>French and German</key>
 	<dict>
 		<key>male</key>
 		<string>Jean-Luc Bilodeau</string>
@@ -24,7 +24,7 @@
 		<key>femaleImage</key>
 		<string>http://s1.ibtimes.com/sites/www.ibtimes.com/files/styles/v2_article_large/public/2014/10/21/renee-zellweger-2004.jpg?itok=g40rYpV2</string>
 	</dict>
-  <key>British &amp; Irish</key>
+  <key>British and Irish</key>
   <dict>
     <key>male</key>
     <string>Brad Pitt</string>
@@ -167,7 +167,7 @@
     <key>femaleImage</key>
     <string>http://www.seventeen.com/cm/seventeen/images/bz/sev-vanessa-hudgens-beauty-makeover-01-2014-mdn.jpg</string>
   </dict>
-  <key>Southeast Asian</key>
+  <key>East Asian</key>
   <dict>
     <key>male</key>
     <string>Darren Criss</string>
@@ -233,7 +233,7 @@
     <key>femaleImage</key>
     <string>http://static1.look-dei-vip.it/people/3/28/67/93/@/1892-liya-kebede-400x0-2.jpg</string>
   </dict>
-  <key>Central &amp; South African</key>
+  <key>Central and South African</key>
   <dict>
     <key>male</key>
     <string>Snoop Dogg</string>
