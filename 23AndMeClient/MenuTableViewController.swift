@@ -28,6 +28,16 @@ class MenuTableViewController: UITableViewController {
     // if we don't have a stored access token we need to ask for one
     if (NetworkController.sharedNetworkController.accessToken == nil || NetworkController.sharedNetworkController.needRefresh)
     {
+      if NetworkController.sharedNetworkController.accessToken == nil
+      {
+        println("Access token is nil, setting up the web controller to ask for an initial token")
+      } // access token == nil
+      
+      else
+      {
+        println("Access token has timed out, setting up the web controller to ask for a new token")
+
+      }
       let webVC = WebViewController()
       self.presentViewController(webVC, animated: true, completion: { () -> Void in
       }) // enclosure

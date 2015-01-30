@@ -57,7 +57,8 @@ class NetworkController
     // if we have a stored access token, that is less than a day old, use it
     if let accessToken = NSUserDefaults.standardUserDefaults().valueForKey(self.accessTokenUserDefaultsKey) as? String
     {
-      //self.accessToken = accessToken
+      self.accessToken = accessToken // set access token, which may be timed out
+
       let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(tokenStoredDateDefaultKey) as? NSDate
       self.tokenType = NSUserDefaults.standardUserDefaults().valueForKey(tokenTypeDefaultKey) as? String
       
@@ -73,13 +74,13 @@ class NetworkController
       
       if components.hour > 23 // token timed out, need a new one
       {
+        println("Timed out, will request new token")
         if let refreshToken = NSUserDefaults.standardUserDefaults().valueForKey(refreshTokenUserDefaultsKey) as? String
         {
           self.needRefresh = true // signal we need to refresh the access token
         } // if let refreshToken
       } // if components
-    }
-    // if let accessToken
+   } // if let accessToken
   } // init ()
   
   // MARK: handleCallbackURL
@@ -87,8 +88,8 @@ class NetworkController
   {
     var postRequest : NSMutableURLRequest!
     
-    println("Access token: \(self.accessToken)")
-    println("Refresh token: \(self.refreshToken)")
+    //println("Access token: \(self.accessToken)")
+    //println("Refresh token: \(self.refreshToken)")
     
       if self.accessToken == nil // need to ask for an initial token
       {
@@ -244,7 +245,7 @@ class NetworkController
                 for item in profilesArray
                 {
                   let profile = UserProfile(jsonDictionary: item)
-                  println(profile)
+                  //println(profile)
                   self.profiles.append(profile)
                 } // for item
                 
@@ -323,13 +324,13 @@ class NetworkController
   // MARK: fetchNeanderthal()
   func fetchNeanderthal((), callback : ([String : AnyObject], String?) -> (Void))
   {
-    println("Access token = \(self.accessToken)")
+    //println("Access token = \(self.accessToken)")
     let url = NSURL(string: "https://api.23andme.com/1/demo/neanderthal/SP1_FATHER_V4/")
     
     let request = NSMutableURLRequest(URL: url!)
     request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
     
-    println(request.allHTTPHeaderFields)
+    //println(request.allHTTPHeaderFields)
     
     let dataTask = self.urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
       if error == nil {
