@@ -260,8 +260,6 @@ class NetworkController
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
               println(jsonDictionary)
             }
-            
-            
           case 500 ... 599:
             println("Got response saying error at server end with status code: \(httpResponse.statusCode)")
             
@@ -286,7 +284,6 @@ class NetworkController
     let url = NSURL(string: "https://api.23andme.com/1/demo/haplogroups/SP1_FATHER_V4/")
     let requestedURL = NSMutableURLRequest(URL: url!)
     requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
-    
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
       if(error == nil)
       {
@@ -297,18 +294,18 @@ class NetworkController
         {
           if(error == nil)
           {
-            println("jsonData = \(jsonData)")
-            for dictionary in jsonData
+            //println("jsonData = \(jsonData)")
+            if let paternal = jsonData["paternal"] as? String
             {
-              if let maternal = jsonData["maternal"] as? String
+              paternalHaplo = paternal
+              for dictoionary in jsonData
               {
-                maternalHaplo = maternal
-              } else if let paternal = jsonData["paternal"] as? String
-              {
-                paternalHaplo = paternal
+                if let maternal = jsonData["maternal"] as? String
+                {
+                  maternalHaplo = maternal
+                }
               }
             }
-            println("maternal = \(maternalHaplo) - paternal = \(paternalHaplo)")
           }
           NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
             callback(maternalHaplo:maternalHaplo, paternalHaplo:paternalHaplo, errorString: nil)

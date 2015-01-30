@@ -27,5 +27,5 @@ class NeanderthalAncestryViewController: UIViewController {
         self.percentageNeanderthalLabel.text = neanderthal.proportion
       }) // callback enclosure
     } // viewDidLoad()
-  
+
 } // NeanderthalAncestryViewController()
