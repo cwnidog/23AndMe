@@ -184,7 +184,7 @@ class NetworkController
             var error:NSError?
             if let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as? [String:AnyObject]
             {
-              //println(jsonData)
+             //println(jsonData)
              if (error == nil)
              {
               var regions = [Regions]()
@@ -280,11 +280,12 @@ class NetworkController
   
   /*  MARK: fetchUserHaplogroup  -  this method will return a paternal(if available) and maternal  **
   **  haplogroup as 2 strings - these strings will be stored for future use using NSUserDefaults   */
-  func fetchUserHaplogroup(profileID:String?, callback:(maternalHaplo:String?, paternalHaplo:String?, errorString: String?) -> (Void))
+  func fetchUserHaplogroup(callback:(maternalHaplo:String?, paternalHaplo:String?, errorString: String?) -> (Void))
   {
-    let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(profileID!)")
+    let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(self.profiles[0].profileID)/")
     let requestedURL = NSMutableURLRequest(URL: url!)
-    requestedURL.setValue("\(self.tokenType) \(self.accessToken)", forHTTPHeaderField: "Authorization")
+    requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
+    
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
       if(error == nil)
       {
@@ -295,19 +296,18 @@ class NetworkController
         {
           if(error == nil)
           {
-            println(jsonData)
+            println("jsonData = \(jsonData)")
             for dictionary in jsonData
             {
               if let maternal = jsonData["maternal"] as? String
               {
                 maternalHaplo = maternal
-                println(maternalHaplo)
               } else if let paternal = jsonData["paternal"] as? String
               {
-                println(paternalHaplo)
                 paternalHaplo = paternal
               }
             }
+            println("maternal = \(maternalHaplo) - paternal = \(paternalHaplo)")
           }
           NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
             callback(maternalHaplo:maternalHaplo, paternalHaplo:paternalHaplo, errorString: nil)

@@ -23,7 +23,7 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
     self.tableView.dataSource = self
     self.tableView.delegate   = self
     self.tableView.registerNib(UINib(nibName: "GlobalCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "GLOBAL_CELL")
-    
+    self.tableView.backgroundColor = UIColor.grayColor()
     
     //TODO: need to pass userID here, or store it in netController
     NetworkController.sharedNetworkController.fetchAncestryComposition({ (region, errorString) -> (Void) in

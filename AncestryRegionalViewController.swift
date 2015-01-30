@@ -23,6 +23,7 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
     // initiate variables
     self.tableView.dataSource = self
     self.tableView.delegate   = self
+    self.tableView.backgroundColor = UIColor.grayColor()
     
     self.tableView.registerNib(UINib(nibName: "GlobalCell",
                                       bundle: NSBundle.mainBundle()),
