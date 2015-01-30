@@ -111,7 +111,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="i8j-jA-Wt8" kind="show" id="Zlo-U8-LUc"/>
+                                            <segue destination="i8j-jA-Wt8" kind="show" identifier="ToPaternal" id="Zlo-U8-LUc"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="sMK-js-nlb" rowHeight="105" style="IBUITableViewCellStyleDefault" id="Szb-6b-mzg">
@@ -185,7 +185,7 @@
         <!--Maternal Line-->
         <scene sceneID="4S2-42-dz3">
             <objects>
-                <viewController title="Maternal Line" id="hhp-Ag-uMo" customClass="MaternalWebViewController" customModule="_3AndMeClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Maternal Line" id="hhp-Ag-uMo" customClass="MaternalLineViewController" customModule="_3AndMeClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tex-H1-OGA"/>
                         <viewControllerLayoutGuide type="bottom" id="ljr-w9-tDY"/>
@@ -212,7 +212,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="DLP-p4-JhZ" id="A1v-gR-Rqw"/>
+                        <outlet property="webView" destination="DLP-p4-JhZ" id="zNX-AU-Ihk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1j-sO-ndt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -299,22 +299,6 @@
                             <constraint firstItem="Lmd-BV-4ZW" firstAttribute="top" secondItem="ucv-49-Utg" secondAttribute="bottom" constant="8" id="juZ-7h-nlo"/>
                             <constraint firstAttribute="centerX" secondItem="m6m-Oa-xRR" secondAttribute="centerX" id="lIJ-4M-zpL"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="97o-vX-Vv1"/>
-                                <exclude reference="BZU-Zl-pZp"/>
-                                <exclude reference="IEq-Pg-A4B"/>
-                                <exclude reference="N9N-qz-mbv"/>
-                                <exclude reference="VOP-GW-TXu"/>
-                                <exclude reference="fOc-pZ-F5a"/>
-                                <exclude reference="JCf-di-AV8"/>
-                                <exclude reference="uCZ-wb-t7I"/>
-                                <exclude reference="uqw-kH-bnS"/>
-                                <exclude reference="vQ5-F4-4ig"/>
-                                <exclude reference="X7g-rE-993"/>
-                                <exclude reference="YJR-ue-9Cs"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="celebrityFemaleImage" destination="Lmd-BV-4ZW" id="tGx-Pj-BnE"/>
