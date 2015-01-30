@@ -266,6 +266,18 @@
     <key>femaleImage</key>
     <string>http://images5.fanpop.com/image/photos/27900000/Brooke-Fraser-brooke-fraser-27912836-1330-1344.jpg</string>
   </dict>
+  <key>Sub-Saharan African</key>
+  <dict>
+    <key>male</key>
+    <string>Marc Lamont Hill</string>
+    <key>female</key>
+    <string>Oprah Winfrey</string>
+    <key>maleImage</key>
+    <string>http://patdollard.com/wp-content/uploads/2013/02/marc_lamont_hill_2_1028.jpg</string>
+    <key>femaleImage</key>
+    <string>http://newbesttop10.com/wp-content/uploads/2014/10/Oprah.jpeg</string>
+  </dict>
+
   <key>Unassigned</key>
   <dict>
     <key>male</key>
