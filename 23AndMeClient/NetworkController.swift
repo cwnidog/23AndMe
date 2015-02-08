@@ -59,8 +59,8 @@ class NetworkController
     {
       self.accessToken = accessToken // set access token, which may be timed out
 
-      let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(tokenStoredDateDefaultKey) as? NSDate
-      self.tokenType = NSUserDefaults.standardUserDefaults().valueForKey(tokenTypeDefaultKey) as? String
+      let tokenDate = NSUserDefaults.standardUserDefaults().valueForKey(self.tokenStoredDateDefaultKey) as? NSDate
+      self.tokenType = NSUserDefaults.standardUserDefaults().valueForKey(self.tokenTypeDefaultKey) as? String
       
       //load stored user haplogroups - If user has an access token - then they should also have haplogroup data stored
       self.paternalHaplogroup = NSUserDefaults.standardUserDefaults().valueForKey(paternalDefaultKey) as? String
@@ -88,42 +88,39 @@ class NetworkController
   {
     var postRequest : NSMutableURLRequest!
     
-    //println("Access token: \(self.accessToken)")
-    //println("Refresh token: \(self.refreshToken)")
-    
-      if self.accessToken == nil // need to ask for an initial token
-      {
-        let code = url.query
-        
-        // send a POST back to 23AndMe asking for a token using the authorization code
-        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=http://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
-        let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
-        let length = bodyData!.length
-        
-        // put the POST request together
-        postRequest = NSMutableURLRequest(URL : NSURL(string: "https://api.23andme.com/token/")!)
-        postRequest.HTTPMethod = "POST"
-        postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
-        postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        postRequest.HTTPBody = bodyData
-      } // need to ask for inital token
-        
-      else if self.needRefresh // use the refresh token to get a new access token
-      {
-        self.refreshToken = NSUserDefaults.standardUserDefaults().valueForKey(self.refreshTokenUserDefaultsKey) as? String
-        // send a POST back to 23AndMe asking for a token using the refresh token
-        let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(self.refreshToken!)&redirect_uri=https://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
-        let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
-        let length = bodyData!.length
-        
-        // put the POST request together
-        postRequest = NSMutableURLRequest(URL : NSURL(string: "https://api.23andme.com/token/")!)
-        postRequest.HTTPMethod = "POST"
-        postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
-        postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        postRequest.HTTPBody = bodyData
-        
-      } // need to use refresh token
+    if self.accessToken == nil // need to ask for an initial token
+    {
+      let code = url.query
+      
+      // send a POST back to 23AndMe asking for a token using the authorization code
+      let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=authorization_code&\(code!)&redirect_uri=http://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
+      let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
+      let length = bodyData!.length
+      
+      // put the POST request together
+      postRequest = NSMutableURLRequest(URL : NSURL(string: "https://api.23andme.com/token/")!)
+      postRequest.HTTPMethod = "POST"
+      postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
+      postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+      postRequest.HTTPBody = bodyData
+    } // need to ask for inital token
+      
+    else if self.needRefresh // use the refresh token to get a new access token
+    {
+      self.refreshToken = NSUserDefaults.standardUserDefaults().valueForKey(self.refreshTokenUserDefaultsKey) as? String
+      // send a POST back to 23AndMe asking for a token using the refresh token
+      let bodyString = "client_id=\(self.clientID)&client_secret=\(self.clientSecret)&grant_type=refresh_token&refresh_token=\(self.refreshToken!)&redirect_uri=https://localhost:5000/receive_code/&scope=basic%20haplogroups%20ancestry%20names"
+      let bodyData = bodyString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
+      let length = bodyData!.length
+      
+      // put the POST request together
+      postRequest = NSMutableURLRequest(URL : NSURL(string: "https://api.23andme.com/token/")!)
+      postRequest.HTTPMethod = "POST"
+      postRequest.setValue("\(length)", forHTTPHeaderField: "Content-Length")
+      postRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+      postRequest.HTTPBody = bodyData
+      
+    } // need to use refresh token
     
     // deal with the response
     let dataTask = self.urlSession.dataTaskWithRequest(postRequest, completionHandler: { (data, response, error) -> Void in
@@ -134,20 +131,22 @@ class NetworkController
         {
           switch httpResponse.statusCode
           {
-          case 200 ... 299 :
+          case 200 ... 299 : // success
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String : AnyObject]
             {
               self.accessToken = jsonDictionary["access_token"] as? String
               self.refreshToken = jsonDictionary["refresh_token"] as? String
               self.tokenType = jsonDictionary["token_type"] as? String
               let currentDate = NSDate()
-              
+              self.needRefresh = false // have a new token, so don't need to refresh anymore
+
               // store the access and refresh tokens away for reuse
               NSUserDefaults.standardUserDefaults().setValue(self.accessToken!, forKey: self.accessTokenUserDefaultsKey)
               NSUserDefaults.standardUserDefaults().setValue(self.refreshToken!, forKey: self.refreshTokenUserDefaultsKey)
               NSUserDefaults.standardUserDefaults().setValue(currentDate, forKey: self.tokenStoredDateDefaultKey)
               NSUserDefaults.standardUserDefaults().setValue(self.tokenType, forKey: self.tokenTypeDefaultKey)
               NSUserDefaults.standardUserDefaults().synchronize()
+              
               NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 completionHandler()
               })
@@ -164,6 +163,11 @@ class NetworkController
           } // switch httpResponse.statusCode
         } // if let httpResponse
       } // if no error
+      
+      else {
+        println(error.localizedDescription) // what was the error?
+      }
+      
     }) // end dataTask enclosure
     dataTask.resume()
   } // handleCallbackURL()
@@ -232,7 +236,7 @@ class NetworkController
       if error == nil {
         if let httpResponse = response as? NSHTTPURLResponse {
           switch httpResponse.statusCode {
-          case 200 ... 299 :
+          case 200 ... 299 : // success
             // get the user's ID
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
               if let userID = jsonDictionary["id"] as? String
@@ -259,9 +263,7 @@ class NetworkController
             
           case 400 ... 499:
             println("Got response saying error at our end with status code: \(httpResponse.statusCode)")
-            if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject] {
-              println(jsonDictionary)
-            }
+
           case 500 ... 599:
             println("Got response saying error at server end with status code: \(httpResponse.statusCode)")
             
@@ -336,7 +338,7 @@ class NetworkController
       if error == nil {
         if let httpResponse = response as? NSHTTPURLResponse {
           switch httpResponse.statusCode {
-          case 200 ... 299 :
+          case 200 ... 299 : // success
             // get the neanderthal JSON
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String:AnyObject]
             {

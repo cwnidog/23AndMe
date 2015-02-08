@@ -31,13 +31,15 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     
     let url = "https://api.23andme.com/authorize/?redirect_uri=http://localhost:5000/receive_code/&response_type=code&client_id=\(NetworkController.sharedNetworkController.clientID)&scope=basic%20haplogroups%20ancestry%20names"
     self.webView.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
-    // Do any additional setup after loading the view.
-  }
+  } // viewDidLoad()
   
   func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
-    println(navigationAction.request.URL)
+    //println(navigationAction.request.URL)
     
+    // if we get a code back from 23andMe, dismiss the webView and pass the URL on back to the NetworkController to use to get an initial or refreshed token
     if navigationAction.request.URL.description.rangeOfString("code=") != nil {
+      
+      // request the token from 23andMe and then ask teh NetworkController to request the user's profiles, which we need for any further requests
       NetworkController.sharedNetworkController.handleCallbackURL(navigationAction.request.URL, completionHandler: { () -> () in
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
          NetworkController.sharedNetworkController.fetchProfileID((), callback: { (profiles, userID, errorDescription) -> (Void) in
@@ -48,19 +50,8 @@ class WebViewController: UIViewController, WKNavigationDelegate {
       }) // handleCallbackURL enclosure
     } // if navigationAction
     
-    decisionHandler(WKNavigationActionPolicy.Allow) // OK to move away
+    decisionHandler(WKNavigationActionPolicy.Allow) // OK to move away from the web view
     
   } // webView()
   
-  
-  /*
-  // MARK: - Navigation
-  
-  // In a storyboard-based application, you will often want to do a little preparation before navigation
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-  // Get the new view controller using segue.destinationViewController.
-  // Pass the selected object to the new view controller.
-  }
-  */
-  
-}
+} // WebViewController()
