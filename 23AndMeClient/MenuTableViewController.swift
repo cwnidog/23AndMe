@@ -15,7 +15,7 @@ class MenuTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.accentImage.image = UIImage(named: "gel0.jpg")
+//    self.accentImage.image = UIImage(named: "gel0.jpg")
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = false
     

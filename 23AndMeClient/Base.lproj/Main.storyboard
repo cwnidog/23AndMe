@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yVV-pq-wpX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yVV-pq-wpX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+            <string>OpenSans-Bold</string>
+            <string>OpenSans-Bold</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+            <string>OpenSans</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Ancestry Global View Controller-->
         <scene sceneID="Zgq-T3-vVy">
@@ -61,21 +80,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <imageView key="tableFooterView" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gel0" id="NSe-zV-xRb">
-                            <rect key="frame" x="0.0" y="424" width="600" height="210"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                        <color key="sectionIndexBackgroundColor" red="0.88627450980392153" green="0.88235294117647056" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Celebrify Me" id="TrZ-3c-TIF">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="z2v-Ty-UEZ" rowHeight="75" style="IBUITableViewCellStyleDefault" id="Zj0-bZ-cBZ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="z2v-Ty-UEZ" rowHeight="90" style="IBUITableViewCellStyleDefault" id="Zj0-bZ-cBZ">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zj0-bZ-cBZ" id="sz9-W4-Mk6">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ancestry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z2v-Ty-UEZ" userLabel="Ancestry">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.45150726010101006" green="0.45150726010101006" blue="0.45150726010101006" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,14 +104,14 @@
                                             <segue destination="ayE-d8-SEw" kind="show" id="bKS-xe-Xjf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="aFt-VT-yLC" rowHeight="75" style="IBUITableViewCellStyleDefault" id="Zwd-bn-5TN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="aFt-VT-yLC" rowHeight="90" style="IBUITableViewCellStyleDefault" id="Zwd-bn-5TN">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zwd-bn-5TN" id="vTq-b2-NVf">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Maternal Line" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aFt-VT-yLC">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.45150726010101006" green="0.45150726010101006" blue="0.45150726010101006" alpha="1" colorSpace="calibratedRGB"/>
@@ -108,14 +124,14 @@
                                             <segue destination="hhp-Ag-uMo" kind="show" id="gwz-Xx-lRP"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ega-j8-uiI" rowHeight="75" style="IBUITableViewCellStyleDefault" id="5lu-aU-yAj">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ega-j8-uiI" rowHeight="90" style="IBUITableViewCellStyleDefault" id="5lu-aU-yAj">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5lu-aU-yAj" id="ZN9-UH-Pna">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Paternal Line" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ega-j8-uiI">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.45150726010101006" green="0.45150726010101006" blue="0.45150726010101006" alpha="0.31" colorSpace="calibratedRGB"/>
@@ -128,14 +144,14 @@
                                             <segue destination="i8j-jA-Wt8" kind="show" identifier="ToPaternal" id="Zlo-U8-LUc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="sMK-js-nlb" rowHeight="75" style="IBUITableViewCellStyleDefault" id="Szb-6b-mzg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="sMK-js-nlb" rowHeight="90" style="IBUITableViewCellStyleDefault" id="Szb-6b-mzg">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Szb-6b-mzg" id="ecG-Rx-iHy">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Neanderthal Ancestry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sMK-js-nlb">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" red="0.45150726010101006" green="0.45150726010101006" blue="0.45150726010101006" alpha="1" colorSpace="calibratedRGB"/>
@@ -157,9 +173,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="5ND-vF-4at"/>
-                    <connections>
-                        <outlet property="accentImage" destination="NSe-zV-xRb" id="ZC7-tD-pDU"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saF-l9-sPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,16 +271,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CelebF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2F-ZF-5Aa">
-                                <rect key="frame" x="272" y="559" width="55" height="21"/>
+                                <rect key="frame" x="272" y="560" width="54" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="X1J-DR-Tqn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-Oa-xRR">
-                                <rect key="frame" x="225" y="114" width="150" height="200"/>
+                                <rect key="frame" x="225" y="115" width="150" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="EFX-6g-Isz"/>
                                     <constraint firstAttribute="width" constant="150" id="MEs-dC-gwT"/>
@@ -280,13 +293,13 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Famous Celebrities with African Ancestory" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjZ-f6-Ktx">
-                                <rect key="frame" x="16" y="72" width="568" height="34"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <rect key="frame" x="16" y="72" width="568" height="35"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lmd-BV-4ZW">
-                                <rect key="frame" x="225" y="351" width="150" height="200"/>
+                                <rect key="frame" x="225" y="352" width="150" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lmd-BV-4ZW" secondAttribute="height" multiplier="1:1" id="4Sq-fi-jrb"/>
                                     <constraint firstAttribute="width" constant="150" id="DFw-dj-Vap"/>
@@ -299,29 +312,69 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CelebM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucv-49-Utg">
-                                <rect key="frame" x="270" y="322" width="60" height="21"/>
+                                <rect key="frame" x="270" y="323" width="60" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="kf8-Bd-zBZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibj-Fp-DTM">
+                                <rect key="frame" x="555" y="563" width="29" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="S7B-IS-WCb"/>
+                                    <constraint firstAttribute="height" constant="29" id="TeN-lC-luo"/>
+                                </constraints>
+                                <state key="normal" image="FB-f-Logo__blue_29.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJf-3V-xZj">
+                                <rect key="frame" x="518" y="563" width="29" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="2Ez-Ab-Bks"/>
+                                    <constraint firstAttribute="height" constant="29" id="FRf-HN-Jd6"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="1424268026_twitter-128.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EjZ-f6-Ktx" firstAttribute="leading" secondItem="Trd-O7-DAI" secondAttribute="leadingMargin" id="4t4-PZ-Ix7"/>
                             <constraint firstItem="m6m-Oa-xRR" firstAttribute="centerX" secondItem="ucv-49-Utg" secondAttribute="centerX" id="53J-UC-EDj"/>
                             <constraint firstItem="I2F-ZF-5Aa" firstAttribute="top" secondItem="Lmd-BV-4ZW" secondAttribute="bottom" constant="8" id="6N2-IM-1jv"/>
+                            <constraint firstItem="ibj-Fp-DTM" firstAttribute="leading" secondItem="cJf-3V-xZj" secondAttribute="trailing" constant="8" id="73W-zR-sXL"/>
                             <constraint firstAttribute="centerX" secondItem="Lmd-BV-4ZW" secondAttribute="centerX" id="FdY-lj-dXx"/>
+                            <constraint firstItem="bbL-Xc-ne0" firstAttribute="top" secondItem="ibj-Fp-DTM" secondAttribute="bottom" constant="8" id="IMu-Ak-RNL"/>
+                            <constraint firstItem="ibj-Fp-DTM" firstAttribute="trailing" secondItem="Trd-O7-DAI" secondAttribute="trailingMargin" id="KOm-u1-YBe"/>
+                            <constraint firstItem="bbL-Xc-ne0" firstAttribute="top" secondItem="cJf-3V-xZj" secondAttribute="bottom" constant="8" id="LKe-I6-vvu"/>
+                            <constraint firstItem="bbL-Xc-ne0" firstAttribute="top" secondItem="cJf-3V-xZj" secondAttribute="bottom" constant="8" id="MDV-5V-mc1"/>
                             <constraint firstItem="EjZ-f6-Ktx" firstAttribute="top" secondItem="pkB-to-fQy" secondAttribute="bottom" constant="8" id="MVn-fQ-Kbo"/>
+                            <constraint firstItem="ibj-Fp-DTM" firstAttribute="width" secondItem="cJf-3V-xZj" secondAttribute="width" id="Nzb-28-SJs"/>
                             <constraint firstItem="I2F-ZF-5Aa" firstAttribute="centerX" secondItem="Lmd-BV-4ZW" secondAttribute="centerX" constant="-1" id="Tzu-6A-4dh"/>
+                            <constraint firstItem="bbL-Xc-ne0" firstAttribute="top" secondItem="ibj-Fp-DTM" secondAttribute="bottom" constant="8" id="Wgz-Zg-PWk"/>
                             <constraint firstItem="EjZ-f6-Ktx" firstAttribute="trailing" secondItem="Trd-O7-DAI" secondAttribute="trailingMargin" id="Wy6-Ik-pzL"/>
+                            <constraint firstItem="ibj-Fp-DTM" firstAttribute="trailing" secondItem="Trd-O7-DAI" secondAttribute="trailingMargin" id="ZFZ-4K-UDf"/>
                             <constraint firstItem="m6m-Oa-xRR" firstAttribute="top" secondItem="EjZ-f6-Ktx" secondAttribute="bottom" constant="8" id="bFg-E0-Pdq"/>
                             <constraint firstItem="ucv-49-Utg" firstAttribute="top" secondItem="m6m-Oa-xRR" secondAttribute="bottom" constant="8" id="cGb-Ld-IdQ"/>
+                            <constraint firstItem="ibj-Fp-DTM" firstAttribute="height" secondItem="cJf-3V-xZj" secondAttribute="height" id="ca0-em-Pmy"/>
                             <constraint firstItem="Lmd-BV-4ZW" firstAttribute="top" secondItem="ucv-49-Utg" secondAttribute="bottom" constant="8" id="juZ-7h-nlo"/>
                             <constraint firstAttribute="centerX" secondItem="m6m-Oa-xRR" secondAttribute="centerX" id="lIJ-4M-zpL"/>
+                            <constraint firstItem="ibj-Fp-DTM" firstAttribute="leading" secondItem="cJf-3V-xZj" secondAttribute="trailing" constant="8" id="sKr-mv-nUz"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MDV-5V-mc1"/>
+                                <exclude reference="Wgz-Zg-PWk"/>
+                                <exclude reference="73W-zR-sXL"/>
+                                <exclude reference="Nzb-28-SJs"/>
+                                <exclude reference="ZFZ-4K-UDf"/>
+                                <exclude reference="ca0-em-Pmy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="celebrityFemaleImage" destination="Lmd-BV-4ZW" id="tGx-Pj-BnE"/>
@@ -333,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYk-GI-k8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3847" y="-52"/>
+            <point key="canvasLocation" x="3867" y="-52"/>
         </scene>
         <!--Ancestry Regional View Controller-->
         <scene sceneID="rmN-7v-r7I">
@@ -449,53 +502,53 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Famous Celebrities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vl-jC-3tr">
-                                <rect key="frame" x="36" y="465" width="204" height="28"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <rect key="frame" x="16" y="465" width="191" height="28"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7je-RE-FQS">
-                                <rect key="frame" x="264" y="320" width="72" height="36"/>
+                                <rect key="frame" x="265" y="320" width="70" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="MIL-P3-gan"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fred and Wilma Flinstone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbQ-yv-KVH">
-                                <rect key="frame" x="125" y="501" width="195" height="21"/>
+                                <rect key="frame" x="84" y="501" width="225" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RP2-LB-t39"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encino Man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irc-iD-hTC">
-                                <rect key="frame" x="125" y="530" width="91" height="21"/>
+                                <rect key="frame" x="84" y="530" width="104" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="aM3-9a-TBA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geico Cave Man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-Jm-JOK">
-                                <rect key="frame" x="125" y="559" width="128" height="21"/>
+                                <rect key="frame" x="84" y="559" width="142" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="CKJ-J6-DC4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage  Neaderthal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyl-Nu-zo1">
-                                <rect key="frame" x="210" y="364" width="181" height="21"/>
+                                <rect key="frame" x="196" y="364" width="209" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="X9H-ai-6lC"/>
+                                    <constraint firstAttribute="height" constant="24" id="X9H-ai-6lC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -506,7 +559,7 @@
                             <constraint firstItem="vbQ-yv-KVH" firstAttribute="top" secondItem="0vl-jC-3tr" secondAttribute="bottom" constant="8" id="53T-wc-TuN"/>
                             <constraint firstItem="Lyl-Nu-zo1" firstAttribute="centerX" secondItem="7je-RE-FQS" secondAttribute="centerX" constant="0.5" id="7H8-LL-61t"/>
                             <constraint firstItem="Irc-iD-hTC" firstAttribute="leading" secondItem="vbQ-yv-KVH" secondAttribute="leading" id="Igp-9e-IUj"/>
-                            <constraint firstItem="0vl-jC-3tr" firstAttribute="leading" secondItem="oNI-ka-i1F" secondAttribute="leadingMargin" constant="20" id="Q2E-yg-JKy"/>
+                            <constraint firstItem="0vl-jC-3tr" firstAttribute="leading" secondItem="oNI-ka-i1F" secondAttribute="leadingMargin" id="Q2E-yg-JKy"/>
                             <constraint firstItem="aT3-s6-yb5" firstAttribute="top" secondItem="fBQ-lR-bsd" secondAttribute="bottom" constant="8" id="UBr-WN-iSu"/>
                             <constraint firstItem="Lyl-Nu-zo1" firstAttribute="top" secondItem="7je-RE-FQS" secondAttribute="bottom" constant="8" id="UrB-Ym-wCU"/>
                             <constraint firstItem="7je-RE-FQS" firstAttribute="top" secondItem="aT3-s6-yb5" secondAttribute="bottom" constant="8" id="YHq-2l-4n5"/>
@@ -549,6 +602,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gel0" width="1088" height="816"/>
+        <image name="1424268026_twitter-128.png" width="128" height="128"/>
+        <image name="FB-f-Logo__blue_29.png" width="29" height="29"/>
     </resources>
 </document>
