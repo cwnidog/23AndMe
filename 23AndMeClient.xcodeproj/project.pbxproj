@@ -12,7 +12,6 @@
 		2FC1EB7C1A78022B000A1935 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1EB7B1A78022B000A1935 /* WebViewController.swift */; };
 		4313C0EE1A785CEE0097DC7E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4313C0ED1A785CEE0097DC7E /* Images.xcassets */; };
 		4330F8091A78589000E5BA72 /* GlobalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4330F8081A78589000E5BA72 /* GlobalCell.xib */; };
-		437E5B021A7AAA1E0066073C /* CelebrityArray copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E5B011A7AAA1E0066073C /* CelebrityArray copy.swift */; };
 		437E5B041A7AAA820066073C /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437E5B031A7AAA820066073C /* Celebrity.swift */; };
 		437E5B061A7AAACD0066073C /* CelebPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 437E5B051A7AAACD0066073C /* CelebPropertyList.plist */; };
 		4383FCCE1A781377009538D0 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCCD1A781377009538D0 /* Regions.swift */; };
@@ -42,9 +41,21 @@
 		5DA907B61A75A886009D92C2 /* PaternalLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907B51A75A885009D92C2 /* PaternalLineViewController.swift */; };
 		5DA907B81A75A91F009D92C2 /* NeanderthalAncestryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */; };
 		5DA907BC1A75ACB4009D92C2 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907BB1A75ACB4009D92C2 /* NetworkController.swift */; };
-		7915CDC31A7753F800597B50 /* CelebrityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7915CDC21A7753F800597B50 /* CelebrityView.xib */; };
 		7915CDCD1A77761D00597B50 /* AncestryGlobalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDCC1A77761D00597B50 /* AncestryGlobalViewController.swift */; };
 		7915CDCF1A777ECC00597B50 /* GlobalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915CDCE1A777ECC00597B50 /* GlobalCell.swift */; };
+		795438DB1A94652B00255A7F /* Apache License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 795438D01A94652B00255A7F /* Apache License.txt */; };
+		795438DC1A94652B00255A7F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795438D11A94652B00255A7F /* OpenSans-Bold.ttf */; };
+		795438DD1A94652B00255A7F /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795438D21A94652B00255A7F /* OpenSans-BoldItalic.ttf */; };
+		795438DE1A94652B00255A7F /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795438D31A94652B00255A7F /* OpenSans-ExtraBold.ttf */; };
+		795438DF1A94652B00255A7F /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795438D41A94652B00255A7F /* OpenSans-ExtraBoldItalic.ttf */; };
+		795438E01A94652B00255A7F /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795438D51A94652B00255A7F /* OpenSans-Italic.ttf */; };
+		795438E11A94652B00255A7F /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795438D61A94652B00255A7F /* OpenSans-Light.ttf */; };
+		795438E21A94652B00255A7F /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795438D71A94652B00255A7F /* OpenSans-LightItalic.ttf */; };
+		795438E31A94652B00255A7F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795438D81A94652B00255A7F /* OpenSans-Regular.ttf */; };
+		795438E41A94652B00255A7F /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795438D91A94652B00255A7F /* OpenSans-Semibold.ttf */; };
+		795438E51A94652B00255A7F /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 795438DA1A94652B00255A7F /* OpenSans-SemiboldItalic.ttf */; };
+		795438E71A947BFE00255A7F /* FB-f-Logo__blue_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 795438E61A947BFE00255A7F /* FB-f-Logo__blue_29.png */; };
+		795438EA1A947E4100255A7F /* 1424268026_twitter-128.png in Resources */ = {isa = PBXBuildFile; fileRef = 795438E91A947E4100255A7F /* 1424268026_twitter-128.png */; };
 		796DDB7D1A77881A00E6FFAE /* CelebrityInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DDB7C1A77881A00E6FFAE /* CelebrityInterestViewController.swift */; };
 		796DDB7F1A77898900E6FFAE /* AncestryRegionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796DDB7E1A77898900E6FFAE /* AncestryRegionalViewController.swift */; };
 		79CFF22D1A797BD700FD578E /* Country2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CFF22C1A797BD700FD578E /* Country2ViewController.swift */; };
@@ -66,7 +77,6 @@
 		2FC1EB7B1A78022B000A1935 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4313C0ED1A785CEE0097DC7E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4330F8081A78589000E5BA72 /* GlobalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlobalCell.xib; sourceTree = "<group>"; };
-		437E5B011A7AAA1E0066073C /* CelebrityArray copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CelebrityArray copy.swift"; sourceTree = "<group>"; };
 		437E5B031A7AAA820066073C /* Celebrity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Celebrity.swift; sourceTree = "<group>"; };
 		437E5B051A7AAACD0066073C /* CelebPropertyList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CelebPropertyList.plist; sourceTree = "<group>"; };
 		4383FCCD1A781377009538D0 /* Regions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
@@ -100,9 +110,21 @@
 		5DA907B51A75A885009D92C2 /* PaternalLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaternalLineViewController.swift; sourceTree = "<group>"; };
 		5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeanderthalAncestryViewController.swift; sourceTree = "<group>"; };
 		5DA907BB1A75ACB4009D92C2 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
-		7915CDC21A7753F800597B50 /* CelebrityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CelebrityView.xib; path = ../CelebrityView.xib; sourceTree = "<group>"; };
 		7915CDCC1A77761D00597B50 /* AncestryGlobalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AncestryGlobalViewController.swift; path = ../AncestryGlobalViewController.swift; sourceTree = "<group>"; };
 		7915CDCE1A777ECC00597B50 /* GlobalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalCell.swift; sourceTree = "<group>"; };
+		795438D01A94652B00255A7F /* Apache License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License.txt"; sourceTree = "<group>"; };
+		795438D11A94652B00255A7F /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		795438D21A94652B00255A7F /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		795438D31A94652B00255A7F /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		795438D41A94652B00255A7F /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		795438D51A94652B00255A7F /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		795438D61A94652B00255A7F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		795438D71A94652B00255A7F /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		795438D81A94652B00255A7F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		795438D91A94652B00255A7F /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		795438DA1A94652B00255A7F /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		795438E61A947BFE00255A7F /* FB-f-Logo__blue_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FB-f-Logo__blue_29.png"; sourceTree = "<group>"; };
+		795438E91A947E4100255A7F /* 1424268026_twitter-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1424268026_twitter-128.png"; sourceTree = "<group>"; };
 		796DDB7C1A77881A00E6FFAE /* CelebrityInterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CelebrityInterestViewController.swift; path = ../CelebrityInterestViewController.swift; sourceTree = "<group>"; };
 		796DDB7E1A77898900E6FFAE /* AncestryRegionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AncestryRegionalViewController.swift; path = ../AncestryRegionalViewController.swift; sourceTree = "<group>"; };
 		79CFF22C1A797BD700FD578E /* Country2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country2ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +183,9 @@
 		5DA907501A758C7B009D92C2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				795438E61A947BFE00255A7F /* FB-f-Logo__blue_29.png */,
+				795438E91A947E4100255A7F /* 1424268026_twitter-128.png */,
+				795438CF1A94652B00255A7F /* open-sans */,
 				5DA907511A758C7B009D92C2 /* Info.plist */,
 				437E5B051A7AAACD0066073C /* CelebPropertyList.plist */,
 			);
@@ -208,7 +233,6 @@
 				7915CDCE1A777ECC00597B50 /* GlobalCell.swift */,
 				4330F8081A78589000E5BA72 /* GlobalCell.xib */,
 				5DA9075B1A758C7C009D92C2 /* LaunchScreen.xib */,
-				7915CDC21A7753F800597B50 /* CelebrityView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -219,7 +243,6 @@
 				2F57952D1A799F1700FEC223 /* UserProfile.swift */,
 				2F62D8A41A7ABAD8008F4620 /* Neanderthal.swift */,
 				4383FCCD1A781377009538D0 /* Regions.swift */,
-				437E5B011A7AAA1E0066073C /* CelebrityArray copy.swift */,
 				437E5B031A7AAA820066073C /* Celebrity.swift */,
 				4383FCCF1A78139B009538D0 /* SubRegion.swift */,
 				4383FCD11A78195F009538D0 /* Country.swift */,
@@ -248,6 +271,24 @@
 				5DA9078D1A758D85009D92C2 /* user.json */,
 			);
 			name = "JSON Files";
+			sourceTree = "<group>";
+		};
+		795438CF1A94652B00255A7F /* open-sans */ = {
+			isa = PBXGroup;
+			children = (
+				795438D01A94652B00255A7F /* Apache License.txt */,
+				795438D11A94652B00255A7F /* OpenSans-Bold.ttf */,
+				795438D21A94652B00255A7F /* OpenSans-BoldItalic.ttf */,
+				795438D31A94652B00255A7F /* OpenSans-ExtraBold.ttf */,
+				795438D41A94652B00255A7F /* OpenSans-ExtraBoldItalic.ttf */,
+				795438D51A94652B00255A7F /* OpenSans-Italic.ttf */,
+				795438D61A94652B00255A7F /* OpenSans-Light.ttf */,
+				795438D71A94652B00255A7F /* OpenSans-LightItalic.ttf */,
+				795438D81A94652B00255A7F /* OpenSans-Regular.ttf */,
+				795438D91A94652B00255A7F /* OpenSans-Semibold.ttf */,
+				795438DA1A94652B00255A7F /* OpenSans-SemiboldItalic.ttf */,
+			);
+			path = "open-sans";
 			sourceTree = "<group>";
 		};
 		79AA5B451A7AAD8E00DC7205 /* plist */ = {
@@ -337,25 +378,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795438DC1A94652B00255A7F /* OpenSans-Bold.ttf in Resources */,
 				5DA907911A758D85009D92C2 /* family_members_get.json in Resources */,
+				795438E21A94652B00255A7F /* OpenSans-LightItalic.ttf in Resources */,
+				795438E31A94652B00255A7F /* OpenSans-Regular.ttf in Resources */,
 				437E5B061A7AAACD0066073C /* CelebPropertyList.plist in Resources */,
 				4313C0EE1A785CEE0097DC7E /* Images.xcassets in Resources */,
 				5DA9079A1A758D85009D92C2 /* neanderthal_get.json in Resources */,
 				5DA907921A758D85009D92C2 /* genome_get.json in Resources */,
 				5DA907991A758D85009D92C2 /* names_get.json in Resources */,
 				5DA907581A758C7C009D92C2 /* Main.storyboard in Resources */,
+				795438EA1A947E4100255A7F /* 1424268026_twitter-128.png in Resources */,
+				795438E71A947BFE00255A7F /* FB-f-Logo__blue_29.png in Resources */,
 				5DA9079C1A758D85009D92C2 /* phenotype_put.json in Resources */,
 				5DA907A31A758D85009D92C2 /* user.json in Resources */,
 				5DA907941A758D85009D92C2 /* grfs_get.json in Resources */,
+				795438DE1A94652B00255A7F /* OpenSans-ExtraBold.ttf in Resources */,
+				795438DB1A94652B00255A7F /* Apache License.txt in Resources */,
 				4330F8091A78589000E5BA72 /* GlobalCell.xib in Resources */,
 				5DA9078E1A758D85009D92C2 /* ancestry_get.json in Resources */,
+				795438E11A94652B00255A7F /* OpenSans-Light.ttf in Resources */,
 				5DA9079D1A758D85009D92C2 /* picture_get.json in Resources */,
-				7915CDC31A7753F800597B50 /* CelebrityView.xib in Resources */,
+				795438E01A94652B00255A7F /* OpenSans-Italic.ttf in Resources */,
+				795438DF1A94652B00255A7F /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				795438DD1A94652B00255A7F /* OpenSans-BoldItalic.ttf in Resources */,
 				5DA9075D1A758C7C009D92C2 /* LaunchScreen.xib in Resources */,
+				795438E41A94652B00255A7F /* OpenSans-Semibold.ttf in Resources */,
 				5DA9079B1A758D85009D92C2 /* phenotype_get.json in Resources */,
 				5DA907931A758D85009D92C2 /* genotypes_get.json in Resources */,
 				5DA9079F1A758D85009D92C2 /* relatives_get.json in Resources */,
 				5DA907951A758D85009D92C2 /* haplogroups_get.json in Resources */,
+				795438E51A94652B00255A7F /* OpenSans-SemiboldItalic.ttf in Resources */,
 				5DA9079E1A758D85009D92C2 /* publish.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,7 +444,6 @@
 				796DDB7D1A77881A00E6FFAE /* CelebrityInterestViewController.swift in Sources */,
 				437E5B041A7AAA820066073C /* Celebrity.swift in Sources */,
 				5DA907B81A75A91F009D92C2 /* NeanderthalAncestryViewController.swift in Sources */,
-				437E5B021A7AAA1E0066073C /* CelebrityArray copy.swift in Sources */,
 				2F62D8A51A7ABAD8008F4620 /* Neanderthal.swift in Sources */,
 				5DA907B01A75A3E1009D92C2 /* Inherited Conditions ViewController.swift in Sources */,
 			);
