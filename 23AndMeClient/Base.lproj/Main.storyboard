@@ -320,16 +320,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibj-Fp-DTM">
-                                <rect key="frame" x="555" y="563" width="29" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="29" id="S7B-IS-WCb"/>
-                                    <constraint firstAttribute="height" constant="29" id="TeN-lC-luo"/>
-                                </constraints>
-                                <state key="normal" image="FB-f-Logo__blue_29.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJf-3V-xZj">
                                 <rect key="frame" x="518" y="563" width="29" height="29"/>
                                 <constraints>
@@ -337,6 +327,16 @@
                                     <constraint firstAttribute="height" constant="29" id="FRf-HN-Jd6"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="1424268026_twitter-128.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibj-Fp-DTM">
+                                <rect key="frame" x="555" y="563" width="29" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="29" id="S7B-IS-WCb"/>
+                                    <constraint firstAttribute="height" constant="29" id="TeN-lC-luo"/>
+                                </constraints>
+                                <state key="normal" image="FB-f-Logo__blue_29.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
