@@ -9,10 +9,10 @@
     <customFonts key="customFonts">
         <mutableArray key="OpenSans-Bold.ttf">
             <string>OpenSans-Bold</string>
-            <string>OpenSans-Bold</string>
-            <string>OpenSans-Bold</string>
         </mutableArray>
         <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+            <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
@@ -258,10 +258,10 @@
             </objects>
             <point key="canvasLocation" x="2277" y="1314"/>
         </scene>
-        <!--Celebrity Interest View Controller-->
+        <!--Celebrities with. . .-->
         <scene sceneID="wOF-pc-h1j">
             <objects>
-                <viewController storyboardIdentifier="CELEBRITY_VC" id="v2z-AI-C8K" customClass="CelebrityInterestViewController" customModule="_3AndMeClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CELEBRITY_VC" title="Celebrities with. . ." id="v2z-AI-C8K" customClass="CelebrityInterestViewController" customModule="_3AndMeClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pkB-to-fQy"/>
                         <viewControllerLayoutGuide type="bottom" id="bbL-Xc-ne0"/>
@@ -271,7 +271,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CelebF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2F-ZF-5Aa">
-                                <rect key="frame" x="272" y="560" width="54" height="21"/>
+                                <rect key="frame" x="272" y="520" width="54" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="X1J-DR-Tqn"/>
                                 </constraints>
@@ -280,26 +280,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-Oa-xRR">
-                                <rect key="frame" x="225" y="115" width="150" height="200"/>
+                                <rect key="frame" x="233" y="115" width="135" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="EFX-6g-Isz"/>
-                                    <constraint firstAttribute="width" constant="150" id="MEs-dC-gwT"/>
-                                    <constraint firstAttribute="width" secondItem="m6m-Oa-xRR" secondAttribute="height" multiplier="1:1" id="k5l-QN-bW5"/>
+                                    <constraint firstAttribute="width" secondItem="m6m-Oa-xRR" secondAttribute="height" multiplier="3:4" id="em5-BB-RWH"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="k5l-QN-bW5"/>
-                                    </mask>
-                                </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Famous Celebrities with African Ancestory" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjZ-f6-Ktx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Famous Celebrities with African Ancestory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999987" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjZ-f6-Ktx">
                                 <rect key="frame" x="16" y="72" width="568" height="35"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lmd-BV-4ZW">
-                                <rect key="frame" x="225" y="352" width="150" height="200"/>
+                                <rect key="frame" x="233" y="332" width="135" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lmd-BV-4ZW" secondAttribute="height" multiplier="1:1" id="4Sq-fi-jrb"/>
                                     <constraint firstAttribute="width" constant="150" id="DFw-dj-Vap"/>
@@ -308,11 +301,13 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="4Sq-fi-jrb"/>
+                                        <exclude reference="DFw-dj-Vap"/>
+                                        <exclude reference="g89-yq-9Rl"/>
                                     </mask>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CelebM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucv-49-Utg">
-                                <rect key="frame" x="270" y="323" width="60" height="21"/>
+                                <rect key="frame" x="270" y="303" width="60" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="kf8-Bd-zBZ"/>
                                 </constraints>
@@ -329,6 +324,9 @@
                                 <state key="normal" title="Button" image="1424268026_twitter-128.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="twitterButtonPressed:" destination="v2z-AI-C8K" eventType="touchUpInside" id="aUr-sr-l2k"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibj-Fp-DTM">
                                 <rect key="frame" x="555" y="563" width="29" height="29"/>
@@ -339,6 +337,9 @@
                                 <state key="normal" image="FB-f-Logo__blue_29.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebookButtonPressed:" destination="v2z-AI-C8K" eventType="touchUpInside" id="QB4-dB-RJQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -346,35 +347,22 @@
                             <constraint firstItem="EjZ-f6-Ktx" firstAttribute="leading" secondItem="Trd-O7-DAI" secondAttribute="leadingMargin" id="4t4-PZ-Ix7"/>
                             <constraint firstItem="m6m-Oa-xRR" firstAttribute="centerX" secondItem="ucv-49-Utg" secondAttribute="centerX" id="53J-UC-EDj"/>
                             <constraint firstItem="I2F-ZF-5Aa" firstAttribute="top" secondItem="Lmd-BV-4ZW" secondAttribute="bottom" constant="8" id="6N2-IM-1jv"/>
-                            <constraint firstItem="ibj-Fp-DTM" firstAttribute="leading" secondItem="cJf-3V-xZj" secondAttribute="trailing" constant="8" id="73W-zR-sXL"/>
+                            <constraint firstItem="m6m-Oa-xRR" firstAttribute="height" secondItem="Trd-O7-DAI" secondAttribute="height" multiplier="0.3" id="EWP-uD-JJH"/>
                             <constraint firstAttribute="centerX" secondItem="Lmd-BV-4ZW" secondAttribute="centerX" id="FdY-lj-dXx"/>
                             <constraint firstItem="bbL-Xc-ne0" firstAttribute="top" secondItem="ibj-Fp-DTM" secondAttribute="bottom" constant="8" id="IMu-Ak-RNL"/>
                             <constraint firstItem="ibj-Fp-DTM" firstAttribute="trailing" secondItem="Trd-O7-DAI" secondAttribute="trailingMargin" id="KOm-u1-YBe"/>
                             <constraint firstItem="bbL-Xc-ne0" firstAttribute="top" secondItem="cJf-3V-xZj" secondAttribute="bottom" constant="8" id="LKe-I6-vvu"/>
-                            <constraint firstItem="bbL-Xc-ne0" firstAttribute="top" secondItem="cJf-3V-xZj" secondAttribute="bottom" constant="8" id="MDV-5V-mc1"/>
+                            <constraint firstItem="Lmd-BV-4ZW" firstAttribute="width" secondItem="m6m-Oa-xRR" secondAttribute="width" id="Lns-La-Zy0"/>
                             <constraint firstItem="EjZ-f6-Ktx" firstAttribute="top" secondItem="pkB-to-fQy" secondAttribute="bottom" constant="8" id="MVn-fQ-Kbo"/>
-                            <constraint firstItem="ibj-Fp-DTM" firstAttribute="width" secondItem="cJf-3V-xZj" secondAttribute="width" id="Nzb-28-SJs"/>
                             <constraint firstItem="I2F-ZF-5Aa" firstAttribute="centerX" secondItem="Lmd-BV-4ZW" secondAttribute="centerX" constant="-1" id="Tzu-6A-4dh"/>
-                            <constraint firstItem="bbL-Xc-ne0" firstAttribute="top" secondItem="ibj-Fp-DTM" secondAttribute="bottom" constant="8" id="Wgz-Zg-PWk"/>
                             <constraint firstItem="EjZ-f6-Ktx" firstAttribute="trailing" secondItem="Trd-O7-DAI" secondAttribute="trailingMargin" id="Wy6-Ik-pzL"/>
-                            <constraint firstItem="ibj-Fp-DTM" firstAttribute="trailing" secondItem="Trd-O7-DAI" secondAttribute="trailingMargin" id="ZFZ-4K-UDf"/>
+                            <constraint firstItem="Lmd-BV-4ZW" firstAttribute="height" secondItem="m6m-Oa-xRR" secondAttribute="height" id="Z9x-b0-yqJ"/>
                             <constraint firstItem="m6m-Oa-xRR" firstAttribute="top" secondItem="EjZ-f6-Ktx" secondAttribute="bottom" constant="8" id="bFg-E0-Pdq"/>
                             <constraint firstItem="ucv-49-Utg" firstAttribute="top" secondItem="m6m-Oa-xRR" secondAttribute="bottom" constant="8" id="cGb-Ld-IdQ"/>
-                            <constraint firstItem="ibj-Fp-DTM" firstAttribute="height" secondItem="cJf-3V-xZj" secondAttribute="height" id="ca0-em-Pmy"/>
                             <constraint firstItem="Lmd-BV-4ZW" firstAttribute="top" secondItem="ucv-49-Utg" secondAttribute="bottom" constant="8" id="juZ-7h-nlo"/>
                             <constraint firstAttribute="centerX" secondItem="m6m-Oa-xRR" secondAttribute="centerX" id="lIJ-4M-zpL"/>
                             <constraint firstItem="ibj-Fp-DTM" firstAttribute="leading" secondItem="cJf-3V-xZj" secondAttribute="trailing" constant="8" id="sKr-mv-nUz"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="MDV-5V-mc1"/>
-                                <exclude reference="Wgz-Zg-PWk"/>
-                                <exclude reference="73W-zR-sXL"/>
-                                <exclude reference="Nzb-28-SJs"/>
-                                <exclude reference="ZFZ-4K-UDf"/>
-                                <exclude reference="ca0-em-Pmy"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="celebrityFemaleImage" destination="Lmd-BV-4ZW" id="tGx-Pj-BnE"/>
@@ -502,8 +490,8 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Famous Celebrities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vl-jC-3tr">
-                                <rect key="frame" x="16" y="465" width="191" height="28"/>
-                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="20"/>
+                                <rect key="frame" x="16" y="465" width="178" height="28"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -516,8 +504,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fred and Wilma Flinstone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbQ-yv-KVH">
-                                <rect key="frame" x="84" y="501" width="225" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Fred and Wilma Flinstone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbQ-yv-KVH">
+                                <rect key="frame" x="78" y="501" width="225" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RP2-LB-t39"/>
                                 </constraints>
@@ -525,8 +513,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encino Man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irc-iD-hTC">
-                                <rect key="frame" x="84" y="530" width="104" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Encino Man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irc-iD-hTC">
+                                <rect key="frame" x="78" y="530" width="104" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="aM3-9a-TBA"/>
                                 </constraints>
@@ -534,8 +522,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geico Cave Man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-Jm-JOK">
-                                <rect key="frame" x="84" y="559" width="142" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Geico Cave Man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-Jm-JOK">
+                                <rect key="frame" x="78" y="559" width="142" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="CKJ-J6-DC4"/>
                                 </constraints>
