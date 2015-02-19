@@ -490,8 +490,8 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Famous Celebrities" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vl-jC-3tr">
-                                <rect key="frame" x="16" y="465" width="178" height="28"/>
-                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="20"/>
+                                <rect key="frame" x="16" y="467" width="169" height="26"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -504,8 +504,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Fred and Wilma Flinstone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbQ-yv-KVH">
-                                <rect key="frame" x="78" y="501" width="225" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fred and Wilma Flinstone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbQ-yv-KVH">
+                                <rect key="frame" x="73" y="501" width="225" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RP2-LB-t39"/>
                                 </constraints>
@@ -513,8 +513,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Encino Man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irc-iD-hTC">
-                                <rect key="frame" x="78" y="530" width="104" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encino Man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irc-iD-hTC">
+                                <rect key="frame" x="73" y="530" width="104" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="aM3-9a-TBA"/>
                                 </constraints>
@@ -522,8 +522,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Geico Cave Man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-Jm-JOK">
-                                <rect key="frame" x="78" y="559" width="142" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geico Cave Man" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-Jm-JOK">
+                                <rect key="frame" x="73" y="559" width="142" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="CKJ-J6-DC4"/>
                                 </constraints>
@@ -540,24 +540,53 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0O-hJ-DWc">
+                                <rect key="frame" x="555" y="563" width="29" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="0eu-oC-fQK"/>
+                                </constraints>
+                                <state key="normal" image="FB-f-Logo__blue_29.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookButtonPressed:" destination="Jnq-wA-BQe" eventType="touchUpInside" id="11n-1e-07I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtg-4E-ecY">
+                                <rect key="frame" x="518" y="563" width="29" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="mNy-J9-m23"/>
+                                    <constraint firstAttribute="width" constant="29" id="mcM-I4-Ee2"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="1424268026_twitter-128.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitterButtonPressed:" destination="Jnq-wA-BQe" eventType="touchUpInside" id="kL4-d2-hiy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="aT3-s6-yb5" secondAttribute="trailing" id="2YU-rv-HlE"/>
                             <constraint firstItem="vbQ-yv-KVH" firstAttribute="top" secondItem="0vl-jC-3tr" secondAttribute="bottom" constant="8" id="53T-wc-TuN"/>
                             <constraint firstItem="Lyl-Nu-zo1" firstAttribute="centerX" secondItem="7je-RE-FQS" secondAttribute="centerX" constant="0.5" id="7H8-LL-61t"/>
+                            <constraint firstItem="M9l-Em-ufK" firstAttribute="top" secondItem="g0O-hJ-DWc" secondAttribute="bottom" constant="8" id="GDa-lg-lP0"/>
                             <constraint firstItem="Irc-iD-hTC" firstAttribute="leading" secondItem="vbQ-yv-KVH" secondAttribute="leading" id="Igp-9e-IUj"/>
+                            <constraint firstItem="g0O-hJ-DWc" firstAttribute="leading" secondItem="Vtg-4E-ecY" secondAttribute="trailing" constant="8" id="NlE-Kp-Sua"/>
                             <constraint firstItem="0vl-jC-3tr" firstAttribute="leading" secondItem="oNI-ka-i1F" secondAttribute="leadingMargin" id="Q2E-yg-JKy"/>
                             <constraint firstItem="aT3-s6-yb5" firstAttribute="top" secondItem="fBQ-lR-bsd" secondAttribute="bottom" constant="8" id="UBr-WN-iSu"/>
                             <constraint firstItem="Lyl-Nu-zo1" firstAttribute="top" secondItem="7je-RE-FQS" secondAttribute="bottom" constant="8" id="UrB-Ym-wCU"/>
                             <constraint firstItem="7je-RE-FQS" firstAttribute="top" secondItem="aT3-s6-yb5" secondAttribute="bottom" constant="8" id="YHq-2l-4n5"/>
                             <constraint firstItem="U74-Jm-JOK" firstAttribute="top" secondItem="Irc-iD-hTC" secondAttribute="bottom" constant="8" id="gGX-CA-Fgi"/>
                             <constraint firstItem="vbQ-yv-KVH" firstAttribute="centerX" secondItem="0vl-jC-3tr" secondAttribute="centerX" constant="84.5" id="huU-Ts-PCJ"/>
+                            <constraint firstItem="M9l-Em-ufK" firstAttribute="top" secondItem="Vtg-4E-ecY" secondAttribute="bottom" constant="8" id="iRK-YC-wcU"/>
                             <constraint firstItem="Irc-iD-hTC" firstAttribute="top" secondItem="vbQ-yv-KVH" secondAttribute="bottom" constant="8" id="j5f-s2-yS0"/>
                             <constraint firstItem="Irc-iD-hTC" firstAttribute="leading" secondItem="U74-Jm-JOK" secondAttribute="leading" id="lfG-Ct-7Lm"/>
                             <constraint firstItem="M9l-Em-ufK" firstAttribute="top" secondItem="U74-Jm-JOK" secondAttribute="bottom" constant="20" id="mfn-06-4uZ"/>
                             <constraint firstItem="aT3-s6-yb5" firstAttribute="height" secondItem="oNI-ka-i1F" secondAttribute="height" multiplier="0.4" id="n9i-wN-6zj"/>
                             <constraint firstItem="aT3-s6-yb5" firstAttribute="leading" secondItem="oNI-ka-i1F" secondAttribute="leadingMargin" id="oFZ-fE-p5K"/>
+                            <constraint firstItem="g0O-hJ-DWc" firstAttribute="trailing" secondItem="oNI-ka-i1F" secondAttribute="trailingMargin" id="sFL-QD-WzJ"/>
                             <constraint firstItem="7je-RE-FQS" firstAttribute="centerX" secondItem="aT3-s6-yb5" secondAttribute="centerX" id="sHE-Ij-gq4"/>
                         </constraints>
                     </view>
