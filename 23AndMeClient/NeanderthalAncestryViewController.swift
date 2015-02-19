@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class NeanderthalAncestryViewController: UIViewController {
 
@@ -30,5 +31,44 @@ class NeanderthalAncestryViewController: UIViewController {
 
       }) // callback enclosure
     } // viewDidLoad()
+  
+  func screenShotMethod() -> UIImage {
+    //Create the UIImage
+    UIGraphicsBeginImageContext(view.frame.size)
+    view.layer.renderInContext(UIGraphicsGetCurrentContext())
+    let screenshotImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    //Save it to the camera roll
+    UIImageWriteToSavedPhotosAlbum(screenshotImage, nil, nil, nil)
+    return screenshotImage
+  } // <- close func screenShot Method
+  
+  @IBAction func twitterButtonPressed(sender: UIButton) {
+    let myImage = screenShotMethod()
+    if SLComposeViewController.isAvailableForServiceType (SLServiceTypeTwitter) {
+      var twitterSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+      twitterSheet.setInitialText("Check-out who has common ancestory as me! ~CelebriMe23")
+      twitterSheet.addImage(myImage)
+      self.presentViewController(twitterSheet, animated: true, completion: nil)
+    } else {
+      var alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+      alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+      self.presentViewController(alert, animated: true, completion:nil)
+    }
+  } // <-close twitterbuttonpressed
+  
+  @IBAction func facebookButtonPressed(sender: UIButton) {
+    let myImage = screenShotMethod()
+    if SLComposeViewController.isAvailableForServiceType (SLServiceTypeFacebook) {
+      var facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+      facebookSheet.setInitialText("Check-out who has common ancestory as me! ~CelebriMe23")
+      facebookSheet.addImage(myImage)
+      self.presentViewController(facebookSheet, animated: true, completion: nil)
+    } else {
+      var alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+      alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+      self.presentViewController(alert, animated: true, completion:nil)
+    }
+  } // <- close facebookbuttonpressed
 
 } // NeanderthalAncestryViewController()
