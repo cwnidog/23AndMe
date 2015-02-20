@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yVV-pq-wpX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yVV-pq-wpX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -50,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afr-q2-tMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1799" y="-60"/>
+            <point key="canvasLocation" x="1805" y="-52"/>
         </scene>
         <!--Main Menu-->
         <scene sceneID="6qt-Oh-9QC">
@@ -61,10 +61,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <imageView key="tableFooterView" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gel0" id="NSe-zV-xRb">
-                            <rect key="frame" x="0.0" y="424" width="600" height="210"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
                         <sections>
                             <tableViewSection headerTitle="Celebrify Me" id="TrZ-3c-TIF">
                                 <cells>
@@ -83,7 +79,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="1" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="ayE-d8-SEw" kind="show" id="bKS-xe-Xjf"/>
                                         </connections>
@@ -157,9 +153,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="5ND-vF-4at"/>
-                    <connections>
-                        <outlet property="accentImage" destination="NSe-zV-xRb" id="ZC7-tD-pDU"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saF-l9-sPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -378,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nh5-bO-Prd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425" y="-60"/>
+            <point key="canvasLocation" x="2513" y="-52"/>
         </scene>
         <!--Country2 View Controller-->
         <scene sceneID="2Bc-v1-0HE">
@@ -529,6 +522,115 @@
             </objects>
             <point key="canvasLocation" x="2728" y="601"/>
         </scene>
+        <!--PageContentViewController-->
+        <scene sceneID="rXu-gw-kYv">
+            <objects>
+                <viewController storyboardIdentifier="Content" id="Q3R-Cn-doj" userLabel="PageContentViewController" customClass="PageContentViewController" customModule="_3AndMeClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VoE-48-Uec"/>
+                        <viewControllerLayoutGuide type="bottom" id="vfB-yF-OzA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zWc-hb-wq7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-8T-xvd">
+                                <rect key="frame" x="190" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="7ws-Va-2o0"/>
+                                    <constraint firstAttribute="width" constant="240" id="Mie-l8-hPQ"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSr-2G-Iwy">
+                                <rect key="frame" x="190" y="154" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="BVE-64-vzl"/>
+                                    <constraint firstAttribute="width" constant="240" id="bIo-ws-Ymf"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-w5-3he">
+                                <rect key="frame" x="277" y="485" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="4Ji-n0-lUn"/>
+                                    <constraint firstAttribute="height" constant="30" id="xOt-Nx-21a"/>
+                                </constraints>
+                                <state key="normal" title="Got it">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPageClicked:" destination="Q3R-Cn-doj" eventType="touchUpInside" id="Rpr-My-YBr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pxw-8T-xvd" firstAttribute="top" secondItem="zWc-hb-wq7" secondAttribute="topMargin" id="4V1-3i-NgO"/>
+                            <constraint firstAttribute="centerX" secondItem="DSr-2G-Iwy" secondAttribute="centerX" constant="-10" id="PWb-IT-fTZ"/>
+                            <constraint firstAttribute="centerX" secondItem="pxw-8T-xvd" secondAttribute="centerX" constant="-10" id="QDo-vX-hLC"/>
+                            <constraint firstAttribute="centerY" secondItem="DSr-2G-Iwy" secondAttribute="centerY" constant="82" id="VoC-Kr-QIp"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="s6l-w5-3he" secondAttribute="bottom" constant="85" id="Xmj-jO-YZB"/>
+                            <constraint firstAttribute="centerX" secondItem="s6l-w5-3he" secondAttribute="centerX" id="ZXB-Nh-WLT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="s6l-w5-3he" id="upY-fx-SXw"/>
+                        <outlet property="pageImage" destination="pxw-8T-xvd" id="zfj-Kw-feJ"/>
+                        <outlet property="pageText" destination="DSr-2G-Iwy" id="BMe-5k-IEh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pzd-bB-HeR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1133" y="-773"/>
+        </scene>
+        <!--NewUserViewController-->
+        <scene sceneID="umM-qf-hXQ">
+            <objects>
+                <viewController storyboardIdentifier="NewUserVC" id="33b-jC-7De" userLabel="NewUserViewController" customClass="PageViewController" customModule="_3AndMeClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v5m-Kt-Qcx"/>
+                        <viewControllerLayoutGuide type="bottom" id="RDK-AD-3Zh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9dk-mK-pqV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gel0" translatesAutoresizingMaskIntoConstraints="NO" id="Ree-Bz-Mbs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="RDK-AD-3Zh" firstAttribute="top" secondItem="Ree-Bz-Mbs" secondAttribute="bottom" id="CcJ-9t-bWo"/>
+                            <constraint firstItem="Ree-Bz-Mbs" firstAttribute="top" secondItem="9dk-mK-pqV" secondAttribute="topMargin" id="LMc-rC-Jth"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ree-Bz-Mbs" secondAttribute="trailing" constant="-16" id="PQa-kU-J0Q"/>
+                            <constraint firstItem="Ree-Bz-Mbs" firstAttribute="leading" secondItem="9dk-mK-pqV" secondAttribute="leadingMargin" constant="-16" id="jcH-nm-yYI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lUS-lm-Cp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="-190"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="YuQ-wF-pwt">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="crossDissolve" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Dus-PT-XW3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxg-MK-hPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1133" y="-52"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Rl-f7-w0r">
             <objects>
@@ -545,7 +647,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EM2-bG-IKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1283" y="601"/>
+            <point key="canvasLocation" x="1133" y="610"/>
         </scene>
     </scenes>
     <resources>
