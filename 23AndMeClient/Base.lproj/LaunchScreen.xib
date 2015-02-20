@@ -3,6 +3,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </mutableArray>
+        <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,7 +30,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="41" id="tDZ-OF-odi"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" red="0.32125344490892321" green="0.29257082542978263" blue="0.54482323232323226" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
@@ -33,7 +41,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="43" id="TQa-pG-Q4Z"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="AlNile-Bold" family="Al Nile" pointSize="36"/>
+                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="36"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" red="0.21624058944995253" green="0.21546669030994098" blue="0.54482323232323226" alpha="0.54000000000000004" colorSpace="calibratedRGB"/>
