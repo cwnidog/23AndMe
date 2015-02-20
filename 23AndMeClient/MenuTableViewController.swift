@@ -11,16 +11,11 @@ import UIKit
 class MenuTableViewController: UITableViewController {
   
   @IBOutlet weak var accentImage: UIImageView!
-
-  var newUser:Bool = true
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    self.accentImage.image = UIImage(named: "gel0.jpg")
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
     
-    if (newUser)
+    if (NetworkController.sharedNetworkController.accessToken == nil)
     {
       let toVC = self.storyboard?.instantiateViewControllerWithIdentifier("NewUserVC") as PageViewController
       self.navigationController?.pushViewController(toVC, animated: true)

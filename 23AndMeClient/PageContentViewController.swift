@@ -35,7 +35,6 @@ class PageContentViewController: UIViewController {
     }
   }
   
-
   
   override func viewDidLoad()
   {
@@ -43,7 +42,6 @@ class PageContentViewController: UIViewController {
 
     pageImage.image = UIImage(named: imageName)
     self.nextButton.hidden   = self.hideButton
-    
     self.pageText.text = self.onboardingInfo.getText(self.itemIndex)
     
   }

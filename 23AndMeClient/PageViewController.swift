@@ -15,7 +15,7 @@ protocol PageController
 
 class PageViewController: UIViewController,  UIPageViewControllerDataSource
 {
-  private let imageContent = ["background0", "background1", "background2", "backgroun3"]
+  private let imageContent = ["", "", "demoCeleb", "demoSignin"]
   
   private var pageViewController: UIPageViewController?
   
@@ -23,7 +23,7 @@ class PageViewController: UIViewController,  UIPageViewControllerDataSource
   {
     super.viewDidLoad()
     createPageViewController()
-    //setupPageControl()  //
+    setupPageControl()
   }
   
   //this method instantiates the PageViewController object - which serves as a controller for all of the individual VC's
@@ -61,12 +61,14 @@ class PageViewController: UIViewController,  UIPageViewControllerDataSource
     }
     return nil
   }
-  /*
+  
   private func setupPageControl()
   {
     let appearance = UIPageControl.appearance()
-    appearance.backgroundColor = UIColor.greenColor()
-  } */
+    appearance.backgroundColor               = UIColor(red: 0.424, green: 0.424, blue: 0.729, alpha: 1)
+    appearance.pageIndicatorTintColor        = UIColor.blackColor()
+    appearance.currentPageIndicatorTintColor = UIColor(red: 0.871, green: 0.831, blue: 0.98, alpha: 1)
+  }
   
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
