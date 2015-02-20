@@ -80,6 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="sectionIndexBackgroundColor" red="0.88627450980392153" green="0.88235294117647056" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Celebrify Me" id="TrZ-3c-TIF">
                                 <cells>
@@ -98,7 +99,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="1" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <segue destination="ayE-d8-SEw" kind="show" id="bKS-xe-Xjf"/>
                                         </connections>
@@ -418,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nh5-bO-Prd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2513" y="-52"/>
+            <point key="canvasLocation" x="2425" y="-60"/>
         </scene>
         <!--Country2 View Controller-->
         <scene sceneID="2Bc-v1-0HE">
@@ -723,11 +724,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EM2-bG-IKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133" y="610"/>
+            <point key="canvasLocation" x="1283" y="601"/>
         </scene>
     </scenes>
     <resources>
         <image name="1424268026_twitter-128.png" width="128" height="128"/>
         <image name="FB-f-Logo__blue_29.png" width="29" height="29"/>
+        <image name="gel0" width="1088" height="816"/>
     </resources>
 </document>
