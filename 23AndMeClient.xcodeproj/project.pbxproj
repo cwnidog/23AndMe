@@ -18,9 +18,9 @@
 		4383FCCE1A781377009538D0 /* Regions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCCD1A781377009538D0 /* Regions.swift */; };
 		4383FCD01A78139B009538D0 /* SubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCCF1A78139B009538D0 /* SubRegion.swift */; };
 		4383FCD21A78195F009538D0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCD11A78195F009538D0 /* Country.swift */; };
-		43AC55B01A7B1C7F00B9FADD /* MaternalLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AC55AF1A7B1C7F00B9FADD /* MaternalLineViewController.swift */; };
 		43ECBD091A9429E5008DBC45 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ECBD081A9429E5008DBC45 /* PageViewController.swift */; };
 		43ECBD0B1A943043008DBC45 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ECBD0A1A943043008DBC45 /* PageContentViewController.swift */; };
+		5D890AA51A9820670098F1D1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D890AA41A9820670098F1D1 /* Media.xcassets */; };
 		5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907521A758C7B009D92C2 /* AppDelegate.swift */; };
 		5DA907581A758C7C009D92C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907561A758C7B009D92C2 /* Main.storyboard */; };
 		5DA9075D1A758C7C009D92C2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA9075B1A758C7C009D92C2 /* LaunchScreen.xib */; };
@@ -88,9 +88,9 @@
 		4383FCCD1A781377009538D0 /* Regions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regions.swift; sourceTree = "<group>"; };
 		4383FCCF1A78139B009538D0 /* SubRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubRegion.swift; sourceTree = "<group>"; };
 		4383FCD11A78195F009538D0 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		43AC55AF1A7B1C7F00B9FADD /* MaternalLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaternalLineViewController.swift; sourceTree = "<group>"; };
 		43ECBD081A9429E5008DBC45 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		43ECBD0A1A943043008DBC45 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		5D890AA41A9820670098F1D1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		5DA9074D1A758C7B009D92C2 /* 23AndMeClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 23AndMeClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA907511A758C7B009D92C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DA907521A758C7B009D92C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +187,7 @@
 				5DA907521A758C7B009D92C2 /* AppDelegate.swift */,
 				5DA907AF1A75A3E1009D92C2 /* Inherited Conditions ViewController.swift */,
 				4313C0ED1A785CEE0097DC7E /* Images.xcassets */,
+				5D890AA41A9820670098F1D1 /* Media.xcassets */,
 				5DA907501A758C7B009D92C2 /* Supporting Files */,
 			);
 			path = 23AndMeClient;
@@ -409,6 +410,7 @@
 				5DA907A31A758D85009D92C2 /* user.json in Resources */,
 				5DA907941A758D85009D92C2 /* grfs_get.json in Resources */,
 				795438DE1A94652B00255A7F /* OpenSans-ExtraBold.ttf in Resources */,
+				5D890AA51A9820670098F1D1 /* Media.xcassets in Resources */,
 				795438DB1A94652B00255A7F /* Apache License.txt in Resources */,
 				4330F8091A78589000E5BA72 /* GlobalCell.xib in Resources */,
 				5DA9078E1A758D85009D92C2 /* ancestry_get.json in Resources */,
