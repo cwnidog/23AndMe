@@ -10,17 +10,16 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
   
-
   @IBOutlet weak var accentImage: UIImageView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    self.accentImage.image = UIImage(named: "gel0.jpg")
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    if (NetworkController.sharedNetworkController.accessToken == nil)
+    {
+      let toVC = self.storyboard?.instantiateViewControllerWithIdentifier("NewUserVC") as PageViewController
+      self.navigationController?.pushViewController(toVC, animated: true)
+    }
   } // viewDidLoad()
   
   override func viewDidAppear(animated: Bool)
