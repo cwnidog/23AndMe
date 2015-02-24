@@ -30,7 +30,7 @@
                         <size key="shadowOffset" width="1" height="1"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Percentage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWW-Sq-GIR">
-                        <rect key="frame" x="106" y="50" width="89" height="24"/>
+                        <rect key="frame" x="106" y="47" width="89" height="24"/>
                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                     <constraint firstItem="05y-gd-mhI" firstAttribute="leading" secondItem="F8e-zW-mjZ" secondAttribute="leading" id="D1f-0T-dOT"/>
                     <constraint firstAttribute="centerX" secondItem="tWW-Sq-GIR" secondAttribute="centerX" constant="-0.5" id="Deh-T8-gQa"/>
                     <constraint firstItem="05y-gd-mhI" firstAttribute="top" secondItem="F8e-zW-mjZ" secondAttribute="top" id="RwT-AU-4gr"/>
-                    <constraint firstItem="tWW-Sq-GIR" firstAttribute="top" secondItem="Usi-Aj-B0U" secondAttribute="bottom" constant="18" id="VmZ-jg-s5s"/>
+                    <constraint firstItem="tWW-Sq-GIR" firstAttribute="top" secondItem="Usi-Aj-B0U" secondAttribute="bottom" constant="15" id="VmZ-jg-s5s"/>
                     <constraint firstItem="Usi-Aj-B0U" firstAttribute="leading" secondItem="F8e-zW-mjZ" secondAttribute="leadingMargin" constant="2" id="kTQ-Ag-Onw"/>
                     <constraint firstItem="Usi-Aj-B0U" firstAttribute="top" secondItem="F8e-zW-mjZ" secondAttribute="topMargin" constant="2" id="u08-wU-bXF"/>
                 </constraints>
