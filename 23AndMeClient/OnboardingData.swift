@@ -23,7 +23,6 @@ class OnboardingData
     {
       if (i == index)
       {
-        
         return myText[index] as String
       }
     }

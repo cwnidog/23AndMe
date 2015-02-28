@@ -15,7 +15,7 @@ protocol PageController
 
 class PageViewController: UIViewController,  UIPageViewControllerDataSource
 {
-  private let imageContent = ["", "", "demoCeleb", "demoSignin"]
+  private let imageContent = ["", "demoTable", "demoCeleb", "demoSignin"]
   
   private var pageViewController: UIPageViewController?
   
@@ -65,6 +65,7 @@ class PageViewController: UIViewController,  UIPageViewControllerDataSource
   private func setupPageControl()
   {
     let appearance = UIPageControl.appearance()
+    
     appearance.backgroundColor               = UIColor(red: 0.424, green: 0.424, blue: 0.729, alpha: 1)
     appearance.pageIndicatorTintColor        = UIColor.blackColor()
     appearance.currentPageIndicatorTintColor = UIColor(red: 0.871, green: 0.831, blue: 0.98, alpha: 1)

@@ -39,11 +39,13 @@ class PageContentViewController: UIViewController {
   override func viewDidLoad()
   {
     super.viewDidLoad()
-
+    
     pageImage.image = UIImage(named: imageName)
     self.nextButton.hidden   = self.hideButton
     self.pageText.text = self.onboardingInfo.getText(self.itemIndex)
-    
+    self.pageText.font = UIFont(name: "OpenSans", size: 15)
+    self.pageText.textAlignment = NSTextAlignment.Center
+    self.nextButton.titleLabel?.font = UIFont(name: "OpenSans", size: 22)
   }
   
 }
