@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yVV-pq-wpX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yVV-pq-wpX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -612,11 +612,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSr-2G-Iwy">
-                                <rect key="frame" x="140" y="60" width="320" height="130"/>
+                                <rect key="frame" x="140" y="60" width="320" height="250"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="Gti-d1-Ypk"/>
-                                    <constraint firstAttribute="height" constant="130" id="wtp-gS-vjh"/>
+                                    <constraint firstAttribute="height" constant="250" id="wtp-gS-vjh"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -630,7 +630,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-w5-3he">
-                                <rect key="frame" x="263" y="408" width="75" height="30"/>
+                                <rect key="frame" x="263" y="503" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="nPh-Mv-uj6"/>
                                     <constraint firstAttribute="width" constant="75" id="pcL-qr-9Ur"/>
@@ -643,10 +643,10 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-8T-xvd">
-                                <rect key="frame" x="238" y="200" width="125" height="200"/>
+                                <rect key="frame" x="238" y="320" width="125" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="Fga-22-mnH"/>
-                                    <constraint firstAttribute="height" constant="200" id="hik-hR-LHE"/>
+                                    <constraint firstAttribute="height" constant="175" id="hik-hR-LHE"/>
                                 </constraints>
                             </imageView>
                         </subviews>
