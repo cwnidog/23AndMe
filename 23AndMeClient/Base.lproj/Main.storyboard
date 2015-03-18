@@ -612,11 +612,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSr-2G-Iwy">
-                                <rect key="frame" x="140" y="60" width="320" height="250"/>
+                                <rect key="frame" x="140" y="60" width="320" height="175"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="Gti-d1-Ypk"/>
-                                    <constraint firstAttribute="height" constant="250" id="wtp-gS-vjh"/>
+                                    <constraint firstAttribute="height" constant="175" id="wtp-gS-vjh"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -630,7 +630,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-w5-3he">
-                                <rect key="frame" x="263" y="503" width="75" height="30"/>
+                                <rect key="frame" x="263" y="418" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="nPh-Mv-uj6"/>
                                     <constraint firstAttribute="width" constant="75" id="pcL-qr-9Ur"/>
@@ -643,7 +643,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-8T-xvd">
-                                <rect key="frame" x="238" y="320" width="125" height="175"/>
+                                <rect key="frame" x="238" y="240" width="125" height="175"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="Fga-22-mnH"/>
                                     <constraint firstAttribute="height" constant="175" id="hik-hR-LHE"/>
@@ -655,8 +655,8 @@
                             <constraint firstItem="DSr-2G-Iwy" firstAttribute="top" secondItem="zWc-hb-wq7" secondAttribute="topMargin" constant="60" id="4kB-sG-Xla"/>
                             <constraint firstAttribute="centerX" secondItem="pxw-8T-xvd" secondAttribute="centerX" constant="-0.5" id="7Fd-XV-YfO"/>
                             <constraint firstAttribute="centerX" secondItem="DSr-2G-Iwy" secondAttribute="centerX" id="DUd-7w-Cdo"/>
-                            <constraint firstItem="pxw-8T-xvd" firstAttribute="top" secondItem="DSr-2G-Iwy" secondAttribute="bottom" constant="10" id="Nbg-8Q-nTj"/>
-                            <constraint firstItem="s6l-w5-3he" firstAttribute="top" secondItem="pxw-8T-xvd" secondAttribute="bottom" constant="8" id="XLc-fO-yXM"/>
+                            <constraint firstItem="pxw-8T-xvd" firstAttribute="top" secondItem="DSr-2G-Iwy" secondAttribute="bottom" constant="5" id="Nbg-8Q-nTj"/>
+                            <constraint firstItem="s6l-w5-3he" firstAttribute="top" secondItem="pxw-8T-xvd" secondAttribute="bottom" constant="3" id="XLc-fO-yXM"/>
                             <constraint firstAttribute="centerX" secondItem="s6l-w5-3he" secondAttribute="centerX" id="XeY-Ku-l4H"/>
                         </constraints>
                     </view>
