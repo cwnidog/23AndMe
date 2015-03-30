@@ -15,7 +15,7 @@ protocol PageController
 
 class PageViewController: UIViewController,  UIPageViewControllerDataSource
 {
-  private let imageContent = ["", "demoTable", "demoCeleb", "demoSignin"]
+  private let imageContent = ["", "demoMatern", "demoCeleb", "demoSignin"]
   
   private var pageViewController: UIPageViewController?
   
