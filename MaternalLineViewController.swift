@@ -23,16 +23,20 @@ class MaternalLineViewController: UIViewController, UIWebViewDelegate
     super.viewDidLoad()
     self.activityIndicator.hidden = false
     
-    let alertController = UIAlertController(title: "User Alert", message: "If you do not have a full profile, you will not be able to access the maternal haplogroup screen", preferredStyle: .Alert)
+    if (NetworkController.sharedNetworkController.maternalHaplogroup == nil)
+    {
     
-    let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in println(action) }
-    alertController.addAction(cancelAction)
+      let alertController = UIAlertController(title: "User Alert", message: "If you do not have a full profile, you will not be able to access the maternal haplogroup screen", preferredStyle: .Alert)
     
-    let goBackAction = UIAlertAction(title: "Go Back", style: .Destructive) {(action) in if let navController = self.navigationController {navController.popViewControllerAnimated(true) } }
-    alertController.addAction(goBackAction)
+      let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in println(action) }
+      alertController.addAction(cancelAction)
     
-    self.presentViewController(alertController, animated: true) {
+      let goBackAction = UIAlertAction(title: "Go Back", style: .Destructive) {(action) in if let navController = self.navigationController {navController.popViewControllerAnimated(true) } }
+      alertController.addAction(goBackAction)
+    
+      self.presentViewController(alertController, animated: true) {
       
+      }
     }
   }
   

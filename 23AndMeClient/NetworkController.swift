@@ -285,7 +285,7 @@ class NetworkController
   **  haplogroup as 2 strings - these strings will be stored for future use using NSUserDefaults   */
   func fetchUserHaplogroup(callback:(maternalHaplo:String?, paternalHaplo:String?, errorString: String?) -> (Void))
   {
-   // let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(self.profiles[0].profileID)/")
+    //let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(self.profiles[0].profileID)/")
     let url = NSURL(string: "https://api.23andme.com/1/demo/haplogroups/SP1_FATHER_V4")
     let requestedURL = NSMutableURLRequest(URL: url!)
     requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
