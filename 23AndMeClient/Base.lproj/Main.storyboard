@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yVV-pq-wpX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yVV-pq-wpX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -611,12 +611,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-w5-3he">
+                                <rect key="frame" x="263" y="562" width="75" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nPh-Mv-uj6"/>
+                                    <constraint firstAttribute="width" constant="75" id="pcL-qr-9Ur"/>
+                                </constraints>
+                                <state key="normal" title="Got it">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPageClicked:" destination="Q3R-Cn-doj" eventType="touchUpInside" id="Rpr-My-YBr"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-8T-xvd">
+                                <rect key="frame" x="208" y="320" width="184" height="234"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pxw-8T-xvd" secondAttribute="height" multiplier="18:23" id="13L-Bc-p4y"/>
+                                </constraints>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSr-2G-Iwy">
-                                <rect key="frame" x="140" y="60" width="320" height="250"/>
+                                <rect key="frame" x="16" y="60" width="568" height="188"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Gti-d1-Ypk"/>
-                                    <constraint firstAttribute="height" constant="250" id="wtp-gS-vjh"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="yBF-AF-Kdv"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -629,26 +647,6 @@
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6l-w5-3he">
-                                <rect key="frame" x="263" y="503" width="75" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="nPh-Mv-uj6"/>
-                                    <constraint firstAttribute="width" constant="75" id="pcL-qr-9Ur"/>
-                                </constraints>
-                                <state key="normal" title="Got it">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextPageClicked:" destination="Q3R-Cn-doj" eventType="touchUpInside" id="Rpr-My-YBr"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pxw-8T-xvd">
-                                <rect key="frame" x="238" y="320" width="125" height="175"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="125" id="Fga-22-mnH"/>
-                                    <constraint firstAttribute="height" constant="175" id="hik-hR-LHE"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -656,8 +654,11 @@
                             <constraint firstAttribute="centerX" secondItem="pxw-8T-xvd" secondAttribute="centerX" constant="-0.5" id="7Fd-XV-YfO"/>
                             <constraint firstAttribute="centerX" secondItem="DSr-2G-Iwy" secondAttribute="centerX" id="DUd-7w-Cdo"/>
                             <constraint firstItem="pxw-8T-xvd" firstAttribute="top" secondItem="DSr-2G-Iwy" secondAttribute="bottom" constant="10" id="Nbg-8Q-nTj"/>
+                            <constraint firstItem="DSr-2G-Iwy" firstAttribute="leading" secondItem="zWc-hb-wq7" secondAttribute="leadingMargin" id="SGB-36-3ZV"/>
+                            <constraint firstItem="DSr-2G-Iwy" firstAttribute="trailing" secondItem="zWc-hb-wq7" secondAttribute="trailingMargin" id="WPC-1E-Zf2"/>
                             <constraint firstItem="s6l-w5-3he" firstAttribute="top" secondItem="pxw-8T-xvd" secondAttribute="bottom" constant="8" id="XLc-fO-yXM"/>
                             <constraint firstAttribute="centerX" secondItem="s6l-w5-3he" secondAttribute="centerX" id="XeY-Ku-l4H"/>
+                            <constraint firstItem="vfB-yF-OzA" firstAttribute="top" secondItem="s6l-w5-3he" secondAttribute="bottom" constant="8" id="d53-JZ-6Ad"/>
                         </constraints>
                     </view>
                     <connections>
