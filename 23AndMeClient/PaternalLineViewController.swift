@@ -21,16 +21,20 @@ class PaternalLineViewController: UIViewController, UIWebViewDelegate
     super.viewDidLoad()
     self.activityIndicator.hidden = false
     
-    let alertController = UIAlertController(title: "User Alert", message: "If you do not have a full profile and have a Y chromosome, you will not be able to access the paternal haplogroup screen", preferredStyle: .Alert)
     
-    let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in println(action) }
-    alertController.addAction(cancelAction)
+    if (NetworkController.sharedNetworkController.paternalHaplogroup == nil)
+    {
+      let alertController = UIAlertController(title: "User Alert", message: "If you do not have a full profile and have a Y chromosome, you will not be able to access the paternal haplogroup screen", preferredStyle: .Alert)
     
-    let goBackAction = UIAlertAction(title: "Go Back", style: .Destructive) {(action) in if let navController = self.navigationController {navController.popViewControllerAnimated(true) } }
-    alertController.addAction(goBackAction)
+      let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in println(action) }
+      alertController.addAction(cancelAction)
     
-    self.presentViewController(alertController, animated: true) {
+      let goBackAction = UIAlertAction(title: "Go Back", style: .Destructive) {(action) in if let navController = self.navigationController {navController.popViewControllerAnimated(true) } }
+      alertController.addAction(goBackAction)
+    
+      self.presentViewController(alertController, animated: true) {
       
+      }
     }
   }
 
