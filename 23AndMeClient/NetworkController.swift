@@ -175,7 +175,7 @@ class NetworkController
   //MARK: fetchAncestryComposition
   func fetchAncestryComposition(callback:(region:[Regions]?, errorString: String?) -> (Void))
   {
-//      let url = NSURL(string: "https://api.23andme.com/1/ancestry/\(self.profiles[0].profileID)/?threshold=0.51") //0.51 = speculative = more results
+    //let url = NSURL(string: "https://api.23andme.com/1/ancestry/\(self.profiles[0].profileID)/?threshold=0.51") //0.51 = speculative = more results
     let url = NSURL(string: "https://api.23andme.com/1/demo/ancestry/SP1_FATHER_V4//?threshold=0.51")
     let requestedURL = NSMutableURLRequest(URL: url!)
     requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
@@ -285,7 +285,7 @@ class NetworkController
   **  haplogroup as 2 strings - these strings will be stored for future use using NSUserDefaults   */
   func fetchUserHaplogroup(callback:(maternalHaplo:String?, paternalHaplo:String?, errorString: String?) -> (Void))
   {
-//    let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(self.profiles[0].profileID)/")
+  //  let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(self.profiles[0].profileID)/")
     let url = NSURL(string: "https://api.23andme.com/1/demo/haplogroups/SP1_FATHER_V4")
     let requestedURL = NSMutableURLRequest(URL: url!)
     requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
