@@ -10,6 +10,7 @@ import Foundation
 
 class OnboardingData
 {
+  // I rearranged the text here
   let text0 = "Welcome to CelebreMe23! This application allows you to import your 23andMe ancestry information and match it across a database of celebrity ancestries.  \n \n *** Note *** if you have not completed your profile, CelebriMe23 will display sample data from 23andMe and it will not be possible to explore parental haplogroups. \n \n Swipe to proceed!"
   let text1 = "Explore your maternal and paternal haplogroups and see what percentage your DNA is of neanderthal origin."
   let text2 = "Once you have discovered your celebrity kin-folk, share it with your friends on twitter or facebook!"
