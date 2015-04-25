@@ -17,8 +17,8 @@ class SubRegion
   
   init(jsonDictionary: [String:AnyObject])
   {
-    self.region     = jsonDictionary["label"] as String
-    let percentage  = jsonDictionary["proportion"] as Float
+    self.region     = jsonDictionary["label"] as! String
+    let percentage  = jsonDictionary["proportion"] as! Float
     self.proportion = percentage * 100
     if let unknown  = jsonDictionary["unassigned"] as? Float
     {

@@ -37,10 +37,10 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     //println(navigationAction.request.URL)
     
     // if we get a code back from 23andMe, dismiss the webView and pass the URL on back to the NetworkController to use to get an initial or refreshed token
-    if navigationAction.request.URL.description.rangeOfString("code=") != nil {
+    if navigationAction.request.URL!.description.rangeOfString("code=") != nil {
       
       // request the token from 23andMe and then ask teh NetworkController to request the user's profiles, which we need for any further requests
-      NetworkController.sharedNetworkController.handleCallbackURL(navigationAction.request.URL, completionHandler: { () -> () in
+      NetworkController.sharedNetworkController.handleCallbackURL(navigationAction.request.URL!, completionHandler: { () -> () in
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
          NetworkController.sharedNetworkController.fetchProfileID((), callback: { (profiles, userID, errorDescription) -> (Void) in
               NetworkController.sharedNetworkController.profiles = profiles!

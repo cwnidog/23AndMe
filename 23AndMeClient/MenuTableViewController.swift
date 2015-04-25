@@ -17,7 +17,7 @@ class MenuTableViewController: UITableViewController {
     
     if (NetworkController.sharedNetworkController.accessToken == nil)
     {
-      let toVC = self.storyboard?.instantiateViewControllerWithIdentifier("NewUserVC") as PageViewController
+      let toVC = self.storyboard?.instantiateViewControllerWithIdentifier("NewUserVC") as! PageViewController
       self.navigationController?.pushViewController(toVC, animated: true)
     }
   } // viewDidLoad()

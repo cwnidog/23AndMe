@@ -15,7 +15,7 @@ class UserProfile
   
   init(jsonDictionary : [String : AnyObject])
   {
-    genotyped = jsonDictionary["genotyped"] as Bool
-    profileID = jsonDictionary["id"] as String
+    genotyped = jsonDictionary["genotyped"] as! Bool
+    profileID = jsonDictionary["id"]as! String
   } // init()
 } // UserProfile

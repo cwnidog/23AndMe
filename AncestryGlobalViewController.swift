@@ -45,7 +45,7 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
   {
-    let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as GlobalCell 
+    let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as! GlobalCell 
     
     let currentRegion = self.global[indexPath.row]
     
@@ -78,14 +78,14 @@ class AncestryGlobalViewController: UIViewController, UITableViewDataSource, UIT
     
     if (regionToSubRegion.subRegions == nil) //this will skip to the celebrityVC if subRegions is epmpty
     {
-      let toVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as CelebrityInterestViewController
+      let toVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as! CelebrityInterestViewController
       
       toVC.region = regionToSubRegion
       
       self.navigationController?.pushViewController(toVC, animated: true)
     } else {
       
-      let toVC = storyboard?.instantiateViewControllerWithIdentifier("REGIONAL_VC") as AncestryRegionalViewController
+      let toVC = storyboard?.instantiateViewControllerWithIdentifier("REGIONAL_VC") as! AncestryRegionalViewController
       
       toVC.region = regionToSubRegion
       

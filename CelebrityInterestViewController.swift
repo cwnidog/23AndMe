@@ -73,7 +73,7 @@ class CelebrityInterestViewController: UIViewController {
   
       self.countryDescriptionLabel.text = "\(finalCountry) Ancestory"
 
-      var countryDictionary = celebDictionary![finalCountry] as [String : AnyObject]
+      var countryDictionary = celebDictionary![finalCountry] as! [String : AnyObject]
 //      println("countryDictionary = \(countryDictionary)")
       self.celebrityMaleLabel.text = countryDictionary["male"] as? String
       self.celebrityFemaleLabel.text = countryDictionary["female"] as? String

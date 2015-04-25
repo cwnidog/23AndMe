@@ -15,8 +15,8 @@ class Country
   
   init(jsonDictionary: [String:AnyObject])
   {
-    self.country    = jsonDictionary["label"] as String
-    let percentage  = jsonDictionary["proportion"] as Float
+    self.country    = jsonDictionary["label"] as! String
+    let percentage  = jsonDictionary["proportion"] as! Float
     self.proportion = percentage * 100
   }
 }

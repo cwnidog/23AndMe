@@ -70,7 +70,7 @@ class NetworkController
       let calendar = NSCalendar.currentCalendar()
       let now = NSDate()
       
-      let components = calendar.components(NSCalendarUnit.HourCalendarUnit, fromDate: tokenDate!, toDate: now, options: nil)
+      let components = calendar.components(NSCalendarUnit.CalendarUnitHour, fromDate: tokenDate!, toDate: now, options: nil)
       
       if components.hour > 23 // token timed out, need a new one
       {
