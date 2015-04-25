@@ -41,6 +41,7 @@ class NetworkController
   var profiles = [UserProfile]() // an array of all the prfiles associated with this user (mother, father, etc.)
   
   var urlSession : NSURLSession
+  var hasProfile = false // true when user has a completed genetic profile at 23andMe
   
   //store string variables associated with the users Haplogroups - paternal could remain nil
   var paternalHaplogroup : String?
@@ -175,9 +176,18 @@ class NetworkController
   //MARK: fetchAncestryComposition
   func fetchAncestryComposition(callback:(region:[Regions]?, errorString: String?) -> (Void))
   {
-    //let url = NSURL(string: "https://api.23andme.com/1/ancestry/\(self.profiles[0].profileID)/?threshold=0.51") //0.51 = speculative = more results
-    let url = NSURL(string: "https://api.23andme.com/1/demo/ancestry/SP1_FATHER_V4//?threshold=0.51")
-    let requestedURL = NSMutableURLRequest(URL: url!)
+    var url: NSURL
+    
+    // choose URL to query based on availability of user's genetic profile
+    if hasProfile {
+      url = NSURL(string: "https://api.23andme.com/1/ancestry/\(self.profiles[0].profileID)/?threshold=0.51")! //0.51 = speculative = more results
+    }
+    else
+    {
+      url = NSURL(string: "https://api.23andme.com/1/demo/ancestry/SP1_FATHER_V4//?threshold=0.51")!
+    }
+    
+    let requestedURL = NSMutableURLRequest(URL: url)
     requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
       if(error == nil)
@@ -285,9 +295,18 @@ class NetworkController
   **  haplogroup as 2 strings - these strings will be stored for future use using NSUserDefaults   */
   func fetchUserHaplogroup(callback:(maternalHaplo:String?, paternalHaplo:String?, errorString: String?) -> (Void))
   {
-    //let url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(self.profiles[0].profileID)/")
-    let url = NSURL(string: "https://api.23andme.com/1/demo/haplogroups/SP1_FATHER_V4")
-    let requestedURL = NSMutableURLRequest(URL: url!)
+    var url: NSURL
+    
+    // choose URL to query based on availability of user's genetic profile
+    if hasProfile {
+      url = NSURL(string: "https://api.23andme.com/1/haplogroups/\(self.profiles[0].profileID)/")!
+    }
+    else
+    {
+      url = NSURL(string: "https://api.23andme.com/1/demo/haplogroups/SP1_FATHER_V4")!
+    }
+    
+    let requestedURL = NSMutableURLRequest(URL: url)
     requestedURL.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
     let dataTask = self.urlSession.dataTaskWithRequest(requestedURL, completionHandler: { (data, response, error) -> Void in
       if(error == nil)
@@ -325,11 +344,17 @@ class NetworkController
   // MARK: fetchNeanderthal()
   func fetchNeanderthal((), callback : ([String : AnyObject], String?) -> (Void))
   {
-    println("Access token = \(self.accessToken)")
-    //let url = NSURL(string: "https://api.23andme.com/1/neanderthal/\(self.profiles[0].profileID)/")
-    let url = NSURL(string: "https://api.23andme.com/1/demo/neanderthal/SP1_FATHER_V4/")
+    var url: NSURL
+    
+    // choose URL to query based on availability of user's genetic profile
+    if hasProfile {
+      url = NSURL(string: "https://api.23andme.com/1/neanderthal/\(self.profiles[0].profileID)/")!
+    }
+    else {
+      url = NSURL(string: "https://api.23andme.com/1/demo/neanderthal/SP1_FATHER_V4/")!
+    }
 
-    let request = NSMutableURLRequest(URL: url!)
+    let request = NSMutableURLRequest(URL: url)
     request.setValue("\(self.tokenType!) \(self.accessToken!)", forHTTPHeaderField: "Authorization")
     
     //println(request.allHTTPHeaderFields)
