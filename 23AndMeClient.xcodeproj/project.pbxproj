@@ -20,6 +20,7 @@
 		4383FCD21A78195F009538D0 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4383FCD11A78195F009538D0 /* Country.swift */; };
 		43ECBD091A9429E5008DBC45 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ECBD081A9429E5008DBC45 /* PageViewController.swift */; };
 		43ECBD0B1A943043008DBC45 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ECBD0A1A943043008DBC45 /* PageContentViewController.swift */; };
+		5D2E13F11AEC44730052CFD4 /* GeneticProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2E13F01AEC44730052CFD4 /* GeneticProfileViewController.swift */; };
 		5D890AA51A9820670098F1D1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D890AA41A9820670098F1D1 /* Media.xcassets */; };
 		5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA907521A758C7B009D92C2 /* AppDelegate.swift */; };
 		5DA907581A758C7C009D92C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA907561A758C7B009D92C2 /* Main.storyboard */; };
@@ -90,6 +91,7 @@
 		4383FCD11A78195F009538D0 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		43ECBD081A9429E5008DBC45 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		43ECBD0A1A943043008DBC45 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		5D2E13F01AEC44730052CFD4 /* GeneticProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneticProfileViewController.swift; sourceTree = "<group>"; };
 		5D890AA41A9820670098F1D1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		5DA9074D1A758C7B009D92C2 /* 23AndMeClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 23AndMeClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA907511A758C7B009D92C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				5DA907B71A75A91F009D92C2 /* NeanderthalAncestryViewController.swift */,
 				5DA907BB1A75ACB4009D92C2 /* NetworkController.swift */,
 				2FC1EB7B1A78022B000A1935 /* WebViewController.swift */,
+				5D2E13F01AEC44730052CFD4 /* GeneticProfileViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				5DA907B61A75A886009D92C2 /* PaternalLineViewController.swift in Sources */,
 				5DA907531A758C7B009D92C2 /* AppDelegate.swift in Sources */,
 				2FC1EB7C1A78022B000A1935 /* WebViewController.swift in Sources */,
+				5D2E13F11AEC44730052CFD4 /* GeneticProfileViewController.swift in Sources */,
 				7915CDCD1A77761D00597B50 /* AncestryGlobalViewController.swift in Sources */,
 				7915CDCF1A777ECC00597B50 /* GlobalCell.swift in Sources */,
 				4383FCCE1A781377009538D0 /* Regions.swift in Sources */,
