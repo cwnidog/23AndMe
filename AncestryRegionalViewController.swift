@@ -48,7 +48,7 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
   {
-    let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as GlobalCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as! GlobalCell
     
     let currentSubRegion = self.subRegions[indexPath.row]
     cell.globalLabel.text = currentSubRegion.region
@@ -79,14 +79,14 @@ class AncestryRegionalViewController: UIViewController, UITableViewDataSource, U
     
     if (subRegionToCountry.countries == nil) // this will skip to the celebrities VC if the countires array is empty.
     {
-      let toCountryVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as CelebrityInterestViewController
+      let toCountryVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as! CelebrityInterestViewController
       
       toCountryVC.subRegion = subRegionToCountry
       
       self.navigationController?.pushViewController(toCountryVC, animated: true)
     } else {
       
-      let toCountryVC = storyboard?.instantiateViewControllerWithIdentifier("COUNTRY_VC") as Country2ViewController
+      let toCountryVC = storyboard?.instantiateViewControllerWithIdentifier("COUNTRY_VC") as! Country2ViewController
       
       toCountryVC.subRegion = subRegionToCountry
       

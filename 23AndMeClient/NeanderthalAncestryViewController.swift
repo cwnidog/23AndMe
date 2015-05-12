@@ -19,7 +19,7 @@ class NeanderthalAncestryViewController: UIViewController {
     override func viewDidLoad()
     {
       super.viewDidLoad()
-      NetworkController.sharedNetworkController.fetchNeanderthal((), { (neanderDict, error) -> (Void) in
+      NetworkController.sharedNetworkController.fetchNeanderthal((), callback: { (neanderDict, error) -> (Void) in
         //initialize a Neanderthal with the provided JSON data
         var neanderthal = Neanderthal(jsonDictionary: neanderDict)
         

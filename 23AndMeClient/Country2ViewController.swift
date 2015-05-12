@@ -39,7 +39,7 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
   {
-    let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as GlobalCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("GLOBAL_CELL", forIndexPath: indexPath) as! GlobalCell
         
     let currentCountry = self.countries[indexPath.row]
         
@@ -68,7 +68,7 @@ class Country2ViewController: UIViewController, UITableViewDataSource, UITableVi
   {
     let countryToCelbrity = self.countries[indexPath.row]
     
-    let toCelebrityVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as CelebrityInterestViewController
+    let toCelebrityVC = storyboard?.instantiateViewControllerWithIdentifier("CELEBRITY_VC") as! CelebrityInterestViewController
     
     println("Country2View:")
     println(countryToCelbrity.country)

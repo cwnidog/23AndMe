@@ -17,8 +17,8 @@ class Regions
 
   init(jsonDictionary : [String : AnyObject]) // will be passed a region dictionary that may contain sub
   {
-    self.region     = jsonDictionary["label"] as String
-    let percentage = jsonDictionary["proportion"] as Float
+    self.region     = jsonDictionary["label"] as! String
+    let percentage = jsonDictionary["proportion"] as! Float
     
     self.proportion = percentage * 100
     

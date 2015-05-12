@@ -18,7 +18,7 @@ class Neanderthal
   // initalize the properties from the JSON received from 23AndMe
   init(jsonDictionary : [String : AnyObject])
   {
-    var rawProportion = jsonDictionary["proportion"] as Float
+    var rawProportion = jsonDictionary["proportion"] as! Float
     proportion = self.convertFloatToString(rawProportion * 100) + "%"
     /*ancestry = jsonDictionary["ancestry"] as String
     average = jsonDictionary["average"] as String

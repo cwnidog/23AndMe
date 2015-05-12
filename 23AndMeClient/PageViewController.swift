@@ -29,13 +29,13 @@ class PageViewController: UIViewController,  UIPageViewControllerDataSource
   //this method instantiates the PageViewController object - which serves as a controller for all of the individual VC's
   func createPageViewController()
   {
-    let pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as UIPageViewController
+    let pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
     pageViewController.dataSource = self
     if (imageContent.count > 0)
     {
       let firstController = getItemController(0)!
       let startingViewControllers: NSArray = [firstController]
-      pageViewController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+      pageViewController.setViewControllers(startingViewControllers as [AnyObject], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
     
     addChildViewController(pageViewController)
@@ -47,7 +47,7 @@ class PageViewController: UIViewController,  UIPageViewControllerDataSource
   {
     if (itemIndex < imageContent.count)
     {
-      let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("Content") as PageContentViewController
+      let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("Content") as! PageContentViewController
       pageItemController.itemIndex = itemIndex
       pageItemController.imageName = self.imageContent[itemIndex]
       
@@ -74,7 +74,7 @@ class PageViewController: UIViewController,  UIPageViewControllerDataSource
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
   {
-   let itemController = viewController as PageContentViewController
+   let itemController = viewController as! PageContentViewController
   
     if (itemController.itemIndex > 0)
     {
@@ -86,7 +86,7 @@ class PageViewController: UIViewController,  UIPageViewControllerDataSource
   
   func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
   {
-    let itemController = viewController as PageContentViewController
+    let itemController = viewController as! PageContentViewController
     
     if (itemController.itemIndex + 1 < imageContent.count)
     {

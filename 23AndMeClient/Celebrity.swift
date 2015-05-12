@@ -18,10 +18,10 @@ struct Celebrity
   
   init(celebrityNameDictionary: [String:AnyObject])
   {
-    self.maleName    = celebrityNameDictionary["male"] as String
-    self.femaleName = celebrityNameDictionary["female"] as String
+    self.maleName    = celebrityNameDictionary["male"] as! String
+    self.femaleName = celebrityNameDictionary["female"] as! String
     
-    self.maleUrl = celebrityNameDictionary["maleImage"] as String
-    self.femaleUrl = celebrityNameDictionary["femaleImage"] as String
+    self.maleUrl = celebrityNameDictionary["maleImage"] as! String
+    self.femaleUrl = celebrityNameDictionary["femaleImage"] as! String
   }
 }
