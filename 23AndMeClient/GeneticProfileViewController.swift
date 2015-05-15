@@ -17,11 +17,11 @@ class GeneticProfileViewController: UIViewController {
       let alertController = UIAlertController(title: "Genetic Profile", message: "Do you have a completed genetic profile at 23andMe? Note: if you do not have a profile and hit the \"Yes\" option, displays will be erratic", preferredStyle: .Alert)
       
       let noAction = UIAlertAction(title: "No", style: .Cancel) {(action) in println(action)
-        self.navigationController?.popToRootViewControllerAnimated(true)}
+        self.navigationController?.popViewControllerAnimated(true)}
       alertController.addAction(noAction)
       
       let yesAction = UIAlertAction(title: "Yes", style: .Destructive) {(action) in NetworkController.sharedNetworkController.hasProfile = true
-      self.navigationController?.popToRootViewControllerAnimated(true)}
+      self.navigationController?.popViewControllerAnimated(true)}
       alertController.addAction(yesAction)
       
       self.presentViewController(alertController, animated: true) {}
