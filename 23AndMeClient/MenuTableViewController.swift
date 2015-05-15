@@ -14,16 +14,16 @@ class MenuTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-        
+    
+    // ask user if they have a genetic profile through a separate View Controller
+    let gpVC = self.storyboard?.instantiateViewControllerWithIdentifier("GeneticContentVC") as! GeneticProfileViewController
+    self.navigationController?.pushViewController(gpVC, animated: true)
+    
     if (NetworkController.sharedNetworkController.accessToken == nil)
     {
       let toVC = self.storyboard?.instantiateViewControllerWithIdentifier("NewUserVC") as! PageViewController
       self.navigationController?.pushViewController(toVC, animated: true)
     }
-    
-    // ask user if they have a genetic profile through a separate View Controller
-    let gpVC = self.storyboard?.instantiateViewControllerWithIdentifier("GeneticContentVC") as! GeneticProfileViewController
-    self.navigationController?.pushViewController(gpVC, animated: true)
     
   } // viewDidLoad()
   

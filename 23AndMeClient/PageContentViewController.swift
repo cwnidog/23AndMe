@@ -17,7 +17,7 @@ class PageContentViewController: UIViewController {
   {
     println("next page clicked")
     
-    self.navigationController?.popToRootViewControllerAnimated(true)
+    self.navigationController?.popViewControllerAnimated(true)
   }
   
   let onboardingInfo      = OnboardingData()
