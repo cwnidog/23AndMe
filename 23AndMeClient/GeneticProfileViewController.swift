@@ -14,8 +14,9 @@ class GeneticProfileViewController: UIViewController {
       super.viewDidLoad()
       
       // find out if the user has a completed genetic profile before dismissing the view
-      let alertController = UIAlertController(title: "Genetic Profile", message: "Do you have a completed genetic profile at 23andMe? Note: if you do not have a profile and hit the \"Yes\" option, displays will be erratic", preferredStyle: .Alert)
+      let alertController = UIAlertController(title: "Genetic Profile", message: "Do you have genetic profile results from 23andMe? \n \n Note: If you do not have genetic results from 23andMe, please pick \"No\" and you will be given sample data. \n \n A \"Yes\" option without 23andMe will display erratic data", preferredStyle: .Alert)
       
+        
       let noAction = UIAlertAction(title: "No", style: .Cancel) {(action) in println(action)
         self.navigationController?.popViewControllerAnimated(true)}
       alertController.addAction(noAction)
